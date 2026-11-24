@@ -1,0 +1,162 @@
+[
+  {
+    "trial": 0,
+    "params": {
+      "start_layer_index": 25,
+      "end_layer_index": 26,
+      "preserve_good_behavior_weight": 0.3873,
+      "steer_bad_behavior_weight": 0.0003,
+      "overcorrect_relative_weight": 0.8555,
+      "neighbor_count": 14
+    },
+    "scores": {
+      "Refusals": 0.89,
+      "KL divergence": 0.0023822777438908815
+    },
+    "elapsed_sec": 120.81
+  },
+  {
+    "trial": 1,
+    "params": {
+      "start_layer_index": 25,
+      "end_layer_index": 26,
+      "preserve_good_behavior_weight": 0.3873,
+      "steer_bad_behavior_weight": 0.003,
+      "overcorrect_relative_weight": 0.8555,
+      "neighbor_count": 14
+    },
+    "scores": {
+      "Refusals": 0.92,
+      "KL divergence": 0.005007930565625429
+    },
+    "elapsed_sec": 119.86
+  },
+  {
+    "trial": 2,
+    "params": {
+      "start_layer_index": 25,
+      "end_layer_index": 26,
+      "preserve_good_behavior_weight": 0.38340965986494446,
+      "steer_bad_behavior_weight": 0.00010379733829293239,
+      "overcorrect_relative_weight": 1.2594181949105316,
+      "neighbor_count": 6
+    },
+    "scores": {
+      "Refusals": 0.98,
+      "KL divergence": 0.021072864532470703
+    },
+    "elapsed_sec": 118.15
+  },
+  {
+    "trial": 3,
+    "params": {
+      "start_layer_index": 25,
+      "end_layer_index": 26,
+      "preserve_good_behavior_weight": 0.7717593305669064,
+      "steer_bad_behavior_weight": 0.028168262317655395,
+      "overcorrect_relative_weight": 0.31871375959014736,
+      "neighbor_count": 24
+    },
+    "scores": {
+      "Refusals": 0.95,
+      "KL divergence": 0.003752547549083829
+    },
+    "elapsed_sec": 120.04
+  },
+  {
+    "trial": 4,
+    "params": {
+      "start_layer_index": 25,
+      "end_layer_index": 26,
+      "preserve_good_behavior_weight": 0.10030193040577357,
+      "steer_bad_behavior_weight": 0.0001079512007460337,
+      "overcorrect_relative_weight": 1.4784343351021787,
+      "neighbor_count": 19
+    },
+    "scores": {
+      "Refusals": 0.95,
+      "KL divergence": 0.05756020545959473
+    },
+    "elapsed_sec": 118.37
+  },
+  {
+    "trial": 5,
+    "params": {
+      "start_layer_index": 25,
+      "end_layer_index": 26,
+      "preserve_good_behavior_weight": 0.7367284780841556,
+      "steer_bad_behavior_weight": 0.0015840067833205625,
+      "overcorrect_relative_weight": 0.6604887987320793,
+      "neighbor_count": 5
+    },
+    "scores": {
+      "Refusals": 0.99,
+      "KL divergence": 0.0018313589971512556
+    },
+    "elapsed_sec": 119.57
+  },
+  {
+    "trial": 6,
+    "params": {
+      "start_layer_index": 25,
+      "end_layer_index": 26,
+      "preserve_good_behavior_weight": 0.7876845019496543,
+      "steer_bad_behavior_weight": 0.0022655383425632496,
+      "overcorrect_relative_weight": 0.31516919468457344,
+      "neighbor_count": 5
+    },
+    "scores": {
+      "Refusals": 0.99,
+      "KL divergence": 0.001853916677646339
+    },
+    "elapsed_sec": 120.08
+  },
+  {
+    "trial": 7,
+    "params": {
+      "start_layer_index": 25,
+      "end_layer_index": 26,
+      "preserve_good_behavior_weight": 0.5935848254403285,
+      "steer_bad_behavior_weight": 0.04908323403043303,
+      "overcorrect_relative_weight": 0.7569736445946288,
+      "neighbor_count": 12
+    },
+    "scores": {
+      "Refusals": 0.94,
+      "KL divergence": 0.009240776300430298
+    },
+    "elapsed_sec": 120.06
+  },
+  {
+    "trial": 8,
+    "params": {
+      "start_layer_index": 25,
+      "end_layer_index": 26,
+      "preserve_good_behavior_weight": 0.0868718075706576,
+      "steer_bad_behavior_weight": 0.004008774001500759,
+      "overcorrect_relative_weight": 0.5691064081697701,
+      "neighbor_count": 25
+    },
+    "scores": {
+      "Refusals": 0.94,
+      "KL divergence": 0.006011875346302986
+    },
+    "elapsed_sec": 120.21
+  },
+  {
+    "trial": 9,
+    "params": {
+      "start_layer_index": 25,
+      "end_layer_index": 26,
+      "preserve_good_behavior_weight": 0.538261852378696,
+      "steer_bad_behavior_weight": 0.0007274194707445767,
+      "overcorrect_relative_weight": 1.1264805432093306,
+      "neighbor_count": 10
+    },
+    "scores": {
+      "Refusals": 0.99,
+      "KL divergence": 0.7988843321800232
+    },
+    "elapsed_sec": 120.54
+  }
+]

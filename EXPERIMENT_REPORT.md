@@ -101,3 +101,38 @@
 - 同一の ARA 重み（`steer_bad_behavior_weight=0.0003`）を第25層のみに適用した場合、KL divergence は `0.0024` と極めて小さくモデルの元挙動はほぼ保たれた一方、拒否率は `99/100` → `89/100`（-10 pp）の低下に留まった。
 - 21層（21〜41層）への介入では `4/100` まで低下していることから、Gemma 4 E4B の拒否表現は第25層単層に局在しているのではなく複数層に分散している、もしくは単層介入では `steer_bad_behavior_weight=0.0003` の強度が不足している可能性が示唆される。
 - 永続化ファイル: `scripts/run_layer25.py`, `results/gemma4_e4b_layer25/heretic_layer25.log`, `results/gemma4_e4b_layer25/google--gemma-4-E4B-it.jsonl`
+
+---
+
+## 7. 第25層単層 Optuna 局所探索（10トライアル）
+
+- **実施日時**: 2026-11-24 11:54:48Z 〜 12:33:34Z（キャッシュ生成 152.5s + 10トライアル各約 120s）
+- **実行環境**: Google Colab `Tesla T4` (`15,360 MiB VRAM`, `SHAPE_STANDARD`)
+- **使用スクリプト**: `scripts/run_layer25_optuna.py`（コミット `1287e17`）
+- **CCU 消費**: `590.6251` → `589.9307`（消費 `0.6944` CCU、`assignments_end: 0`）
+- **探索条件**:
+  - 固定層: `start_layer_index=25, end_layer_index=26`（第25層のみ）
+  - サンプラー: `TPESampler(seed=42, n_startup_trials=2)`（目的: `Refusals` 最小化 & `KL divergence` 最小化）
+  - 初期投入: Trial 0（`coder3101` 重み）、Trial 1（`steer_bad_behavior_weight=0.003`）
+  - 探索範囲: `preserve_good ∈ [0.05, 0.80]`, `steer_bad ∈ [1e-4, 5e-2] (log)`, `overcorrect ∈ [0.30, 1.50]`, `neighbor_count ∈ [5, 25]`
+
+| Trial | preserve_good | steer_bad | overcorrect | k | Refusals | KL divergence | 所要時間 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| **0** *(coder3101)* | 0.3873 | 0.00030 | 0.8555 | 14 | **89/100** | **0.0024** | 120.8s |
+| **1** *(probe)* | 0.3873 | 0.00300 | 0.8555 | 14 | 92/100 | 0.0050 | 119.9s |
+| 2 | 0.3834 | 0.00010 | 1.2594 | 6 | 98/100 | 0.0211 | 118.2s |
+| 3 | 0.7718 | 0.02817 | 0.3187 | 24 | 95/100 | 0.0038 | 120.0s |
+| 4 | 0.1003 | 0.00011 | 1.4784 | 19 | 95/100 | 0.0576 | 118.4s |
+| **5** *(min KL)* | 0.7367 | 0.00158 | 0.6605 | 5 | 99/100 | **0.0018** | 119.6s |
+| 6 | 0.7877 | 0.00227 | 0.3152 | 5 | 99/100 | 0.0019 | 120.1s |
+| 7 | 0.5936 | 0.04908 | 0.7570 | 12 | 94/100 | 0.0092 | 120.1s |
+| 8 | 0.0869 | 0.00401 | 0.5691 | 25 | 94/100 | 0.0060 | 120.2s |
+| 9 | 0.5383 | 0.00073 | 1.1265 | 10 | 99/100 | 0.7989 | 120.5s |
+
+### 結論・パラメータ傾向
+- **第25層のみでは重みを調整しても拒否率をさらに下げられなかった**: Trial 0（`89/100`, `KL=0.0024`）が最良であり、`steer_bad_behavior_weight` を最大 `0.049` まで上げても（Trial 7: `94/100`）、`preserve_good_behavior_weight` を `0.087` まで下げても（Trial 8: `94/100`）、90% 前後の壁を破れなかった。
+- **パラメータ方向の傾向**:
+  - `overcorrect_relative_weight > 1.1`（Trial 2, 4, 9）は拒否率を下げないまま KL divergence のみ急増させた（最大 `0.7989`）。
+  - `neighbor_count` が極端に小さい（`k=5〜6`）場合は `98〜99/100` とほぼ変化せず、`k=12〜25` の方がわずかに低下する傾向が見られた。
+- **総合知見**: 同一の `coder3101` 重みで 21〜41層（21層）なら `4/100` まで低下することと対比すると、`google/gemma-4-E4B-it` の拒否機構は第25層単層に集中しているのではなく、後半複数層にまたがって分散・冗長化していることが強く示唆される。
+- 永続化ファイル: `results/gemma4_e4b_layer25_optuna/optuna_results.json`, `results/gemma4_e4b_layer25_optuna/layer25_optuna_journal.jsonl`, `results/gemma4_e4b_layer25_optuna/optuna.log`
