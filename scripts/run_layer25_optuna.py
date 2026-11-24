@@ -17,10 +17,10 @@ from optuna.storages.journal import JournalFileBackend
 import torch
 
 from heretic.config import QuantizationMethod, Settings
+from heretic.evaluator import Evaluator
 from heretic.model import Model
 from heretic.modifiers.ara import ARA, Parameters as ARAParameters, Settings as ARASettings
 from heretic.plugin import Context
-from heretic.scorer import load_and_init_scorers
 
 
 def save_ara_cache(modifier: ARA, cache_path: Path) -> None:
@@ -66,7 +66,7 @@ def main():
     model = Model(settings)
     ctx = Context(settings=settings, model=model)
 
-    scorers = load_and_init_scorers(settings, model)
+    evaluator = Evaluator(settings, model)
     modifier = ARA(ARASettings(), settings)
 
     cache_path = Path(args.cache_path)
@@ -124,10 +124,8 @@ def main():
             modifier.reset_model(ctx)
         modifier.modify_model(ctx, params)
 
-        scores = {}
-        for entry in scorers:
-            res = entry.scorer.score(ctx)
-            scores[entry.name] = float(res.value if hasattr(res, "value") else res)
+        score_pairs = evaluator.get_scores()
+        scores = {name: float(score.value) for name, score in score_pairs}
 
         refusals = scores.get("Refusals")
         kl_div = scores.get("KL divergence")
