@@ -7,6 +7,7 @@ applying the exact coder3101 ARA weights to one layer at a time:
 """
 import argparse
 import json
+import sys
 import time
 from pathlib import Path
 
@@ -56,6 +57,8 @@ def main():
     parser.add_argument("--cache-path", default="/content/cache/gemma4_e4b_bnb4bit_seed42_ara.pt")
     parser.add_argument("--output-json", default="/content/layers_26_41/single_layer_results.json")
     args = parser.parse_args()
+    # Prevent heretic's pydantic-settings CLI parser from reading our custom flags
+    sys.argv = [sys.argv[0]]
 
     out_path = Path(args.output_json)
     out_path.parent.mkdir(parents=True, exist_ok=True)
