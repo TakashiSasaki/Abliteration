@@ -1,0 +1,122 @@
+
+Loading model google/gemma-4-E4B-it...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+* Trying dtype auto...
+Loading weights:   0%|          | 0/2076 [00:00<?, ?it/s]Loading weights:   0%|          | 3/2076 [00:00<03:14, 10.68it/s]Loading weights:   1%|          | 15/2076 [00:00<00:49, 41.71it/s]Loading weights:   1%|▏         | 29/2076 [00:00<00:30, 67.82it/s]Loading weights:   3%|▎         | 60/2076 [00:00<00:14, 135.88it/s]Loading weights:   4%|▎         | 77/2076 [00:00<00:14, 135.80it/s]Loading weights:   5%|▌         | 105/2076 [00:00<00:11, 173.92it/s]Loading weights:   6%|▋         | 132/2076 [00:01<00:10, 185.13it/s]Loading weights:   8%|▊         | 158/2076 [00:01<00:09, 198.62it/s]Loading weights:   9%|▉         | 189/2076 [00:01<00:08, 227.87it/s]Loading weights:  10%|█         | 213/2076 [00:01<00:08, 225.07it/s]Loading weights:  12%|█▏        | 251/2076 [00:01<00:07, 252.09it/s]Loading weights:  13%|█▎        | 277/2076 [00:01<00:07, 237.59it/s]Loading weights:  15%|█▌        | 318/2076 [00:01<00:06, 268.11it/s]Loading weights:  18%|█▊        | 364/2076 [00:01<00:05, 315.59it/s]Loading weights:  19%|█▉        | 397/2076 [00:01<00:05, 293.83it/s]Loading weights:  21%|██▏       | 442/2076 [00:02<00:05, 315.17it/s]Loading weights:  24%|██▎       | 488/2076 [00:02<00:04, 347.98it/s]Loading weights:  25%|██▌       | 524/2076 [00:02<00:04, 322.05it/s]Loading weights:  27%|██▋       | 566/2076 [00:02<00:04, 320.77it/s]Loading weights:  29%|██▉       | 601/2076 [00:02<00:04, 326.32it/s]Loading weights:  31%|███       | 635/2076 [00:02<00:04, 304.53it/s]Loading weights:  33%|███▎      | 685/2076 [00:02<00:04, 326.99it/s]Loading weights:  35%|███▍      | 718/2076 [00:02<00:04, 308.12it/s]Loading weights:  36%|███▋      | 753/2076 [00:03<00:04, 313.26it/s]Loading weights:  36%|███▋      | 753/2076 [00:16<00:04, 313.26it/s]Loading weights:  36%|███▋      | 755/2076 [00:30<06:53,  3.19it/s] Loading weights:  37%|███▋      | 758/2076 [00:30<06:38,  3.31it/s]Loading weights:  38%|███▊      | 781/2076 [00:32<04:42,  4.58it/s]Loading weights:  38%|███▊      | 798/2076 [00:32<03:40,  5.79it/s]Loading weights:  39%|███▉      | 811/2076 [00:33<03:05,  6.80it/s]Loading weights:  40%|███▉      | 822/2076 [00:33<02:27,  8.48it/s]Loading weights:  40%|████      | 832/2076 [00:34<02:12,  9.39it/s]Loading weights:  40%|████      | 840/2076 [00:34<01:48, 11.36it/s]Loading weights:  41%|████      | 848/2076 [00:35<01:46, 11.58it/s]Loading weights:  41%|████      | 854/2076 [00:35<01:29, 13.67it/s]Loading weights:  41%|████▏     | 860/2076 [00:35<01:23, 14.56it/s]Loading weights:  42%|████▏     | 865/2076 [00:35<01:27, 13.88it/s]Loading weights:  42%|████▏     | 874/2076 [00:36<01:01, 19.48it/s]Loading weights:  42%|████▏     | 880/2076 [00:36<01:17, 15.40it/s]Loading weights:  43%|████▎     | 891/2076 [00:36<00:51, 23.21it/s]Loading weights:  43%|████▎     | 897/2076 [00:37<01:08, 17.32it/s]Loading weights:  44%|████▎     | 908/2076 [00:37<00:46, 25.33it/s]Loading weights:  44%|████▍     | 915/2076 [00:38<01:01, 18.93it/s]Loading weights:  45%|████▍     | 928/2076 [00:38<00:47, 24.34it/s]Loading weights:  45%|████▍     | 933/2076 [00:38<00:56, 20.36it/s]Loading weights:  45%|████▌     | 942/2076 [00:39<00:42, 26.91it/s]Loading weights:  46%|████▌     | 948/2076 [00:39<00:59, 18.86it/s]Loading weights:  46%|████▌     | 956/2076 [00:39<00:45, 24.42it/s]Loading weights:  46%|████▋     | 961/2076 [00:39<00:40, 27.35it/s]Loading weights:  47%|████▋     | 966/2076 [00:40<01:04, 17.30it/s]Loading weights:  47%|████▋     | 976/2076 [00:40<00:42, 25.79it/s]Loading weights:  47%|████▋     | 982/2076 [00:41<01:01, 17.92it/s]Loading weights:  48%|████▊     | 993/2076 [00:41<00:40, 26.79it/s]Loading weights:  48%|████▊     | 999/2076 [00:41<00:57, 18.68it/s]Loading weights:  49%|████▊     | 1010/2076 [00:42<00:39, 27.25it/s]Loading weights:  49%|████▉     | 1017/2076 [00:42<00:53, 19.72it/s]Loading weights:  49%|████▉     | 1027/2076 [00:42<00:38, 27.19it/s]Loading weights:  50%|████▉     | 1034/2076 [00:43<00:52, 19.73it/s]Loading weights:  50%|█████     | 1044/2076 [00:43<00:38, 27.16it/s]Loading weights:  51%|█████     | 1051/2076 [00:44<00:51, 19.74it/s]Loading weights:  51%|█████     | 1058/2076 [00:44<00:41, 24.32it/s]Loading weights:  51%|█████▏    | 1064/2076 [00:44<00:44, 22.78it/s]Loading weights:  51%|█████▏    | 1069/2076 [00:45<00:53, 18.77it/s]Loading weights:  52%|█████▏    | 1078/2076 [00:45<00:37, 26.42it/s]Loading weights:  52%|█████▏    | 1083/2076 [00:45<00:57, 17.30it/s]Loading weights:  53%|█████▎    | 1094/2076 [00:45<00:36, 26.62it/s]Loading weights:  53%|█████▎    | 1100/2076 [00:46<00:53, 18.38it/s]Loading weights:  54%|█████▎    | 1111/2076 [00:46<00:35, 27.18it/s]Loading weights:  54%|█████▍    | 1118/2076 [00:47<00:49, 19.54it/s]Loading weights:  54%|█████▍    | 1129/2076 [00:47<00:33, 27.87it/s]Loading weights:  55%|█████▍    | 1136/2076 [00:48<00:46, 20.10it/s]Loading weights:  55%|█████▌    | 1146/2076 [00:48<00:33, 27.50it/s]Loading weights:  56%|█████▌    | 1153/2076 [00:48<00:46, 19.88it/s]Loading weights:  56%|█████▌    | 1160/2076 [00:48<00:37, 24.49it/s]Loading weights:  56%|█████▌    | 1166/2076 [00:49<00:39, 22.93it/s]Loading weights:  56%|█████▋    | 1171/2076 [00:49<00:48, 18.80it/s]Loading weights:  57%|█████▋    | 1180/2076 [00:49<00:40, 21.87it/s]Loading weights:  57%|█████▋    | 1184/2076 [00:50<00:51, 17.47it/s]Loading weights:  58%|█████▊    | 1194/2076 [00:50<00:40, 21.66it/s]Loading weights:  58%|█████▊    | 1197/2076 [00:51<00:52, 16.64it/s]Loading weights:  58%|█████▊    | 1208/2076 [00:51<00:39, 21.79it/s]Loading weights:  58%|█████▊    | 1211/2076 [00:51<00:51, 16.78it/s]Loading weights:  59%|█████▉    | 1222/2076 [00:52<00:39, 21.84it/s]Loading weights:  59%|█████▉    | 1225/2076 [00:52<00:50, 16.84it/s]Loading weights:  60%|█████▉    | 1236/2076 [00:52<00:38, 21.87it/s]Loading weights:  60%|█████▉    | 1239/2076 [00:53<00:49, 16.86it/s]Loading weights:  60%|██████    | 1247/2076 [00:53<00:38, 21.74it/s]Loading weights:  60%|██████    | 1250/2076 [00:53<00:41, 20.01it/s]Loading weights:  60%|██████    | 1253/2076 [00:54<00:54, 15.00it/s]Loading weights:  61%|██████    | 1264/2076 [00:54<00:38, 21.07it/s]Loading weights:  61%|██████    | 1267/2076 [00:54<00:50, 16.02it/s]Loading weights:  62%|██████▏   | 1278/2076 [00:55<00:37, 21.50it/s]Loading weights:  62%|██████▏   | 1281/2076 [00:55<00:48, 16.48it/s]Loading weights:  62%|██████▏   | 1292/2076 [00:55<00:36, 21.69it/s]Loading weights:  62%|██████▏   | 1295/2076 [00:56<00:46, 16.70it/s]Loading weights:  63%|██████▎   | 1306/2076 [00:56<00:35, 21.81it/s]Loading weights:  63%|██████▎   | 1309/2076 [00:56<00:45, 16.80it/s]Loading weights:  64%|██████▎   | 1320/2076 [00:57<00:34, 21.84it/s]Loading weights:  64%|██████▎   | 1323/2076 [00:57<00:44, 16.85it/s]Loading weights:  64%|██████▍   | 1331/2076 [00:57<00:34, 21.71it/s]Loading weights:  64%|██████▍   | 1334/2076 [00:58<00:37, 19.97it/s]Loading weights:  64%|██████▍   | 1337/2076 [00:58<00:49, 14.98it/s]Loading weights:  65%|██████▍   | 1348/2076 [00:58<00:34, 21.06it/s]Loading weights:  65%|██████▌   | 1351/2076 [00:59<00:45, 16.01it/s]Loading weights:  66%|██████▌   | 1362/2076 [00:59<00:33, 21.48it/s]Loading weights:  66%|██████▌   | 1365/2076 [00:59<00:43, 16.46it/s]Loading weights:  66%|██████▋   | 1376/2076 [01:00<00:32, 21.71it/s]Loading weights:  66%|██████▋   | 1379/2076 [01:00<00:41, 16.64it/s]Loading weights:  67%|██████▋   | 1390/2076 [01:00<00:31, 21.79it/s]Loading weights:  67%|██████▋   | 1393/2076 [01:01<00:40, 16.77it/s]Loading weights:  68%|██████▊   | 1404/2076 [01:01<00:30, 21.76it/s]Loading weights:  68%|██████▊   | 1407/2076 [01:02<00:39, 16.84it/s]Loading weights:  68%|██████▊   | 1415/2076 [01:02<00:30, 21.70it/s]Loading weights:  68%|██████▊   | 1418/2076 [01:02<00:33, 19.72it/s]Loading weights:  71%|███████   | 1467/2076 [01:02<00:07, 80.97it/s]Loading weights:  73%|███████▎  | 1514/2076 [01:02<00:04, 139.29it/s]Loading weights:  76%|███████▋  | 1586/2076 [01:02<00:02, 242.05it/s]Loading weights:  79%|███████▉  | 1637/2076 [01:02<00:01, 288.69it/s]Loading weights:  82%|████████▏ | 1709/2076 [01:03<00:00, 373.55it/s]Loading weights:  85%|████████▍ | 1760/2076 [01:03<00:00, 394.18it/s]Loading weights:  88%|████████▊ | 1832/2076 [01:03<00:00, 460.37it/s]Loading weights:  91%|█████████ | 1884/2076 [01:03<00:00, 458.01it/s]Loading weights:  94%|█████████▍| 1955/2076 [01:03<00:00, 509.05it/s]Loading weights:  97%|█████████▋| 2010/2076 [01:03<00:00, 501.41it/s]Loading weights: 100%|█████████▉| 2075/2076 [01:03<00:00, 540.59it/s]Loading weights: 100%|██████████| 2076/2076 [01:03<00:00, 32.53it/s] 
+* Quantized to 4-bit precision
+* Transformer model with 42 layers
+* Modifiable components:
+  * attn.o_proj: 42 modules total
+  * mlp.down_proj: 42 modules total
+
+Loading and initializing scorers...
+* Loaded: KeywordRate
+* Loaded: KLDivergence
+
+Loading Refusals evaluation prompts from mlabonne/harmful_behaviors...
+Generating train split:   0%|          | 0/416 [00:00<?, ? examples/s]Generating train split: 100%|██████████| 416/416 [00:00<00:00, 4588.15 examples/s]
+Generating test split:   0%|          | 0/104 [00:00<?, ? examples/s]Generating test split: 100%|██████████| 104/104 [00:00<00:00, 20974.55 examples/s]
+* 100 prompts loaded
+
+Loading KL divergence evaluation prompts from mlabonne/harmless_alpaca...
+Generating train split:   0%|          | 0/25058 [00:00<?, ? examples/s]Generating train split: 100%|██████████| 25058/25058 [00:00<00:00, 1273548.57 examples/s]
+Generating test split:   0%|          | 0/6265 [00:00<?, ? examples/s]Generating test split: 100%|██████████| 6265/6265 [00:00<00:00, 706417.40 examples/s]
+* 100 prompts loaded
+* Obtaining baseline first-token probability distributions...
+
+Getting baseline scores...
+[W1124 12:49:45.541949591 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 176160768 bytes (free: 138215424, total: 15637086208).
+[W1124 12:50:03.364613022 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 213909504 bytes (free: 119341056, total: 15637086208).
+[W1124 12:50:09.132334509 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 226492416 bytes (free: 196935680, total: 15637086208).
+[W1124 12:50:15.923079621 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 239075328 bytes (free: 35454976, total: 15637086208).
+* Baseline Refusals: 99/100
+* Baseline KL divergence: 0 (by definition)
+
+Loading good prompts from mlabonne/harmless_alpaca...
+* 400 prompts loaded
+
+Loading bad prompts from mlabonne/harmful_behaviors...
+* 400 prompts loaded
+
+Obtaining module I/O for good prompts...
+
+Obtaining module I/O for bad prompts...
+ARA init took 151.6s
+Saved ARA cache to /content/cache/gemma4_e4b_bnb4bit_seed42_ara.pt (1137.6 MB)
+[Layer 26] (117.72s) Refusals=0.98 KL=0.0019
+[W1124 12:55:58.413519400 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 174063616 bytes (free: 83689472, total: 15637086208).
+[W1124 12:56:17.668231319 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 211812352 bytes (free: 169672704, total: 15637086208).
+[W1124 12:56:23.474693723 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 224395264 bytes (free: 175964160, total: 15637086208).
+[W1124 12:56:30.201460560 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 236978176 bytes (free: 136118272, total: 15637086208).
+[Layer 27] (117.36s) Refusals=0.94 KL=0.0020
+[W1124 12:57:55.673402985 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 174063616 bytes (free: 85786624, total: 15637086208).
+[W1124 12:58:14.947426000 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 211812352 bytes (free: 169672704, total: 15637086208).
+[W1124 12:58:20.754734655 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 224395264 bytes (free: 175964160, total: 15637086208).
+[W1124 12:58:27.483690666 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 236978176 bytes (free: 136118272, total: 15637086208).
+[Layer 28] (117.15s) Refusals=0.96 KL=0.0014
+[W1124 12:59:53.234565589 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 174063616 bytes (free: 144506880, total: 15637086208).
+[W1124 13:00:12.613793947 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 211812352 bytes (free: 94175232, total: 15637086208).
+[W1124 13:00:19.292899527 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 226492416 bytes (free: 52232192, total: 15637086208).
+[W1124 13:00:26.091861996 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 239075328 bytes (free: 226295808, total: 15637086208).
+[Layer 29] (118.0s) Refusals=0.61 KL=0.0044
+[W1124 13:01:50.988179986 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 174063616 bytes (free: 85786624, total: 15637086208).
+[W1124 13:02:10.272034036 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 211812352 bytes (free: 169672704, total: 15637086208).
+[W1124 13:02:16.074183503 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 224395264 bytes (free: 175964160, total: 15637086208).
+[W1124 13:02:22.793620851 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 236978176 bytes (free: 136118272, total: 15637086208).
+[Layer 30] (117.08s) Refusals=0.98 KL=0.0017
+[W1124 13:03:47.745312700 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 174063616 bytes (free: 83689472, total: 15637086208).
+[W1124 13:04:06.911726879 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 211812352 bytes (free: 169672704, total: 15637086208).
+[W1124 13:04:12.677407597 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 224395264 bytes (free: 175964160, total: 15637086208).
+[W1124 13:04:19.353618907 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 236978176 bytes (free: 136118272, total: 15637086208).
+[Layer 31] (116.58s) Refusals=0.97 KL=0.0010
+[W1124 13:05:44.592324735 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 174063616 bytes (free: 85786624, total: 15637086208).
+[W1124 13:06:03.723136510 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 211812352 bytes (free: 169672704, total: 15637086208).
+[W1124 13:06:09.480828963 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 224395264 bytes (free: 175964160, total: 15637086208).
+[W1124 13:06:16.164278716 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 236978176 bytes (free: 136118272, total: 15637086208).
+[Layer 32] (116.95s) Refusals=0.98 KL=0.0006
+[W1124 13:07:41.433810110 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 174063616 bytes (free: 85786624, total: 15637086208).
+[W1124 13:08:00.667199153 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 211812352 bytes (free: 169672704, total: 15637086208).
+[W1124 13:08:06.469641003 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 224395264 bytes (free: 175964160, total: 15637086208).
+[W1124 13:08:13.160936102 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 236978176 bytes (free: 136118272, total: 15637086208).
+[Layer 33] (116.9s) Refusals=0.99 KL=0.0005
+[W1124 13:09:38.093746967 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 174063616 bytes (free: 85786624, total: 15637086208).
+[W1124 13:09:57.219573991 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 211812352 bytes (free: 169672704, total: 15637086208).
+[W1124 13:10:02.974865002 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 224395264 bytes (free: 175964160, total: 15637086208).
+[W1124 13:10:09.659604452 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 236978176 bytes (free: 136118272, total: 15637086208).
+[Layer 34] (116.46s) Refusals=0.98 KL=0.0006
+[W1124 13:11:34.721665461 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 174063616 bytes (free: 144506880, total: 15637086208).
+[W1124 13:11:53.977560166 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 211812352 bytes (free: 94175232, total: 15637086208).
+[W1124 13:12:00.584248752 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 226492416 bytes (free: 52232192, total: 15637086208).
+[W1124 13:12:07.337081625 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 239075328 bytes (free: 226295808, total: 15637086208).
+[Layer 35] (116.94s) Refusals=0.98 KL=0.0005
+[W1124 13:13:31.725754625 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 174063616 bytes (free: 85786624, total: 15637086208).
+[W1124 13:13:50.952508889 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 211812352 bytes (free: 169672704, total: 15637086208).
+[W1124 13:13:56.734869705 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 224395264 bytes (free: 175964160, total: 15637086208).
+[W1124 13:14:03.441318139 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 236978176 bytes (free: 136118272, total: 15637086208).
+[Layer 36] (117.01s) Refusals=0.98 KL=0.0004
+[W1124 13:15:28.484607652 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 174063616 bytes (free: 85786624, total: 15637086208).
+[W1124 13:15:47.756523033 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 211812352 bytes (free: 169672704, total: 15637086208).
+[W1124 13:15:53.562429195 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 224395264 bytes (free: 175964160, total: 15637086208).
+[W1124 13:16:00.291285129 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 236978176 bytes (free: 136118272, total: 15637086208).
+[Layer 37] (116.91s) Refusals=1.0 KL=0.0004
+[W1124 13:17:25.639210859 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 174063616 bytes (free: 85786624, total: 15637086208).
+[W1124 13:17:44.886591752 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 211812352 bytes (free: 169672704, total: 15637086208).
+[W1124 13:17:50.677917318 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 224395264 bytes (free: 175964160, total: 15637086208).
+[W1124 13:17:57.387465948 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 236978176 bytes (free: 136118272, total: 15637086208).
+[Layer 38] (116.92s) Refusals=0.98 KL=0.0004
+[W1124 13:19:22.279461232 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 174063616 bytes (free: 85786624, total: 15637086208).
+[W1124 13:19:41.475316815 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 211812352 bytes (free: 169672704, total: 15637086208).
+[W1124 13:19:47.263339225 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 224395264 bytes (free: 175964160, total: 15637086208).
+[W1124 13:19:53.953682609 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 236978176 bytes (free: 136118272, total: 15637086208).
+[Layer 39] (116.71s) Refusals=0.99 KL=0.0005
+[W1124 13:21:18.840168857 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 174063616 bytes (free: 85786624, total: 15637086208).
+[W1124 13:21:37.051616012 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 211812352 bytes (free: 169672704, total: 15637086208).
+[W1124 13:21:43.839452896 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 224395264 bytes (free: 175964160, total: 15637086208).
+[W1124 13:21:50.546332121 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 236978176 bytes (free: 136118272, total: 15637086208).
+[Layer 40] (116.44s) Refusals=0.98 KL=0.0008
+[W1124 13:23:15.903829975 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 174063616 bytes (free: 144506880, total: 15637086208).
+[W1124 13:23:35.101535302 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 211812352 bytes (free: 94175232, total: 15637086208).
+[W1124 13:23:41.692553136 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 226492416 bytes (free: 52232192, total: 15637086208).
+[W1124 13:23:48.414609639 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 239075328 bytes (free: 226295808, total: 15637086208).
+[Layer 41] (116.92s) Refusals=0.99 KL=0.0012
+All requested layers completed!

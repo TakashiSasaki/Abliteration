@@ -1,0 +1,258 @@
+[
+  {
+    "layer": 26,
+    "params": {
+      "start_layer_index": 26,
+      "end_layer_index": 27,
+      "preserve_good_behavior_weight": 0.3873,
+      "steer_bad_behavior_weight": 0.0003,
+      "overcorrect_relative_weight": 0.8555,
+      "neighbor_count": 14
+    },
+    "scores": {
+      "Refusals": 0.98,
+      "KL divergence": 0.0018527230713516474
+    },
+    "elapsed_sec": 117.72
+  },
+  {
+    "layer": 27,
+    "params": {
+      "start_layer_index": 27,
+      "end_layer_index": 28,
+      "preserve_good_behavior_weight": 0.3873,
+      "steer_bad_behavior_weight": 0.0003,
+      "overcorrect_relative_weight": 0.8555,
+      "neighbor_count": 14
+    },
+    "scores": {
+      "Refusals": 0.94,
+      "KL divergence": 0.002012323820963502
+    },
+    "elapsed_sec": 117.36
+  },
+  {
+    "layer": 28,
+    "params": {
+      "start_layer_index": 28,
+      "end_layer_index": 29,
+      "preserve_good_behavior_weight": 0.3873,
+      "steer_bad_behavior_weight": 0.0003,
+      "overcorrect_relative_weight": 0.8555,
+      "neighbor_count": 14
+    },
+    "scores": {
+      "Refusals": 0.96,
+      "KL divergence": 0.001407877542078495
+    },
+    "elapsed_sec": 117.15
+  },
+  {
+    "layer": 29,
+    "params": {
+      "start_layer_index": 29,
+      "end_layer_index": 30,
+      "preserve_good_behavior_weight": 0.3873,
+      "steer_bad_behavior_weight": 0.0003,
+      "overcorrect_relative_weight": 0.8555,
+      "neighbor_count": 14
+    },
+    "scores": {
+      "Refusals": 0.61,
+      "KL divergence": 0.004414585884660482
+    },
+    "elapsed_sec": 118.0
+  },
+  {
+    "layer": 30,
+    "params": {
+      "start_layer_index": 30,
+      "end_layer_index": 31,
+      "preserve_good_behavior_weight": 0.3873,
+      "steer_bad_behavior_weight": 0.0003,
+      "overcorrect_relative_weight": 0.8555,
+      "neighbor_count": 14
+    },
+    "scores": {
+      "Refusals": 0.98,
+      "KL divergence": 0.0017036849167197943
+    },
+    "elapsed_sec": 117.08
+  },
+  {
+    "layer": 31,
+    "params": {
+      "start_layer_index": 31,
+      "end_layer_index": 32,
+      "preserve_good_behavior_weight": 0.3873,
+      "steer_bad_behavior_weight": 0.0003,
+      "overcorrect_relative_weight": 0.8555,
+      "neighbor_count": 14
+    },
+    "scores": {
+      "Refusals": 0.97,
+      "KL divergence": 0.001030812505632639
+    },
+    "elapsed_sec": 116.58
+  },
+  {
+    "layer": 32,
+    "params": {
+      "start_layer_index": 32,
+      "end_layer_index": 33,
+      "preserve_good_behavior_weight": 0.3873,
+      "steer_bad_behavior_weight": 0.0003,
+      "overcorrect_relative_weight": 0.8555,
+      "neighbor_count": 14
+    },
+    "scores": {
+      "Refusals": 0.98,
+      "KL divergence": 0.0005640563322231174
+    },
+    "elapsed_sec": 116.95
+  },
+  {
+    "layer": 33,
+    "params": {
+      "start_layer_index": 33,
+      "end_layer_index": 34,
+      "preserve_good_behavior_weight": 0.3873,
+      "steer_bad_behavior_weight": 0.0003,
+      "overcorrect_relative_weight": 0.8555,
+      "neighbor_count": 14
+    },
+    "scores": {
+      "Refusals": 0.99,
+      "KL divergence": 0.0005387087003327906
+    },
+    "elapsed_sec": 116.9
+  },
+  {
+    "layer": 34,
+    "params": {
+      "start_layer_index": 34,
+      "end_layer_index": 35,
+      "preserve_good_behavior_weight": 0.3873,
+      "steer_bad_behavior_weight": 0.0003,
+      "overcorrect_relative_weight": 0.8555,
+      "neighbor_count": 14
+    },
+    "scores": {
+      "Refusals": 0.98,
+      "KL divergence": 0.0005602533929049969
+    },
+    "elapsed_sec": 116.46
+  },
+  {
+    "layer": 35,
+    "params": {
+      "start_layer_index": 35,
+      "end_layer_index": 36,
+      "preserve_good_behavior_weight": 0.3873,
+      "steer_bad_behavior_weight": 0.0003,
+      "overcorrect_relative_weight": 0.8555,
+      "neighbor_count": 14
+    },
+    "scores": {
+      "Refusals": 0.98,
+      "KL divergence": 0.0005182688473723829
+    },
+    "elapsed_sec": 116.94
+  },
+  {
+    "layer": 36,
+    "params": {
+      "start_layer_index": 36,
+      "end_layer_index": 37,
+      "preserve_good_behavior_weight": 0.3873,
+      "steer_bad_behavior_weight": 0.0003,
+      "overcorrect_relative_weight": 0.8555,
+      "neighbor_count": 14
+    },
+    "scores": {
+      "Refusals": 0.98,
+      "KL divergence": 0.00040654363692738116
+    },
+    "elapsed_sec": 117.01
+  },
+  {
+    "layer": 37,
+    "params": {
+      "start_layer_index": 37,
+      "end_layer_index": 38,
+      "preserve_good_behavior_weight": 0.3873,
+      "steer_bad_behavior_weight": 0.0003,
+      "overcorrect_relative_weight": 0.8555,
+      "neighbor_count": 14
+    },
+    "scores": {
+      "Refusals": 1.0,
+      "KL divergence": 0.0003898651048075408
+    },
+    "elapsed_sec": 116.91
+  },
+  {
+    "layer": 38,
+    "params": {
+      "start_layer_index": 38,
+      "end_layer_index": 39,
+      "preserve_good_behavior_weight": 0.3873,
+      "steer_bad_behavior_weight": 0.0003,
+      "overcorrect_relative_weight": 0.8555,
+      "neighbor_count": 14
+    },
+    "scores": {
+      "Refusals": 0.98,
+      "KL divergence": 0.0003842134028673172
+    },
+    "elapsed_sec": 116.92
+  },
+  {
+    "layer": 39,
+    "params": {
+      "start_layer_index": 39,
+      "end_layer_index": 40,
+      "preserve_good_behavior_weight": 0.3873,
+      "steer_bad_behavior_weight": 0.0003,
+      "overcorrect_relative_weight": 0.8555,
+      "neighbor_count": 14
+    },
+    "scores": {
+      "Refusals": 0.99,
+      "KL divergence": 0.0004999811062589288
+    },
+    "elapsed_sec": 116.71
+  },
+  {
+    "layer": 40,
+    "params": {
+      "start_layer_index": 40,
+      "end_layer_index": 41,
+      "preserve_good_behavior_weight": 0.3873,
+      "steer_bad_behavior_weight": 0.0003,
+      "overcorrect_relative_weight": 0.8555,
+      "neighbor_count": 14
+    },
+    "scores": {
+      "Refusals": 0.98,
+      "KL divergence": 0.000779107678681612
+    },
+    "elapsed_sec": 116.44
+  },
+  {
+    "layer": 41,
+    "params": {
+      "start_layer_index": 41,
+      "end_layer_index": 42,
+      "preserve_good_behavior_weight": 0.3873,
+      "steer_bad_behavior_weight": 0.0003,
+      "overcorrect_relative_weight": 0.8555,
+      "neighbor_count": 14
+    },
+    "scores": {
+      "Refusals": 0.99,
+      "KL divergence": 0.0011752810096368194
+    },
+    "elapsed_sec": 116.92
+  }
+]
