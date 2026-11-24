@@ -1,0 +1,232 @@
+Loading DAMO-NLP-SG/MultiJail...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+Generating train split:   0%|          | 0/315 [00:00<?, ? examples/s]
+Generating train split: 100%|ââââââââââ| 315/315 [00:00<00:00, 13802.96 examples/s]
+Prepared 175 prompts across 7 languages.
+Loading model google/gemma-4-E4B-it (BNB_4BIT)...
+
+Loading model google/gemma-4-E4B-it...
+* Trying dtype auto...
+
+Loading weights:   0%|          | 0/2076 [00:00<?, ?it/s]
+Loading weights:   0%|          | 3/2076 [00:00<03:08, 11.01it/s]
+Loading weights:   1%|          | 15/2076 [00:00<00:55, 36.82it/s]
+Loading weights:   2%|â         | 34/2076 [00:00<00:28, 72.74it/s]
+Loading weights:   3%|â         | 65/2076 [00:00<00:15, 128.58it/s]
+Loading weights:   4%|â         | 81/2076 [00:00<00:15, 128.10it/s]
+Loading weights:   5%|â         | 111/2076 [00:00<00:11, 169.60it/s]
+Loading weights:   6%|â         | 132/2076 [00:01<00:11, 163.47it/s]
+Loading weights:   7%|â         | 150/2076 [00:01<00:13, 147.65it/s]
+Loading weights:   9%|â         | 184/2076 [00:01<00:09, 193.74it/s]
+Loading weights:  10%|â         | 206/2076 [00:01<00:11, 162.77it/s]
+Loading weights:  12%|ââ        | 251/2076 [00:01<00:08, 208.04it/s]
+Loading weights:  13%|ââ        | 274/2076 [00:01<00:08, 202.60it/s]
+Loading weights:  15%|ââ        | 313/2076 [00:01<00:07, 234.01it/s]
+Loading weights:  16%|ââ        | 338/2076 [00:02<00:07, 232.91it/s]
+Loading weights:  18%|ââ        | 376/2076 [00:02<00:06, 270.28it/s]
+Loading weights:  20%|ââ        | 405/2076 [00:02<00:06, 270.43it/s]
+Loading weights:  21%|âââ       | 442/2076 [00:02<00:05, 277.71it/s]
+Loading weights:  23%|âââ       | 479/2076 [00:02<00:05, 302.23it/s]
+Loading weights:  25%|âââ       | 511/2076 [00:02<00:05, 284.20it/s]
+Loading weights:  27%|âââ       | 556/2076 [00:02<00:04, 326.08it/s]
+Loading weights:  28%|âââ       | 590/2076 [00:02<00:04, 297.98it/s]
+Loading weights:  30%|âââ       | 628/2076 [00:02<00:04, 300.75it/s]
+Loading weights:  32%|ââââ      | 669/2076 [00:03<00:04, 323.77it/s]
+Loading weights:  34%|ââââ      | 703/2076 [00:03<00:04, 283.72it/s]
+Loading weights:  36%|ââââ      | 752/2076 [00:03<00:04, 324.05it/s]
+Loading weights:  36%|ââââ      | 752/2076 [00:18<00:04, 324.05it/s]
+Loading weights:  36%|ââââ      | 755/2076 [00:31<06:19,  3.48it/s] 
+Loading weights:  37%|ââââ      | 758/2076 [00:31<06:07,  3.59it/s]
+Loading weights:  38%|ââââ      | 782/2076 [00:32<04:23,  4.91it/s]
+Loading weights:  39%|ââââ      | 800/2076 [00:33<03:26,  6.18it/s]
+Loading weights:  39%|ââââ      | 813/2076 [00:33<02:56,  7.14it/s]
+Loading weights:  40%|ââââ      | 824/2076 [00:34<02:22,  8.81it/s]
+Loading weights:  40%|ââââ      | 834/2076 [00:34<02:08,  9.68it/s]
+Loading weights:  41%|ââââ      | 842/2076 [00:34<01:46, 11.60it/s]
+Loading weights:  41%|ââââ      | 850/2076 [00:35<01:43, 11.89it/s]
+Loading weights:  41%|ââââ      | 856/2076 [00:35<01:30, 13.50it/s]
+Loading weights:  41%|âââââ     | 861/2076 [00:36<01:33, 13.05it/s]
+Loading weights:  42%|âââââ     | 865/2076 [00:36<01:28, 13.74it/s]
+Loading weights:  42%|âââââ     | 874/2076 [00:36<01:01, 19.68it/s]
+Loading weights:  42%|âââââ     | 879/2076 [00:36<01:20, 14.85it/s]
+Loading weights:  43%|âââââ     | 890/2076 [00:37<00:51, 22.97it/s]
+Loading weights:  43%|âââââ     | 896/2076 [00:37<01:09, 17.03it/s]
+Loading weights:  44%|âââââ     | 907/2076 [00:37<00:46, 25.29it/s]
+Loading weights:  44%|âââââ     | 914/2076 [00:38<01:01, 18.82it/s]
+Loading weights:  45%|âââââ     | 925/2076 [00:38<00:42, 26.90it/s]
+Loading weights:  45%|âââââ     | 932/2076 [00:39<00:58, 19.72it/s]
+Loading weights:  45%|âââââ     | 942/2076 [00:39<00:41, 27.01it/s]
+Loading weights:  46%|âââââ     | 949/2076 [00:39<00:57, 19.58it/s]
+Loading weights:  46%|âââââ     | 956/2076 [00:40<00:46, 24.13it/s]
+Loading weights:  46%|âââââ     | 962/2076 [00:40<00:49, 22.71it/s]
+Loading weights:  47%|âââââ     | 967/2076 [00:40<01:00, 18.46it/s]
+Loading weights:  47%|âââââ     | 976/2076 [00:40<00:42, 25.96it/s]
+Loading weights:  47%|âââââ     | 981/2076 [00:41<01:03, 17.16it/s]
+Loading weights:  48%|âââââ     | 992/2076 [00:41<00:41, 26.01it/s]
+Loading weights:  48%|âââââ     | 998/2076 [00:42<00:58, 18.39it/s]
+Loading weights:  49%|âââââ     | 1010/2076 [00:42<00:37, 28.21it/s]
+Loading weights:  49%|âââââ     | 1017/2076 [00:43<00:51, 20.37it/s]
+Loading weights:  49%|âââââ     | 1027/2076 [00:43<00:37, 27.93it/s]
+Loading weights:  50%|âââââ     | 1034/2076 [00:43<00:51, 20.05it/s]
+Loading weights:  50%|âââââ     | 1044/2076 [00:43<00:37, 27.47it/s]
+Loading weights:  51%|âââââ     | 1051/2076 [00:44<00:51, 19.87it/s]
+Loading weights:  51%|âââââ     | 1058/2076 [00:44<00:41, 24.49it/s]
+Loading weights:  51%|ââââââ    | 1064/2076 [00:44<00:44, 22.96it/s]
+Loading weights:  51%|ââââââ    | 1069/2076 [00:45<00:53, 18.84it/s]
+Loading weights:  52%|ââââââ    | 1078/2076 [00:45<00:37, 26.53it/s]
+Loading weights:  52%|ââââââ    | 1083/2076 [00:46<00:57, 17.36it/s]
+Loading weights:  53%|ââââââ    | 1094/2076 [00:46<00:36, 26.65it/s]
+Loading weights:  53%|ââââââ    | 1100/2076 [00:46<00:53, 18.38it/s]
+Loading weights:  54%|ââââââ    | 1111/2076 [00:46<00:35, 27.23it/s]
+Loading weights:  54%|ââââââ    | 1118/2076 [00:47<00:49, 19.48it/s]
+Loading weights:  54%|ââââââ    | 1129/2076 [00:47<00:34, 27.84it/s]
+Loading weights:  55%|ââââââ    | 1136/2076 [00:48<00:46, 20.08it/s]
+Loading weights:  55%|ââââââ    | 1146/2076 [00:48<00:33, 27.48it/s]
+Loading weights:  56%|ââââââ    | 1153/2076 [00:49<00:46, 19.92it/s]
+Loading weights:  56%|ââââââ    | 1160/2076 [00:49<00:37, 24.49it/s]
+Loading weights:  56%|ââââââ    | 1166/2076 [00:49<00:39, 22.87it/s]
+Loading weights:  56%|ââââââ    | 1171/2076 [00:49<00:47, 18.87it/s]
+Loading weights:  57%|ââââââ    | 1180/2076 [00:50<00:40, 21.86it/s]
+Loading weights:  57%|ââââââ    | 1184/2076 [00:50<00:51, 17.47it/s]
+Loading weights:  58%|ââââââ    | 1194/2076 [00:50<00:40, 21.64it/s]
+Loading weights:  58%|ââââââ    | 1197/2076 [00:51<00:52, 16.64it/s]
+Loading weights:  58%|ââââââ    | 1208/2076 [00:51<00:39, 21.78it/s]
+Loading weights:  58%|ââââââ    | 1211/2076 [00:52<00:51, 16.75it/s]
+Loading weights:  59%|ââââââ    | 1222/2076 [00:52<00:39, 21.76it/s]
+Loading weights:  59%|ââââââ    | 1225/2076 [00:52<00:50, 16.76it/s]
+Loading weights:  59%|ââââââ    | 1234/2076 [00:52<00:34, 24.22it/s]
+Loading weights:  60%|ââââââ    | 1238/2076 [00:53<00:52, 15.85it/s]
+Loading weights:  60%|ââââââ    | 1247/2076 [00:53<00:38, 21.52it/s]
+Loading weights:  60%|ââââââ    | 1251/2076 [00:54<00:48, 17.04it/s]
+Loading weights:  60%|ââââââ    | 1254/2076 [00:54<00:50, 16.17it/s]
+Loading weights:  61%|ââââââ    | 1264/2076 [00:54<00:37, 21.67it/s]
+Loading weights:  61%|ââââââ    | 1267/2076 [00:55<00:49, 16.26it/s]
+Loading weights:  62%|âââââââ   | 1278/2076 [00:55<00:36, 21.80it/s]
+Loading weights:  62%|âââââââ   | 1281/2076 [00:55<00:47, 16.57it/s]
+Loading weights:  62%|âââââââ   | 1292/2076 [00:56<00:35, 21.86it/s]
+Loading weights:  62%|âââââââ   | 1295/2076 [00:56<00:46, 16.74it/s]
+Loading weights:  63%|âââââââ   | 1306/2076 [00:56<00:35, 21.90it/s]
+Loading weights:  63%|âââââââ   | 1309/2076 [00:57<00:45, 16.83it/s]
+Loading weights:  64%|âââââââ   | 1320/2076 [00:57<00:34, 21.85it/s]
+Loading weights:  64%|âââââââ   | 1323/2076 [00:57<00:44, 16.86it/s]
+Loading weights:  64%|âââââââ   | 1331/2076 [00:58<00:34, 21.59it/s]
+Loading weights:  64%|âââââââ   | 1334/2076 [00:58<00:37, 19.93it/s]
+Loading weights:  64%|âââââââ   | 1337/2076 [00:58<00:49, 14.95it/s]
+Loading weights:  65%|âââââââ   | 1348/2076 [00:59<00:34, 21.05it/s]
+Loading weights:  65%|âââââââ   | 1351/2076 [00:59<00:45, 15.99it/s]
+Loading weights:  66%|âââââââ   | 1362/2076 [00:59<00:33, 21.50it/s]
+Loading weights:  66%|âââââââ   | 1365/2076 [01:00<00:43, 16.46it/s]
+Loading weights:  66%|âââââââ   | 1376/2076 [01:00<00:32, 21.71it/s]
+Loading weights:  66%|âââââââ   | 1379/2076 [01:00<00:41, 16.68it/s]
+Loading weights:  67%|âââââââ   | 1390/2076 [01:01<00:31, 21.80it/s]
+Loading weights:  67%|âââââââ   | 1393/2076 [01:01<00:40, 16.78it/s]
+Loading weights:  68%|âââââââ   | 1404/2076 [01:01<00:30, 21.83it/s]
+Loading weights:  68%|âââââââ   | 1407/2076 [01:02<00:39, 16.79it/s]
+Loading weights:  68%|âââââââ   | 1415/2076 [01:02<00:30, 21.71it/s]
+Loading weights:  68%|âââââââ   | 1418/2076 [01:02<00:33, 19.75it/s]
+Loading weights:  71%|âââââââ   | 1468/2076 [01:02<00:07, 81.07it/s]
+Loading weights:  73%|ââââââââ  | 1514/2076 [01:02<00:04, 139.52it/s]
+Loading weights:  76%|ââââââââ  | 1580/2076 [01:03<00:02, 232.79it/s]
+Loading weights:  79%|ââââââââ  | 1632/2076 [01:03<00:01, 281.95it/s]
+Loading weights:  81%|âââââââââ | 1687/2076 [01:03<00:01, 338.70it/s]
+Loading weights:  84%|âââââââââ | 1750/2076 [01:03<00:00, 401.84it/s]
+Loading weights:  87%|âââââââââ | 1801/2076 [01:03<00:00, 413.16it/s]
+Loading weights:  90%|âââââââââ | 1873/2076 [01:03<00:00, 473.65it/s]
+Loading weights:  93%|ââââââââââ| 1925/2076 [01:03<00:00, 476.59it/s]
+Loading weights:  96%|ââââââââââ| 1996/2076 [01:03<00:00, 520.72it/s]
+Loading weights:  99%|ââââââââââ| 2051/2076 [01:03<00:00, 517.47it/s]
+Loading weights: 100%|ââââââââââ| 2076/2076 [01:04<00:00, 32.39it/s] 
+* Quantized to 4-bit precision
+* Transformer model with 42 layers
+* Modifiable components:
+  * attn.o_proj: 42 modules total
+  * mlp.down_proj: 42 modules total
+Running Baseline evaluation...
+[W1123 13:05:49.221940641 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 176160768 bytes (free: 58523648, total: 15637086208).
+Initializing ARA modifier (English datasets)...
+* Loaded: ARA
+
+Loading good prompts from mlabonne/harmless_alpaca...
+
+Generating train split:   0%|          | 0/25058 [00:00<?, ? examples/s]
+Generating train split: 100%|ââââââââââ| 25058/25058 [00:00<00:00, 227017.86 examples/s]
+Generating train split: 100%|ââââââââââ| 25058/25058 [00:00<00:00, 226371.45 examples/s]
+
+Generating test split:   0%|          | 0/6265 [00:00<?, ? examples/s]
+Generating test split: 100%|ââââââââââ| 6265/6265 [00:00<00:00, 1058885.98 examples/s]
+* 400 prompts loaded
+
+Loading bad prompts from mlabonne/harmful_behaviors...
+
+Generating train split:   0%|          | 0/416 [00:00<?, ? examples/s]
+Generating train split: 100%|ââââââââââ| 416/416 [00:00<00:00, 157362.05 examples/s]
+
+Generating test split:   0%|          | 0/104 [00:00<?, ? examples/s]
+Generating test split: 100%|ââââââââââ| 104/104 [00:00<00:00, 59267.34 examples/s]
+* 400 prompts loaded
+
+Obtaining module I/O for good prompts...
+
+Obtaining module I/O for bad prompts...
+Applying English-only ARA abliteration...
+Running Abliterated evaluation...
+Done in 779.2s!
+{
+  "en": {
+    "total": 25,
+    "baseline_refusals": 17,
+    "abliterated_refusals": 1,
+    "baseline_refusal_rate": 0.68,
+    "abliterated_refusal_rate": 0.04,
+    "reduction_pp": 64.0
+  },
+  "zh": {
+    "total": 25,
+    "baseline_refusals": 19,
+    "abliterated_refusals": 1,
+    "baseline_refusal_rate": 0.76,
+    "abliterated_refusal_rate": 0.04,
+    "reduction_pp": 72.0
+  },
+  "it": {
+    "total": 25,
+    "baseline_refusals": 16,
+    "abliterated_refusals": 1,
+    "baseline_refusal_rate": 0.64,
+    "abliterated_refusal_rate": 0.04,
+    "reduction_pp": 60.0
+  },
+  "ko": {
+    "total": 25,
+    "baseline_refusals": 18,
+    "abliterated_refusals": 3,
+    "baseline_refusal_rate": 0.72,
+    "abliterated_refusal_rate": 0.12,
+    "reduction_pp": 60.0
+  },
+  "ar": {
+    "total": 25,
+    "baseline_refusals": 17,
+    "abliterated_refusals": 1,
+    "baseline_refusal_rate": 0.68,
+    "abliterated_refusal_rate": 0.04,
+    "reduction_pp": 64.0
+  },
+  "vi": {
+    "total": 25,
+    "baseline_refusals": 16,
+    "abliterated_refusals": 5,
+    "baseline_refusal_rate": 0.64,
+    "abliterated_refusal_rate": 0.2,
+    "reduction_pp": 44.0
+  },
+  "sw": {
+    "total": 25,
+    "baseline_refusals": 17,
+    "abliterated_refusals": 3,
+    "baseline_refusal_rate": 0.68,
+    "abliterated_refusal_rate": 0.12,
+    "reduction_pp": 56.0
+  }
+}

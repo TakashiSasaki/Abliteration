@@ -1,0 +1,211 @@
+âââââââââââââââââââââââââ  v2.1.0
+âââââââââââââââââââââââââ  https://heretic-project.org
+âââââââââââââââââââââââââ  https://github.com/p-e-w/heretic
+
+Detected 1 CUDA device(s) (14.56 GB total VRAM)
+CUDA Version: 13.0
+Driver Version: 580.82.07
+* CUDA 0: Tesla T4 (14.56 GB)
+Warning: Input is not a terminal (fd=0).
+
+Loading model google/gemma-4-E4B-it...
+* Trying dtype auto...
+
+Loading weights:   0%|          | 0/2076 [00:00<?, ?it/s]
+Loading weights:   0%|          | 3/2076 [00:00<01:26, 23.88it/s]
+Loading weights:   1%|â         | 29/2076 [00:00<00:14, 144.64it/s]
+Loading weights:   3%|â         | 70/2076 [00:00<00:08, 237.70it/s]
+Loading weights:   5%|â         | 111/2076 [00:00<00:06, 292.94it/s]
+Loading weights:   7%|â         | 141/2076 [00:00<00:07, 273.63it/s]
+Loading weights:   9%|â         | 184/2076 [00:00<00:05, 316.13it/s]
+Loading weights:  10%|â         | 217/2076 [00:00<00:06, 292.81it/s]
+Loading weights:  12%|ââ        | 256/2076 [00:00<00:06, 300.15it/s]
+Loading weights:  14%|ââ        | 291/2076 [00:01<00:05, 312.31it/s]
+Loading weights:  16%|ââ        | 325/2076 [00:01<00:05, 291.94it/s]
+Loading weights:  18%|ââ        | 370/2076 [00:01<00:05, 330.39it/s]
+Loading weights:  19%|ââ        | 404/2076 [00:01<00:05, 305.73it/s]
+Loading weights:  21%|âââ       | 442/2076 [00:01<00:05, 311.22it/s]
+Loading weights:  23%|âââ       | 483/2076 [00:01<00:04, 334.23it/s]
+Loading weights:  25%|âââ       | 518/2076 [00:01<00:05, 300.26it/s]
+Loading weights:  27%|âââ       | 566/2076 [00:01<00:04, 324.78it/s]
+Loading weights:  29%|âââ       | 601/2076 [00:02<00:04, 330.27it/s]
+Loading weights:  31%|âââ       | 635/2076 [00:02<00:04, 304.09it/s]
+Loading weights:  33%|ââââ      | 680/2076 [00:02<00:04, 339.23it/s]
+Loading weights:  34%|ââââ      | 715/2076 [00:02<00:04, 314.46it/s]
+Loading weights:  36%|ââââ      | 752/2076 [00:02<00:04, 327.90it/s]
+Loading weights:  36%|ââââ      | 752/2076 [00:20<00:04, 327.90it/s]
+Loading weights:  36%|ââââ      | 755/2076 [00:30<06:45,  3.26it/s] 
+Loading weights:  37%|ââââ      | 758/2076 [00:30<06:30,  3.38it/s]
+Loading weights:  38%|ââââ      | 782/2076 [00:31<04:34,  4.71it/s]
+Loading weights:  39%|ââââ      | 800/2076 [00:32<03:32,  6.00it/s]
+Loading weights:  39%|ââââ      | 813/2076 [00:33<03:00,  6.98it/s]
+Loading weights:  40%|ââââ      | 823/2076 [00:33<02:27,  8.49it/s]
+Loading weights:  40%|ââââ      | 833/2076 [00:33<02:12,  9.41it/s]
+Loading weights:  41%|ââââ      | 841/2076 [00:33<01:48, 11.38it/s]
+Loading weights:  41%|ââââ      | 849/2076 [00:34<01:45, 11.62it/s]
+Loading weights:  41%|ââââ      | 855/2076 [00:34<01:29, 13.70it/s]
+Loading weights:  41%|âââââ     | 861/2076 [00:35<01:32, 13.12it/s]
+Loading weights:  42%|âââââ     | 866/2076 [00:35<01:25, 14.18it/s]
+Loading weights:  42%|âââââ     | 874/2076 [00:35<01:03, 19.06it/s]
+Loading weights:  42%|âââââ     | 879/2076 [00:36<01:22, 14.53it/s]
+Loading weights:  43%|âââââ     | 890/2076 [00:36<00:53, 22.31it/s]
+Loading weights:  43%|âââââ     | 896/2076 [00:36<01:09, 16.89it/s]
+Loading weights:  44%|âââââ     | 907/2076 [00:37<00:47, 24.76it/s]
+Loading weights:  44%|âââââ     | 913/2076 [00:37<01:06, 17.61it/s]
+Loading weights:  45%|âââââ     | 925/2076 [00:37<00:43, 26.53it/s]
+Loading weights:  45%|âââââ     | 932/2076 [00:38<00:55, 20.63it/s]
+Loading weights:  45%|âââââ     | 942/2076 [00:38<00:40, 27.97it/s]
+Loading weights:  46%|âââââ     | 949/2076 [00:39<00:55, 20.24it/s]
+Loading weights:  46%|âââââ     | 956/2076 [00:39<00:45, 24.84it/s]
+Loading weights:  46%|âââââ     | 962/2076 [00:39<00:48, 23.14it/s]
+Loading weights:  47%|âââââ     | 967/2076 [00:39<00:58, 18.97it/s]
+Loading weights:  47%|âââââ     | 976/2076 [00:40<00:41, 26.64it/s]
+Loading weights:  47%|âââââ     | 981/2076 [00:40<01:02, 17.42it/s]
+Loading weights:  48%|âââââ     | 992/2076 [00:40<00:40, 26.71it/s]
+Loading weights:  48%|âââââ     | 998/2076 [00:41<00:58, 18.45it/s]
+Loading weights:  49%|âââââ     | 1009/2076 [00:41<00:39, 27.24it/s]
+Loading weights:  49%|âââââ     | 1016/2076 [00:42<00:54, 19.56it/s]
+Loading weights:  49%|âââââ     | 1027/2076 [00:42<00:37, 27.95it/s]
+Loading weights:  50%|âââââ     | 1034/2076 [00:42<00:51, 20.11it/s]
+Loading weights:  50%|âââââ     | 1044/2076 [00:43<00:37, 27.56it/s]
+Loading weights:  51%|âââââ     | 1051/2076 [00:43<00:51, 19.92it/s]
+Loading weights:  51%|âââââ     | 1058/2076 [00:43<00:41, 24.53it/s]
+Loading weights:  51%|ââââââ    | 1064/2076 [00:44<00:44, 22.92it/s]
+Loading weights:  51%|ââââââ    | 1069/2076 [00:44<00:53, 18.88it/s]
+Loading weights:  52%|ââââââ    | 1078/2076 [00:44<00:37, 26.52it/s]
+Loading weights:  52%|ââââââ    | 1083/2076 [00:45<00:57, 17.39it/s]
+Loading weights:  53%|ââââââ    | 1094/2076 [00:45<00:36, 26.65it/s]
+Loading weights:  53%|ââââââ    | 1100/2076 [00:45<00:53, 18.41it/s]
+Loading weights:  54%|ââââââ    | 1111/2076 [00:46<00:35, 27.21it/s]
+Loading weights:  54%|ââââââ    | 1118/2076 [00:46<00:49, 19.51it/s]
+Loading weights:  54%|ââââââ    | 1129/2076 [00:46<00:34, 27.82it/s]
+Loading weights:  55%|ââââââ    | 1136/2076 [00:47<00:46, 20.12it/s]
+Loading weights:  55%|ââââââ    | 1146/2076 [00:47<00:33, 27.57it/s]
+Loading weights:  56%|ââââââ    | 1153/2076 [00:48<00:48, 19.19it/s]
+Loading weights:  56%|ââââââ    | 1160/2076 [00:48<00:39, 23.32it/s]
+Loading weights:  56%|ââââââ    | 1166/2076 [00:48<00:42, 21.50it/s]
+Loading weights:  56%|ââââââ    | 1171/2076 [00:49<00:51, 17.74it/s]
+Loading weights:  57%|ââââââ    | 1179/2076 [00:49<00:37, 24.14it/s]
+Loading weights:  57%|ââââââ    | 1184/2076 [00:49<00:56, 15.87it/s]
+Loading weights:  58%|ââââââ    | 1194/2076 [00:50<00:44, 19.82it/s]
+Loading weights:  58%|ââââââ    | 1198/2076 [00:50<00:52, 16.62it/s]
+Loading weights:  58%|ââââââ    | 1208/2076 [00:50<00:40, 21.31it/s]
+Loading weights:  58%|ââââââ    | 1211/2076 [00:51<00:51, 16.75it/s]
+Loading weights:  59%|ââââââ    | 1222/2076 [00:51<00:38, 22.09it/s]
+Loading weights:  59%|ââââââ    | 1225/2076 [00:52<00:50, 16.96it/s]
+Loading weights:  60%|ââââââ    | 1236/2076 [00:52<00:38, 21.99it/s]
+Loading weights:  60%|ââââââ    | 1239/2076 [00:52<00:49, 16.90it/s]
+Loading weights:  60%|ââââââ    | 1247/2076 [00:52<00:38, 21.77it/s]
+Loading weights:  60%|ââââââ    | 1250/2076 [00:53<00:41, 20.06it/s]
+Loading weights:  60%|ââââââ    | 1253/2076 [00:53<00:54, 14.99it/s]
+Loading weights:  61%|ââââââ    | 1264/2076 [00:53<00:38, 21.07it/s]
+Loading weights:  61%|ââââââ    | 1267/2076 [00:54<00:50, 15.99it/s]
+Loading weights:  62%|âââââââ   | 1278/2076 [00:54<00:37, 21.53it/s]
+Loading weights:  62%|âââââââ   | 1281/2076 [00:55<00:48, 16.49it/s]
+Loading weights:  62%|âââââââ   | 1292/2076 [00:55<00:36, 21.73it/s]
+Loading weights:  62%|âââââââ   | 1295/2076 [00:55<00:46, 16.68it/s]
+Loading weights:  63%|âââââââ   | 1306/2076 [00:56<00:35, 21.82it/s]
+Loading weights:  63%|âââââââ   | 1309/2076 [00:56<00:45, 16.77it/s]
+Loading weights:  64%|âââââââ   | 1320/2076 [00:56<00:34, 21.86it/s]
+Loading weights:  64%|âââââââ   | 1323/2076 [00:57<00:44, 16.81it/s]
+Loading weights:  64%|âââââââ   | 1331/2076 [00:57<00:34, 21.74it/s]
+Loading weights:  64%|âââââââ   | 1334/2076 [00:57<00:37, 20.01it/s]
+Loading weights:  64%|âââââââ   | 1337/2076 [00:58<00:49, 14.97it/s]
+Loading weights:  65%|âââââââ   | 1348/2076 [00:58<00:34, 21.03it/s]
+Loading weights:  65%|âââââââ   | 1351/2076 [00:58<00:45, 16.01it/s]
+Loading weights:  66%|âââââââ   | 1362/2076 [00:59<00:33, 21.53it/s]
+Loading weights:  66%|âââââââ   | 1365/2076 [00:59<00:43, 16.48it/s]
+Loading weights:  66%|âââââââ   | 1376/2076 [00:59<00:32, 21.71it/s]
+Loading weights:  66%|âââââââ   | 1379/2076 [01:00<00:41, 16.68it/s]
+Loading weights:  67%|âââââââ   | 1390/2076 [01:00<00:31, 21.79it/s]
+Loading weights:  67%|âââââââ   | 1393/2076 [01:00<00:41, 16.43it/s]
+Loading weights:  67%|âââââââ   | 1401/2076 [01:01<00:29, 22.89it/s]
+Loading weights:  68%|âââââââ   | 1405/2076 [01:01<00:38, 17.55it/s]
+Loading weights:  68%|âââââââ   | 1408/2076 [01:01<00:39, 16.91it/s]
+Loading weights:  68%|âââââââ   | 1415/2076 [01:01<00:30, 21.82it/s]
+Loading weights:  68%|âââââââ   | 1418/2076 [01:02<00:33, 19.56it/s]
+Loading weights:  70%|âââââââ   | 1463/2076 [01:02<00:07, 81.23it/s]
+Loading weights:  73%|ââââââââ  | 1509/2076 [01:02<00:03, 143.35it/s]
+Loading weights:  75%|ââââââââ  | 1555/2076 [01:02<00:02, 199.53it/s]
+Loading weights:  77%|ââââââââ  | 1605/2076 [01:02<00:01, 260.59it/s]
+Loading weights:  80%|ââââââââ  | 1654/2076 [01:02<00:01, 313.23it/s]
+Loading weights:  82%|âââââââââ | 1698/2076 [01:02<00:01, 343.57it/s]
+Loading weights:  84%|âââââââââ | 1750/2076 [01:02<00:00, 376.38it/s]
+Loading weights:  87%|âââââââââ | 1796/2076 [01:02<00:00, 380.88it/s]
+Loading weights:  89%|âââââââââ | 1842/2076 [01:03<00:00, 384.65it/s]
+Loading weights:  91%|âââââââââ | 1886/2076 [01:03<00:00, 399.17it/s]
+Loading weights:  93%|ââââââââââ| 1938/2076 [01:03<00:00, 428.58it/s]
+Loading weights:  96%|ââââââââââ| 1996/2076 [01:03<00:00, 462.78it/s]
+Loading weights:  99%|ââââââââââ| 2047/2076 [01:03<00:00, 456.52it/s]
+Loading weights: 100%|ââââââââââ| 2076/2076 [01:03<00:00, 32.61it/s] 
+* Quantized to 4-bit precision
+* Transformer model with 42 layers
+* Modifiable components:
+  * attn.o_proj: 42 modules total
+  * mlp.down_proj: 42 modules total
+
+Resident system RAM: 1.94 GB
+Allocated GPU VRAM: 8.67 GB
+Reserved GPU VRAM: 8.81 GB
+
+Loading and initializing scorers...
+* Loaded: KeywordRate
+* Loaded: KLDivergence
+
+Loading Refusals evaluation prompts from mlabonne/harmful_behaviors...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+* 100 prompts loaded
+
+Loading KL divergence evaluation prompts from mlabonne/harmless_alpaca...
+* 100 prompts loaded
+* Obtaining baseline first-token probability distributions...
+
+Getting baseline scores...
+* Baseline Refusals: 99/100
+* Baseline KL divergence: 0 (by definition)
+
+Loading and initializing modifiers...
+* Loaded: ARA
+
+Loading good prompts from mlabonne/harmless_alpaca...
+* 400 prompts loaded
+
+Loading bad prompts from mlabonne/harmful_behaviors...
+* 400 prompts loaded
+
+Obtaining module I/O for good prompts...
+
+Obtaining module I/O for bad prompts...
+
+Resuming existing study.
+
+Running trial 5 of 20...
+* Parameters:
+  * start_layer_index = 21
+  * end_layer_index = 42
+  * preserve_good_behavior_weight = 0.3873
+  * steer_bad_behavior_weight = 0.0003
+  * overcorrect_relative_weight = 0.8555
+  * neighbor_count = 14
+* Resetting model...
+* Modifying model using Arbitrary-Rank Ablation (ARA)...
+* Evaluating...
+  * Refusals: 4/100
+  * KL divergence: 0.0994
+
+Elapsed time: 2m 45s
+Estimated remaining time: 41m 16s
+Resident system RAM: 3.83 GB
+Allocated GPU VRAM: 8.82 GB
+Reserved GPU VRAM: 8.86 GB
+
+Running trial 6 of 20...
+* Parameters:
+  * start_layer_index = 8
+  * end_layer_index = 41
+  * preserve_good_behavior_weight = 0.7320
+  * steer_bad_behavior_weight = 0.0248
+  * overcorrect_relative_weight = 0.2028
+  * neighbor_count = 3
+* Resetting model...
+* Modifying model using Arbitrary-Rank Ablation (ARA)...

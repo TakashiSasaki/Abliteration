@@ -1,0 +1,15 @@
+# Python & virtualenvs
+.venv/
+__pycache__/
+*.py[cod]
+
+# Model weights & large binary artifacts
+*.safetensors
+*.gguf
+*.bin
+*.pt
+*.pth
+*.onnx
+models/
+checkpoints/
+hf_cache/
