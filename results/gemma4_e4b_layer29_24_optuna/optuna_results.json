@@ -1,0 +1,182 @@
+[
+  {
+    "trial": 0,
+    "layers": [
+      29,
+      24
+    ],
+    "params": {
+      "preserve_good_behavior_weight": 0.3873,
+      "steer_bad_behavior_weight": 0.0003,
+      "overcorrect_relative_weight": 0.8555,
+      "neighbor_count": 14
+    },
+    "scores": {
+      "Refusals": 0.35,
+      "KL divergence": 0.007513659540563822
+    },
+    "elapsed_sec": 109.63
+  },
+  {
+    "trial": 1,
+    "layers": [
+      29,
+      24
+    ],
+    "params": {
+      "preserve_good_behavior_weight": 0.2,
+      "steer_bad_behavior_weight": 0.001,
+      "overcorrect_relative_weight": 0.95,
+      "neighbor_count": 14
+    },
+    "scores": {
+      "Refusals": 0.15,
+      "KL divergence": 0.013603908009827137
+    },
+    "elapsed_sec": 109.28
+  },
+  {
+    "trial": 2,
+    "layers": [
+      29,
+      24
+    ],
+    "params": {
+      "preserve_good_behavior_weight": 0.07337346337946768,
+      "steer_bad_behavior_weight": 0.004077870135442972,
+      "overcorrect_relative_weight": 1.2725833997090792,
+      "neighbor_count": 8
+    },
+    "scores": {
+      "Refusals": 0.19,
+      "KL divergence": 9.058813095092773
+    },
+    "elapsed_sec": 108.05
+  },
+  {
+    "trial": 3,
+    "layers": [
+      29,
+      24
+    ],
+    "params": {
+      "preserve_good_behavior_weight": 0.7712390491068131,
+      "steer_bad_behavior_weight": 0.012262073639847151,
+      "overcorrect_relative_weight": 0.4140353196926106,
+      "neighbor_count": 24
+    },
+    "scores": {
+      "Refusals": 0.47,
+      "KL divergence": 0.014207117259502411
+    },
+    "elapsed_sec": 109.48
+  },
+  {
+    "trial": 4,
+    "layers": [
+      29,
+      24
+    ],
+    "params": {
+      "preserve_good_behavior_weight": 0.08901216382595745,
+      "steer_bad_behavior_weight": 0.00010674028804796201,
+      "overcorrect_relative_weight": 1.2876498456266225,
+      "neighbor_count": 20
+    },
+    "scores": {
+      "Refusals": 0.18,
+      "KL divergence": 0.5918349027633667
+    },
+    "elapsed_sec": 106.3
+  },
+  {
+    "trial": 5,
+    "layers": [
+      29,
+      24
+    ],
+    "params": {
+      "preserve_good_behavior_weight": 0.5687156939793825,
+      "steer_bad_behavior_weight": 0.0012551590061223856,
+      "overcorrect_relative_weight": 0.8065866303186571,
+      "neighbor_count": 8
+    },
+    "scores": {
+      "Refusals": 0.3,
+      "KL divergence": 0.007531615439802408
+    },
+    "elapsed_sec": 109.36
+  },
+  {
+    "trial": 6,
+    "layers": [
+      29,
+      24
+    ],
+    "params": {
+      "preserve_good_behavior_weight": 0.7876845019496543,
+      "steer_bad_behavior_weight": 0.0016009927209495903,
+      "overcorrect_relative_weight": 0.4142028171471141,
+      "neighbor_count": 8
+    },
+    "scores": {
+      "Refusals": 0.98,
+      "KL divergence": 0.003595791757106781
+    },
+    "elapsed_sec": 109.15
+  },
+  {
+    "trial": 7,
+    "layers": [
+      29,
+      24
+    ],
+    "params": {
+      "preserve_good_behavior_weight": 0.5188925888827681,
+      "steer_bad_behavior_weight": 0.019690846168148198,
+      "overcorrect_relative_weight": 0.7167654317893054,
+      "neighbor_count": 14
+    },
+    "scores": {
+      "Refusals": 0.5,
+      "KL divergence": 0.021257031708955765
+    },
+    "elapsed_sec": 109.59
+  },
+  {
+    "trial": 8,
+    "layers": [
+      29,
+      24
+    ],
+    "params": {
+      "preserve_good_behavior_weight": 0.539440907778634,
+      "steer_bad_behavior_weight": 0.0004709814354723477,
+      "overcorrect_relative_weight": 0.6283922315069758,
+      "neighbor_count": 19
+    },
+    "scores": {
+      "Refusals": 0.48,
+      "KL divergence": 0.005646042060106993
+    },
+    "elapsed_sec": 109.62
+  },
+  {
+    "trial": 9,
+    "layers": [
+      29,
+      24
+    ],
+    "params": {
+      "preserve_good_behavior_weight": 0.3342657312697873,
+      "steer_bad_behavior_weight": 0.0035443294918346534,
+      "overcorrect_relative_weight": 1.0578201720730744,
+      "neighbor_count": 11
+    },
+    "scores": {
+      "Refusals": 0.13,
+      "KL divergence": 8.935774803161621
+    },
+    "elapsed_sec": 109.44
+  }
+]
