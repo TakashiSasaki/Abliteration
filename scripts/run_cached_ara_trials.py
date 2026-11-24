@@ -71,7 +71,7 @@ def main():
     ctx = Context(settings=settings, model=model)
 
     evaluator = Evaluator(settings, model)
-    modifier = ARA(ARASettings(), settings)
+    modifier = ARA(heretic_settings=settings, settings=ARASettings())
 
     cache_path = Path(args.cache_path)
     if cache_path.exists():
