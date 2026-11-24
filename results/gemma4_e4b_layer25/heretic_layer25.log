@@ -1,0 +1,299 @@
+[I 2026-11-24 09:55:57,682] A new study created in Journal with name: heretic
+█░█░█▀▀░█▀▄░█▀▀░▀█▀░█░█▀▀  v2.1.0
+█▀█░█▀▀░█▀▄░█▀▀░░█░░█░█░░  https://heretic-project.org
+▀░▀░▀▀▀░▀░▀░▀▀▀░░▀░░▀░▀▀▀  https://github.com/p-e-w/heretic
+
+Detected 1 CUDA device(s) (14.56 GB total VRAM)
+CUDA Version: 13.0
+Driver Version: 580.82.07
+* CUDA 0: Tesla T4 (14.56 GB)
+Warning: Input is not a terminal (fd=0).
+
+Loading model google/gemma-4-E4B-it...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+* Trying dtype auto...
+Loading weights:   0%|          | 0/2076 [00:00<?, ?it/s]Loading weights:   0%|          | 3/2076 [00:00<01:59, 17.28it/s]Loading weights:   1%|          | 20/2076 [00:00<00:27, 74.78it/s]Loading weights:   3%|▎         | 60/2076 [00:00<00:11, 182.19it/s]Loading weights:   4%|▍         | 81/2076 [00:00<00:11, 167.11it/s]Loading weights:   6%|▌         | 116/2076 [00:00<00:09, 215.56it/s]Loading weights:   7%|▋         | 140/2076 [00:00<00:09, 200.19it/s]Loading weights:   9%|▊         | 181/2076 [00:00<00:07, 253.72it/s]Loading weights:  10%|█         | 209/2076 [00:01<00:08, 228.51it/s]Loading weights:  12%|█▏        | 251/2076 [00:01<00:06, 273.85it/s]Loading weights:  14%|█▎        | 281/2076 [00:01<00:06, 276.80it/s]Loading weights:  15%|█▌        | 313/2076 [00:01<00:06, 287.31it/s]Loading weights:  17%|█▋        | 343/2076 [00:01<00:06, 284.00it/s]Loading weights:  18%|█▊        | 380/2076 [00:01<00:05, 288.01it/s]Loading weights:  20%|█▉        | 415/2076 [00:01<00:05, 302.75it/s]Loading weights:  22%|██▏       | 449/2076 [00:01<00:05, 285.36it/s]Loading weights:  24%|██▍       | 499/2076 [00:01<00:04, 317.07it/s]Loading weights:  26%|██▌       | 531/2076 [00:02<00:05, 298.73it/s]Loading weights:  27%|██▋       | 566/2076 [00:02<00:04, 309.22it/s]Loading weights:  29%|██▉       | 601/2076 [00:02<00:04, 316.41it/s]Loading weights:  30%|███       | 633/2076 [00:02<00:04, 315.34it/s]Loading weights:  32%|███▏      | 669/2076 [00:02<00:04, 321.43it/s]Loading weights:  34%|███▍      | 702/2076 [00:02<00:04, 288.54it/s]Loading weights:  36%|███▌      | 752/2076 [00:02<00:04, 330.40it/s]Loading weights:  36%|███▌      | 752/2076 [00:20<00:04, 330.40it/s]Loading weights:  36%|███▋      | 755/2076 [00:30<06:32,  3.37it/s] Loading weights:  37%|███▋      | 758/2076 [00:30<06:18,  3.48it/s]Loading weights:  38%|███▊      | 782/2076 [00:31<04:29,  4.81it/s]Loading weights:  39%|███▊      | 800/2076 [00:32<03:29,  6.09it/s]Loading weights:  39%|███▉      | 813/2076 [00:33<02:58,  7.07it/s]Loading weights:  40%|███▉      | 823/2076 [00:33<02:26,  8.58it/s]Loading weights:  40%|████      | 833/2076 [00:34<02:12,  9.39it/s]Loading weights:  41%|████      | 841/2076 [00:34<01:49, 11.28it/s]Loading weights:  41%|████      | 848/2076 [00:34<01:49, 11.21it/s]Loading weights:  41%|████      | 854/2076 [00:35<01:31, 13.31it/s]Loading weights:  41%|████▏     | 860/2076 [00:35<01:24, 14.39it/s]Loading weights:  42%|████▏     | 865/2076 [00:35<01:28, 13.65it/s]Loading weights:  42%|████▏     | 873/2076 [00:35<01:04, 18.54it/s]Loading weights:  42%|████▏     | 878/2076 [00:36<01:10, 16.92it/s]Loading weights:  42%|████▏     | 882/2076 [00:36<01:08, 17.48it/s]Loading weights:  43%|████▎     | 891/2076 [00:36<00:46, 25.58it/s]Loading weights:  43%|████▎     | 896/2076 [00:37<01:10, 16.77it/s]Loading weights:  44%|████▎     | 907/2076 [00:37<00:44, 26.25it/s]Loading weights:  44%|████▍     | 913/2076 [00:37<01:04, 18.13it/s]Loading weights:  45%|████▍     | 924/2076 [00:38<00:42, 27.00it/s]Loading weights:  45%|████▍     | 931/2076 [00:38<00:58, 19.41it/s]Loading weights:  45%|████▌     | 942/2076 [00:38<00:40, 27.79it/s]Loading weights:  46%|████▌     | 949/2076 [00:39<00:56, 20.07it/s]Loading weights:  46%|████▌     | 956/2076 [00:39<00:45, 24.63it/s]Loading weights:  46%|████▋     | 962/2076 [00:39<00:48, 22.96it/s]Loading weights:  47%|████▋     | 967/2076 [00:40<00:58, 18.87it/s]Loading weights:  47%|████▋     | 976/2076 [00:40<00:41, 26.59it/s]Loading weights:  47%|████▋     | 982/2076 [00:40<01:00, 18.12it/s]Loading weights:  48%|████▊     | 993/2076 [00:41<00:39, 27.17it/s]Loading weights:  48%|████▊     | 999/2076 [00:41<00:57, 18.78it/s]Loading weights:  49%|████▊     | 1010/2076 [00:41<00:38, 27.36it/s]Loading weights:  49%|████▉     | 1017/2076 [00:42<00:53, 19.69it/s]Loading weights:  49%|████▉     | 1027/2076 [00:42<00:38, 27.16it/s]Loading weights:  50%|████▉     | 1034/2076 [00:43<00:52, 19.68it/s]Loading weights:  50%|█████     | 1044/2076 [00:43<00:38, 27.15it/s]Loading weights:  51%|█████     | 1051/2076 [00:43<00:51, 19.71it/s]Loading weights:  51%|█████     | 1058/2076 [00:44<00:41, 24.35it/s]Loading weights:  51%|█████▏    | 1064/2076 [00:44<00:44, 22.81it/s]Loading weights:  51%|█████▏    | 1069/2076 [00:44<00:53, 18.79it/s]Loading weights:  52%|█████▏    | 1078/2076 [00:44<00:37, 26.44it/s]Loading weights:  52%|█████▏    | 1083/2076 [00:45<00:57, 17.34it/s]Loading weights:  53%|█████▎    | 1094/2076 [00:45<00:36, 26.63it/s]Loading weights:  53%|█████▎    | 1100/2076 [00:46<00:53, 18.36it/s]Loading weights:  54%|█████▎    | 1111/2076 [00:46<00:35, 26.92it/s]Loading weights:  54%|█████▍    | 1118/2076 [00:47<00:48, 19.57it/s]Loading weights:  54%|█████▍    | 1129/2076 [00:47<00:33, 27.93it/s]Loading weights:  55%|█████▍    | 1136/2076 [00:47<00:47, 19.98it/s]Loading weights:  55%|█████▌    | 1146/2076 [00:47<00:34, 27.31it/s]Loading weights:  56%|█████▌    | 1153/2076 [00:48<00:46, 20.04it/s]Loading weights:  56%|█████▌    | 1160/2076 [00:48<00:37, 24.64it/s]Loading weights:  56%|█████▌    | 1166/2076 [00:48<00:39, 23.01it/s]Loading weights:  56%|█████▋    | 1171/2076 [00:49<00:47, 18.90it/s]Loading weights:  57%|█████▋    | 1180/2076 [00:49<00:40, 21.89it/s]Loading weights:  57%|█████▋    | 1184/2076 [00:50<00:50, 17.49it/s]Loading weights:  58%|█████▊    | 1194/2076 [00:50<00:40, 21.66it/s]Loading weights:  58%|█████▊    | 1197/2076 [00:50<00:52, 16.65it/s]Loading weights:  58%|█████▊    | 1208/2076 [00:51<00:39, 21.78it/s]Loading weights:  58%|█████▊    | 1211/2076 [00:51<00:51, 16.77it/s]Loading weights:  59%|█████▉    | 1222/2076 [00:51<00:39, 21.84it/s]Loading weights:  59%|█████▉    | 1225/2076 [00:52<00:50, 16.83it/s]Loading weights:  60%|█████▉    | 1236/2076 [00:52<00:38, 21.86it/s]Loading weights:  60%|█████▉    | 1239/2076 [00:52<00:49, 16.86it/s]Loading weights:  60%|██████    | 1247/2076 [00:53<00:38, 21.72it/s]Loading weights:  60%|██████    | 1250/2076 [00:53<00:41, 20.01it/s]Loading weights:  60%|██████    | 1253/2076 [00:53<00:55, 14.96it/s]Loading weights:  61%|██████    | 1264/2076 [00:54<00:38, 21.06it/s]Loading weights:  61%|██████    | 1267/2076 [00:54<00:50, 16.01it/s]Loading weights:  62%|██████▏   | 1278/2076 [00:54<00:37, 21.51it/s]Loading weights:  62%|██████▏   | 1281/2076 [00:55<00:48, 16.49it/s]Loading weights:  62%|██████▏   | 1292/2076 [00:55<00:36, 21.71it/s]Loading weights:  62%|██████▏   | 1295/2076 [00:55<00:46, 16.69it/s]Loading weights:  63%|██████▎   | 1306/2076 [00:56<00:35, 21.81it/s]Loading weights:  63%|██████▎   | 1309/2076 [00:56<00:45, 16.79it/s]Loading weights:  64%|██████▎   | 1320/2076 [00:56<00:34, 21.85it/s]Loading weights:  64%|██████▎   | 1323/2076 [00:57<00:44, 16.83it/s]Loading weights:  64%|██████▍   | 1331/2076 [00:57<00:34, 21.71it/s]Loading weights:  64%|██████▍   | 1334/2076 [00:57<00:37, 19.99it/s]Loading weights:  64%|██████▍   | 1337/2076 [00:58<00:49, 14.95it/s]Loading weights:  65%|██████▍   | 1348/2076 [00:58<00:34, 21.03it/s]Loading weights:  65%|██████▌   | 1351/2076 [00:58<00:45, 16.00it/s]Loading weights:  66%|██████▌   | 1362/2076 [00:59<00:33, 21.49it/s]Loading weights:  66%|██████▌   | 1365/2076 [00:59<00:43, 16.48it/s]Loading weights:  66%|██████▋   | 1376/2076 [00:59<00:32, 21.68it/s]Loading weights:  66%|██████▋   | 1379/2076 [01:00<00:42, 16.57it/s]Loading weights:  67%|██████▋   | 1388/2076 [01:00<00:28, 24.19it/s]Loading weights:  67%|██████▋   | 1393/2076 [01:01<00:41, 16.53it/s]Loading weights:  68%|██████▊   | 1404/2076 [01:01<00:31, 21.48it/s]Loading weights:  68%|██████▊   | 1408/2076 [01:01<00:38, 17.43it/s]Loading weights:  68%|██████▊   | 1415/2076 [01:01<00:31, 21.26it/s]Loading weights:  68%|██████▊   | 1419/2076 [01:02<00:32, 20.44it/s]Loading weights:  71%|███████   | 1468/2076 [01:02<00:07, 79.96it/s]Loading weights:  73%|███████▎  | 1514/2076 [01:02<00:04, 138.35it/s]Loading weights:  76%|███████▋  | 1586/2076 [01:02<00:02, 237.95it/s]Loading weights:  79%|███████▉  | 1637/2076 [01:02<00:01, 286.23it/s]Loading weights:  82%|████████▏ | 1709/2076 [01:02<00:00, 367.91it/s]Loading weights:  85%|████████▍ | 1760/2076 [01:02<00:00, 394.75it/s]Loading weights:  88%|████████▊ | 1832/2076 [01:02<00:00, 459.95it/s]Loading weights:  91%|█████████ | 1884/2076 [01:03<00:00, 460.82it/s]Loading weights:  94%|█████████▍| 1955/2076 [01:03<00:00, 507.80it/s]Loading weights:  97%|█████████▋| 2009/2076 [01:03<00:00, 499.67it/s]Loading weights: 100%|█████████▉| 2075/2076 [01:03<00:00, 539.98it/s]Loading weights: 100%|██████████| 2076/2076 [01:03<00:00, 32.67it/s] 
+* Quantized to 4-bit precision
+* Transformer model with 42 layers
+* Modifiable components:
+  * attn.o_proj: 42 modules total
+  * mlp.down_proj: 42 modules total
+
+Resident system RAM: 2.33 GB
+Allocated GPU VRAM: 8.67 GB
+Reserved GPU VRAM: 8.81 GB
+
+Loading response prefix test prompts from [mlabonne/harmless_alpaca, 
+mlabonne/harmful_behaviors]...
+Generating train split:   0%|          | 0/25058 [00:00<?, ? examples/s]Generating train split:   4%|▍         | 1000/25058 [00:00<00:02, 8335.94 examples/s]Generating train split: 100%|██████████| 25058/25058 [00:00<00:00, 192235.77 examples/s]
+Generating test split:   0%|          | 0/6265 [00:00<?, ? examples/s]Generating test split: 100%|██████████| 6265/6265 [00:00<00:00, 885801.94 examples/s]
+Generating train split:   0%|          | 0/416 [00:00<?, ? examples/s]Generating train split: 100%|██████████| 416/416 [00:00<00:00, 152533.48 examples/s]
+Generating test split:   0%|          | 0/104 [00:00<?, ? examples/s]Generating test split: 100%|██████████| 104/104 [00:00<00:00, 60433.31 examples/s]
+* 200 prompts loaded
+
+Checking chat template for a closed Chain-of-Thought block or an initializer...
+* None found
+
+Checking for common response prefix...
+* None found
+
+Loading and initializing scorers...
+* Loaded: KeywordRate
+* Loaded: KLDivergence
+
+Loading Refusals evaluation prompts from mlabonne/harmful_behaviors...
+* 100 prompts loaded
+
+Loading KL divergence evaluation prompts from mlabonne/harmless_alpaca...
+* 100 prompts loaded
+* Obtaining baseline first-token probability distributions...
+
+Getting baseline scores...
+* Baseline Refusals: 99/100
+* Baseline KL divergence: 0 (by definition)
+
+Loading and initializing modifiers...
+* Loaded: ARA
+
+Loading good prompts from mlabonne/harmless_alpaca...
+* 400 prompts loaded
+
+Loading bad prompts from mlabonne/harmful_behaviors...
+* 400 prompts loaded
+
+Obtaining module I/O for good prompts...
+
+Obtaining module I/O for bad prompts...
+
+Resuming existing study.
+/usr/local/lib/python3.13/dist-packages/heretic/modifiers/ara.py:209: UserWarning: Fixed parameter start_layer_index with value 25 is out of range for distribution IntDistribution(high=21, log=False, low=0, step=1).
+  start_layer_index = trial.suggest_int(
+
+Running trial 2 of 2...
+* Parameters:
+  * start_layer_index = 25
+  * end_layer_index = 26
+  * preserve_good_behavior_weight = 0.3873
+  * steer_bad_behavior_weight = 0.0003
+  * overcorrect_relative_weight = 0.8555
+  * neighbor_count = 14
+* Resetting model...
+* Modifying model using Arbitrary-Rank Ablation (ARA)...
+* Evaluating...
+  * Refusals: 89/100
+  * KL divergence: 0.0024
+
+Elapsed time: 1m 50s
+Resident system RAM: 4.22 GB
+Allocated GPU VRAM: 8.82 GB
+Reserved GPU VRAM: 8.86 GB
+
+Optimization finished!
+
+The following trials resulted in Pareto optimal combinations of the optimization
+objectives. After selecting a trial, you will be able to save the model, upload 
+it to Hugging Face, chat with it to test how well it works, or run standard 
+benchmarks on it. You can return to this menu later to select a different trial.
+
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /usr/local/lib/python3.13/dist-packages/prompt_toolkit/input/vt100.py:169 in │
+│ _attached_input                                                              │
+│                                                                              │
+│   166 │   │   callback()                                                     │
+│   167 │                                                                      │
+│   168 │   try:                                                               │
+│ ❱ 169 │   │   loop.add_reader(fd, callback_wrapper)                          │
+│   170 │   except (PermissionError, OSError):                                 │
+│   171 │   │   # For `EPollSelector`, adding /dev/null to the event loop will │
+│   172 │   │   # `PermissionError` (that doesn't happen for `SelectSelector`  │
+│                                                                              │
+│ /usr/lib/python3.13/asyncio/selector_events.py:351 in add_reader             │
+│                                                                              │
+│    348 │   def add_reader(self, fd, callback, *args):                        │
+│    349 │   │   """Add a reader callback."""                                  │
+│    350 │   │   self._ensure_fd_no_transport(fd)                              │
+│ ❱  351 │   │   self._add_reader(fd, callback, *args)                         │
+│    352 │                                                                     │
+│    353 │   def remove_reader(self, fd):                                      │
+│    354 │   │   """Remove a reader callback."""                               │
+│                                                                              │
+│ /usr/lib/python3.13/asyncio/selector_events.py:283 in _add_reader            │
+│                                                                              │
+│    280 │   │   handle = events.Handle(callback, args, self, None)            │
+│    281 │   │   key = self._selector.get_map().get(fd)                        │
+│    282 │   │   if key is None:                                               │
+│ ❱  283 │   │   │   self._selector.register(fd, selectors.EVENT_READ,         │
+│    284 │   │   │   │   │   │   │   │   │   (handle, None))                   │
+│    285 │   │   else:                                                         │
+│    286 │   │   │   mask, (reader, writer) = key.events, key.data             │
+│                                                                              │
+│ /usr/lib/python3.13/selectors.py:345 in register                             │
+│                                                                              │
+│   342 │   │   poller_events = ((events & EVENT_READ and self._EVENT_READ)    │
+│   343 │   │   │   │   │   │    | (events & EVENT_WRITE and self._EVENT_WRITE │
+│   344 │   │   try:                                                           │
+│ ❱ 345 │   │   │   self._selector.register(key.fd, poller_events)             │
+│   346 │   │   except:                                                        │
+│   347 │   │   │   super().unregister(fileobj)                                │
+│   348 │   │   │   raise                                                      │
+╰──────────────────────────────────────────────────────────────────────────────╯
+PermissionError: [Errno 1] Operation not permitted
+
+During handling of the above exception, another exception occurred:
+
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /usr/local/bin/heretic:6 in <module>                                         │
+│                                                                              │
+│   3 from heretic.main import main                                            │
+│   4 if __name__ == '__main__':                                               │
+│   5 │   sys.argv[0] = sys.argv[0].removesuffix('.exe')                       │
+│ ❱ 6 │   sys.exit(main())                                                     │
+│   7                                                                          │
+│                                                                              │
+│ /usr/local/lib/python3.13/dist-packages/heretic/main.py:1502 in main         │
+│                                                                              │
+│   1499 │   install()                                                         │
+│   1500 │                                                                     │
+│   1501 │   try:                                                              │
+│ ❱ 1502 │   │   run()                                                         │
+│   1503 │   except BaseException as error:                                    │
+│   1504 │   │   # Transformers appears to handle KeyboardInterrupt (or BaseEx │
+│   1505 │   │   # internally in some places, which can re-raise a different e │
+│                                                                              │
+│ /usr/local/lib/python3.13/dist-packages/heretic/main.py:870 in run           │
+│                                                                              │
+│    867 │   │   │   │   if settings.trial_index is None:                      │
+│    868 │   │   │   │   │   print()                                           │
+│    869 │   │   │   │                                                         │
+│ ❱  870 │   │   │   │   trial = ask_if_unset(                                 │
+│    871 │   │   │   │   │   None                                              │
+│    872 │   │   │   │   │   if settings.trial_index is None                   │
+│    873 │   │   │   │   │   else sorted_trials[settings.trial_index],         │
+│                                                                              │
+│ /usr/local/lib/python3.13/dist-packages/heretic/utils.py:132 in ask_if_unset │
+│                                                                              │
+│   129 │   │   if unsafe:                                                     │
+│   130 │   │   │   return question.unsafe_ask()                               │
+│   131 │   │   else:                                                          │
+│ ❱ 132 │   │   │   return question.ask()                                      │
+│   133 │   else:                                                              │
+│   134 │   │   return value                                                   │
+│   135                                                                        │
+│                                                                              │
+│ /usr/local/lib/python3.13/dist-packages/questionary/question.py:64 in ask    │
+│                                                                              │
+│    61 │   │   """                                                            │
+│    62 │   │                                                                  │
+│    63 │   │   try:                                                           │
+│ ❱  64 │   │   │   return self.unsafe_ask(patch_stdout)                       │
+│    65 │   │   except KeyboardInterrupt:                                      │
+│    66 │   │   │   print("{}".format(kbi_msg))                                │
+│    67 │   │   │   return None                                                │
+│                                                                              │
+│ /usr/local/lib/python3.13/dist-packages/questionary/question.py:89 in        │
+│ unsafe_ask                                                                   │
+│                                                                              │
+│    86 │   │   │   with prompt_toolkit.patch_stdout.patch_stdout():           │
+│    87 │   │   │   │   return self.application.run()                          │
+│    88 │   │   else:                                                          │
+│ ❱  89 │   │   │   return self.application.run()                              │
+│    90 │                                                                      │
+│    91 │   def skip_if(self, condition: bool, default: Any = None) -> "Questi │
+│    92 │   │   """Skip the question if flag is set and return the default ins │
+│                                                                              │
+│ /usr/local/lib/python3.13/dist-packages/prompt_toolkit/application/applicati │
+│ on.py:1000 in run                                                            │
+│                                                                              │
+│    997 │   │                                                                 │
+│    998 │   │   else:                                                         │
+│    999 │   │   │   # No loop installed. Run like usual.                      │
+│ ❱ 1000 │   │   │   return asyncio.run(coro)                                  │
+│   1001 │                                                                     │
+│   1002 │   def _handle_exception(                                            │
+│   1003 │   │   self, loop: AbstractEventLoop, context: dict[str, Any]        │
+│                                                                              │
+│ /usr/lib/python3.13/asyncio/runners.py:196 in run                            │
+│                                                                              │
+│   193 │   │   │   "asyncio.run() cannot be called from a running event loop" │
+│   194 │                                                                      │
+│   195 │   with Runner(debug=debug, loop_factory=loop_factory) as runner:     │
+│ ❱ 196 │   │   return runner.run(main)                                        │
+│   197                                                                        │
+│   198                                                                        │
+│   199 def _cancel_all_tasks(loop):                                           │
+│                                                                              │
+│ /usr/lib/python3.13/asyncio/runners.py:119 in run                            │
+│                                                                              │
+│   116 │   │                                                                  │
+│   117 │   │   self._interrupt_count = 0                                      │
+│   118 │   │   try:                                                           │
+│ ❱ 119 │   │   │   return self._loop.run_until_complete(task)                 │
+│   120 │   │   except exceptions.CancelledError:                              │
+│   121 │   │   │   if self._interrupt_count > 0:                              │
+│   122 │   │   │   │   uncancel = getattr(task, "uncancel", None)             │
+│                                                                              │
+│ /usr/lib/python3.13/asyncio/base_events.py:726 in run_until_complete         │
+│                                                                              │
+│    723 │   │   if not future.done():                                         │
+│    724 │   │   │   raise RuntimeError('Event loop stopped before Future comp │
+│    725 │   │                                                                 │
+│ ❱  726 │   │   return future.result()                                        │
+│    727 │                                                                     │
+│    728 │   def stop(self):                                                   │
+│    729 │   │   """Stop running the event loop.                               │
+│                                                                              │
+│ /usr/local/lib/python3.13/dist-packages/prompt_toolkit/application/applicati │
+│ on.py:884 in run_async                                                       │
+│                                                                              │
+│    881 │   │   │   f = stack.enter_context(create_future(loop))              │
+│    882 │   │   │                                                             │
+│    883 │   │   │   try:                                                      │
+│ ❱  884 │   │   │   │   return await _run_async(f)                            │
+│    885 │   │   │   finally:                                                  │
+│    886 │   │   │   │   # Wait for the background tasks to be done. This need │
+│    887 │   │   │   │   # go in the finally! If `_run_async` raises           │
+│                                                                              │
+│ /usr/local/lib/python3.13/dist-packages/prompt_toolkit/application/applicati │
+│ on.py:732 in _run_async                                                      │
+│                                                                              │
+│    729 │   │   │   # Enter raw mode, attach input and attach WINCH event han │
+│    730 │   │   │   with (                                                    │
+│    731 │   │   │   │   self.input.raw_mode(),                                │
+│ ❱  732 │   │   │   │   self.input.attach(read_from_input_in_context),        │
+│    733 │   │   │   │   attach_winch_signal_handler(self._on_resize),         │
+│    734 │   │   │   ):                                                        │
+│    735 │   │   │   │   # Draw UI.                                            │
+│                                                                              │
+│ /usr/lib/python3.13/contextlib.py:141 in __enter__                           │
+│                                                                              │
+│   138 │   │   # they are only needed for recreation, which is not possible a │
+│   139 │   │   del self.args, self.kwds, self.func                            │
+│   140 │   │   try:                                                           │
+│ ❱ 141 │   │   │   return next(self.gen)                                      │
+│   142 │   │   except StopIteration:                                          │
+│   143 │   │   │   raise RuntimeError("generator didn't yield") from None     │
+│   144                                                                        │
+│                                                                              │
+│ /usr/local/lib/python3.13/dist-packages/prompt_toolkit/input/vt100.py:180 in │
+│ _attached_input                                                              │
+│                                                                              │
+│   177 │   │   # exception people expect in                                   │
+│   178 │   │   # `prompt_toolkit.application.Application.run()`.              │
+│   179 │   │   # To reproduce, do: `ptpython 0< /dev/null 1< /dev/null`       │
+│ ❱ 180 │   │   raise EOFError                                                 │
+│   181 │                                                                      │
+│   182 │   _current_callbacks[loop, fd] = callback                            │
+│   183                                                                        │
+╰──────────────────────────────────────────────────────────────────────────────╯
+EOFError
+Traceback (most recent call last):
+  File "/content/layer25_exp/run_layer25.py", line 74, in <module>
+    main()
+    ~~~~^^
+  File "/content/layer25_exp/run_layer25.py", line 70, in main
+    subprocess.run(cmd, env=env, check=True)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/subprocess.py", line 578, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['heretic', '--model', 'google/gemma-4-E4B-it', '--quantization', 'BNB_4BIT', '--batch-size', '128', '--n-trials', '2', '--n-startup-trials', '0', '--seed', '42', '--study-checkpoint-dir', '/content/layer25_exp/checkpoints', '--checkpoint-action', 'continue', '--trial-index', '0', '--model-action', 'save', '--save-directory', '/content/layer25_exp/saved_adapter', '--export-strategy', 'ADAPTER']' returned non-zero exit status 1.

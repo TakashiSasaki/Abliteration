@@ -76,3 +76,28 @@
 | `sw` (スワヒリ語) | 17/25 (68%) | 3/25 (12%) | -56.0 pp |
 
 - 結果ファイル: `results/gemma4_e4b_cross_lingual/multijail_10langs_results.json`, `results/gemma4_e4b_cross_lingual/multijail_10langs.log`
+
+---
+
+## 6. 第25層単層介入実験（`start_layer_index=25, end_layer_index=26`）
+
+- **実施日時**: 2026-11-24 09:55:57Z 〜 10:11:20Z（全体約 15分23秒、Trial 0 単体 `1m 50s`）
+- **実行環境**: Google Colab `Tesla T4` (`15,360 MiB VRAM`, Driver `580.82.07`, CUDA `13.0`, `SHAPE_STANDARD`)
+- **ライブラリ**: `heretic-llm 2.1.0`, `bitsandbytes 0.50.2`, `transformers 5.22.1`, `torch 2.14.1+cu130`, `Python 3.13.16`
+- **CCU 消費**: `591.4906` → `591.1778`（消費 `0.3127` CCU、`assignments_end: 0`）
+- **再現条件（全パラメータ固定）**:
+  - モデル: `google/gemma-4-E4B-it`（42層 `0..41`、`BNB_4BIT` NF4 + double quant、`compute_dtype=torch.bfloat16`）
+  - 設定: `seed=42`, `batch_size=128`, `lora_rank=50`, `preserve_row_magnitudes=True`, `n_optimization_steps=5`, `learning_rate=1.0`, `max_iter=20`, `history_size=10`
+  - ARA パラメータ: `start_layer_index=25`, `end_layer_index=26`（第25層のみ: `attn.o_proj`, `mlp.down_proj`）, `preserve_good_behavior_weight=0.3873`, `steer_bad_behavior_weight=0.0003`, `overcorrect_relative_weight=0.8555`, `neighbor_count=14`
+  - データセット: `mlabonne/harmless_alpaca`（ARA `train[:400]` / KL 100問）, `mlabonne/harmful_behaviors`（ARA `train[:400]` / Refusals 100問）
+
+| 条件 | 介入層 | Refusals | KL divergence | 備考 |
+| :--- | :---: | :---: | :---: | :--- |
+| **Baseline (元モデル)** | なし | **99/100** | **0** *(定義)* | - |
+| **再現実験 (Layers 21–41)** | 21〜41 (21層) | **4/100** | **0.0994** | `coder3101` 公開重み |
+| **第25層単層介入 (Layer 25)** | **25 (1層のみ)** | **89/100** | **0.0024** | 同一 `coder3101` 重み |
+
+### 所見
+- 同一の ARA 重み（`steer_bad_behavior_weight=0.0003`）を第25層のみに適用した場合、KL divergence は `0.0024` と極めて小さくモデルの元挙動はほぼ保たれた一方、拒否率は `99/100` → `89/100`（-10 pp）の低下に留まった。
+- 21層（21〜41層）への介入では `4/100` まで低下していることから、Gemma 4 E4B の拒否表現は第25層単層に局在しているのではなく複数層に分散している、もしくは単層介入では `steer_bad_behavior_weight=0.0003` の強度が不足している可能性が示唆される。
+- 永続化ファイル: `scripts/run_layer25.py`, `results/gemma4_e4b_layer25/heretic_layer25.log`, `results/gemma4_e4b_layer25/google--gemma-4-E4B-it.jsonl`
