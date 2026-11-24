@@ -82,7 +82,9 @@ def main():
         print(f"ARA init took {time.perf_counter() - t0:.1f}s")
         save_ara_cache(modifier, cache_path)
 
-    model.apply_lora(modifier.settings.lora_rank)
+    from peft import PeftModel
+    if not isinstance(model.model, PeftModel):
+        model.apply_lora(modifier.settings.lora_rank)
 
     results = []
     for i, t in enumerate(trials):
