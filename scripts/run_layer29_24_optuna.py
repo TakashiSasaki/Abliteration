@@ -51,6 +51,17 @@ def main():
     parser.add_argument("--batch-size", type=int, default=128)
     parser.add_argument("--cache-path", default="/content/cache/gemma4_e4b_bnb4bit_seed42_ara.pt")
     parser.add_argument("--work-dir", default="/content/layer29_24_optuna")
+    parser.add_argument("--preserve-min", type=float, default=0.05)
+    parser.add_argument("--preserve-max", type=float, default=0.80)
+    parser.add_argument("--steer-min", type=float, default=1e-4)
+    parser.add_argument("--steer-max", type=float, default=2e-2)
+    parser.add_argument("--overcorrect-min", type=float, default=0.40)
+    parser.add_argument("--overcorrect-max", type=float, default=1.30)
+    parser.add_argument("--k-min", type=int, default=8)
+    parser.add_argument("--k-max", type=int, default=24)
+    parser.add_argument("--n-startup-trials", type=int, default=2)
+    parser.add_argument("--seed", type=int, default=42)
+    parser.add_argument("--enqueue-json", default=None, help="JSON list of extra trial param dicts")
     args = parser.parse_args()
     sys.argv = [sys.argv[0]]
 
@@ -90,7 +101,7 @@ def main():
         study_name="layer29_24_optuna",
         storage=storage,
         directions=["minimize", "minimize"],
-        sampler=TPESampler(seed=42, n_startup_trials=2),
+        sampler=TPESampler(seed=args.seed, n_startup_trials=args.n_startup_trials),
     )
 
     # Trial 0: coder3101 published weights
@@ -107,15 +118,19 @@ def main():
         "overcorrect_relative_weight": 0.9500,
         "neighbor_count": 14,
     })
+    if args.enqueue_json:
+        extra_trials = json.loads(args.enqueue_json)
+        for item in extra_trials:
+            study.enqueue_trial(item)
 
     records = []
 
     def objective(trial: optuna.Trial):
         t0 = time.perf_counter()
-        preserve_good = trial.suggest_float("preserve_good_behavior_weight", 0.05, 0.80)
-        steer_bad = trial.suggest_float("steer_bad_behavior_weight", 1e-4, 2e-2, log=True)
-        overcorrect = trial.suggest_float("overcorrect_relative_weight", 0.40, 1.30)
-        neighbor_count = trial.suggest_int("neighbor_count", 8, 24)
+        preserve_good = trial.suggest_float("preserve_good_behavior_weight", args.preserve_min, args.preserve_max)
+        steer_bad = trial.suggest_float("steer_bad_behavior_weight", args.steer_min, args.steer_max, log=True)
+        overcorrect = trial.suggest_float("overcorrect_relative_weight", args.overcorrect_min, args.overcorrect_max)
+        neighbor_count = trial.suggest_int("neighbor_count", args.k_min, args.k_max)
 
         if trial.number > 0:
             modifier.reset_model(ctx)
