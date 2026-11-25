@@ -1,0 +1,73 @@
+
+Loading model google/gemma-4-E4B-it...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+* Trying dtype auto...
+Loading weights:   0%|          | 0/2076 [00:00<?, ?it/s]Loading weights:   0%|          | 3/2076 [00:00<01:17, 26.82it/s]Loading weights:  10%|▉         | 206/2076 [00:00<00:01, 1149.46it/s]Loading weights:  21%|██        | 427/2076 [00:00<00:01, 1620.34it/s]Loading weights:  31%|███       | 635/2076 [00:00<00:00, 1782.74it/s]Loading weights:  39%|███▉      | 816/2076 [00:02<00:05, 227.27it/s] Loading weights:  45%|████▌     | 935/2076 [00:02<00:04, 240.85it/s]Loading weights:  49%|████▉     | 1024/2076 [00:03<00:04, 251.33it/s]Loading weights:  53%|█████▎    | 1094/2076 [00:03<00:03, 258.63it/s]Loading weights:  55%|█████▌    | 1151/2076 [00:03<00:03, 258.17it/s]Loading weights:  58%|█████▊    | 1198/2076 [00:03<00:03, 260.18it/s]Loading weights:  60%|█████▉    | 1239/2076 [00:03<00:03, 259.31it/s]Loading weights:  61%|██████▏   | 1276/2076 [00:04<00:03, 266.36it/s]Loading weights:  63%|██████▎   | 1311/2076 [00:04<00:02, 257.83it/s]Loading weights:  65%|██████▍   | 1342/2076 [00:04<00:02, 260.76it/s]Loading weights:  66%|██████▌   | 1372/2076 [00:04<00:02, 262.12it/s]Loading weights:  67%|██████▋   | 1401/2076 [00:04<00:02, 261.14it/s]Loading weights:  71%|███████▏  | 1482/2076 [00:04<00:01, 387.18it/s]Loading weights:  84%|████████▍ | 1750/2076 [00:04<00:00, 952.37it/s]Loading weights:  97%|█████████▋| 2015/2076 [00:04<00:00, 1391.75it/s]Loading weights: 100%|██████████| 2076/2076 [00:04<00:00, 423.54it/s] 
+* Quantized to 4-bit precision
+* Transformer model with 42 layers
+* Modifiable components:
+  * attn.o_proj: 42 modules total
+  * mlp.down_proj: 42 modules total
+
+Loading and initializing scorers...
+* Loaded: KeywordRate
+* Loaded: KLDivergence
+
+Loading Refusals evaluation prompts from mlabonne/harmful_behaviors...
+Generating train split:   0%|          | 0/416 [00:00<?, ? examples/s]Generating train split: 100%|██████████| 416/416 [00:00<00:00, 99721.69 examples/s]
+Generating test split:   0%|          | 0/104 [00:00<?, ? examples/s]Generating test split: 100%|██████████| 104/104 [00:00<00:00, 45518.90 examples/s]
+* 100 prompts loaded
+
+Loading KL divergence evaluation prompts from mlabonne/harmless_alpaca...
+Generating train split:   0%|          | 0/25058 [00:00<?, ? examples/s]Generating train split: 100%|██████████| 25058/25058 [00:00<00:00, 1947935.68 examples/s]
+Generating test split:   0%|          | 0/6265 [00:00<?, ? examples/s]Generating test split: 100%|██████████| 6265/6265 [00:00<00:00, 1231479.73 examples/s]
+* 100 prompts loaded
+* Obtaining baseline first-token probability distributions...
+
+Getting baseline scores...
+* Baseline Refusals: 100/100
+* Baseline KL divergence: 0 (by definition)
+
+Loading good prompts from mlabonne/harmless_alpaca...
+* 400 prompts loaded
+
+Loading bad prompts from mlabonne/harmful_behaviors...
+* 400 prompts loaded
+
+Obtaining module I/O for good prompts...
+
+Obtaining module I/O for bad prompts...
+ARA init took 14.9s
+Saved ARA cache to /content/cache/gemma4_e4b_bnb4bit_seed42_ara.pt (1137.6 MB)
+[I 2026-11-25 12:13:04,797] A new study created in Journal with name: layer29_24_optuna
+[Trial 0] (32.02s) Refusals=0.05 KL=0.0117 | preserve=0.3873, steer=0.00030, over=0.8555, k=14
+[I 2026-11-25 12:13:36,839] Trial 0 finished with values: [0.05, 0.011742403730750084] and parameters: {'preserve_good_behavior_weight': 0.3873, 'steer_bad_behavior_weight': 0.0003, 'overcorrect_relative_weight': 0.8555, 'neighbor_count': 14}.
+[Trial 1] (31.79s) Refusals=0.03 KL=0.0189 | preserve=0.2000, steer=0.00100, over=0.9500, k=14
+[I 2026-11-25 12:14:08,640] Trial 1 finished with values: [0.03, 0.018877746537327766] and parameters: {'preserve_good_behavior_weight': 0.2, 'steer_bad_behavior_weight': 0.001, 'overcorrect_relative_weight': 0.95, 'neighbor_count': 14}.
+[Trial 2] (31.76s) Refusals=0.04 KL=0.0323 | preserve=0.3515, steer=0.01953, over=0.9449, k=16
+[I 2026-11-25 12:14:40,408] Trial 2 finished with values: [0.04, 0.03226398676633835] and parameters: {'preserve_good_behavior_weight': 0.351520697405329, 'steer_bad_behavior_weight': 0.019527496466900298, 'overcorrect_relative_weight': 0.9448714498284472, 'neighbor_count': 16}.
+[Trial 3] (32.07s) Refusals=0.01 KL=0.0835 | preserve=0.7480, steer=0.00152, over=0.9981, k=14
+[I 2026-11-25 12:15:12,488] Trial 3 finished with values: [0.01, 0.0835421085357666] and parameters: {'preserve_good_behavior_weight': 0.7479549673032704, 'steer_bad_behavior_weight': 0.001521372291785574, 'overcorrect_relative_weight': 0.998106244972613, 'neighbor_count': 14}.
+[Trial 4] (31.64s) Refusals=0.06 KL=0.0324 | preserve=0.1875, steer=0.00825, over=0.8951, k=20
+[I 2026-11-25 12:15:44,135] Trial 4 finished with values: [0.06, 0.032417863607406616] and parameters: {'preserve_good_behavior_weight': 0.1875470506657594, 'steer_bad_behavior_weight': 0.008253397271845188, 'overcorrect_relative_weight': 0.8950750758549428, 'neighbor_count': 20}.
+[Trial 5] (31.84s) Refusals=0.04 KL=0.0192 | preserve=0.7459, steer=0.00033, over=0.9953, k=11
+[I 2026-11-25 12:16:15,978] Trial 5 finished with values: [0.04, 0.019157152622938156] and parameters: {'preserve_good_behavior_weight': 0.7458887390851121, 'steer_bad_behavior_weight': 0.0003309191685655849, 'overcorrect_relative_weight': 0.9953416026149815, 'neighbor_count': 11}.
+[Trial 6] (31.96s) Refusals=0.0 KL=0.0202 | preserve=0.5442, steer=0.00180, over=0.9371, k=10
+[I 2026-11-25 12:16:47,945] Trial 6 finished with values: [0.0, 0.020220577716827393] and parameters: {'preserve_good_behavior_weight': 0.5441703060573755, 'steer_bad_behavior_weight': 0.0018000556886716838, 'overcorrect_relative_weight': 0.9370546836608641, 'neighbor_count': 10}.
+[Trial 7] (31.75s) Refusals=0.01 KL=0.0280 | preserve=0.5469, steer=0.00630, over=0.9176, k=10
+[I 2026-11-25 12:17:19,707] Trial 7 finished with values: [0.01, 0.0279731135815382] and parameters: {'preserve_good_behavior_weight': 0.5469132031648364, 'steer_bad_behavior_weight': 0.006303666132540903, 'overcorrect_relative_weight': 0.917642647141459, 'neighbor_count': 10}.
+[Trial 8] (31.74s) Refusals=0.05 KL=0.0148 | preserve=0.5451, steer=0.00244, over=0.8529, k=20
+[I 2026-11-25 12:17:51,452] Trial 8 finished with values: [0.05, 0.014762575738132] and parameters: {'preserve_good_behavior_weight': 0.5451212771990888, 'steer_bad_behavior_weight': 0.002444099011579923, 'overcorrect_relative_weight': 0.8528663512863419, 'neighbor_count': 20}.
+[Trial 9] (31.63s) Refusals=0.03 KL=0.0482 | preserve=0.5891, steer=0.02442, over=0.9573, k=17
+[I 2026-11-25 12:18:23,087] Trial 9 finished with values: [0.03, 0.04815186560153961] and parameters: {'preserve_good_behavior_weight': 0.589105692619952, 'steer_bad_behavior_weight': 0.024419894985569457, 'overcorrect_relative_weight': 0.9573081211149617, 'neighbor_count': 17}.
+[Trial 10] (31.67s) Refusals=0.05 KL=0.0201 | preserve=0.3619, steer=0.00368, over=0.8924, k=12
+[I 2026-11-25 12:18:54,767] Trial 10 finished with values: [0.05, 0.020114406943321228] and parameters: {'preserve_good_behavior_weight': 0.36187120510071596, 'steer_bad_behavior_weight': 0.0036820191018297763, 'overcorrect_relative_weight': 0.8923826988657529, 'neighbor_count': 12}.
+[Trial 11] (31.92s) Refusals=0.07 KL=0.0098 | preserve=0.4175, steer=0.00030, over=0.8588, k=13
+[I 2026-11-25 12:19:26,695] Trial 11 finished with values: [0.07, 0.009806486777961254] and parameters: {'preserve_good_behavior_weight': 0.41751965320250156, 'steer_bad_behavior_weight': 0.00030410700371887554, 'overcorrect_relative_weight': 0.858758015169746, 'neighbor_count': 13}.
+[Trial 12] (32.07s) Refusals=0.03 KL=0.0129 | preserve=0.4428, steer=0.00073, over=0.8813, k=16
+[I 2026-11-25 12:19:58,775] Trial 12 finished with values: [0.03, 0.012904712930321693] and parameters: {'preserve_good_behavior_weight': 0.4427525646550419, 'steer_bad_behavior_weight': 0.0007285026245986968, 'overcorrect_relative_weight': 0.8813475529327933, 'neighbor_count': 16}.
+[Trial 13] (32.07s) Refusals=0.06 KL=0.0116 | preserve=0.6252, steer=0.00086, over=0.9205, k=17
+[I 2026-11-25 12:20:30,856] Trial 13 finished with values: [0.06, 0.011601640842854977] and parameters: {'preserve_good_behavior_weight': 0.6252295671643264, 'steer_bad_behavior_weight': 0.0008599132257351826, 'overcorrect_relative_weight': 0.9204617147175269, 'neighbor_count': 17}.
+[Trial 14] (31.84s) Refusals=0.05 KL=0.0138 | preserve=0.4682, steer=0.00072, over=0.8837, k=18
+[I 2026-11-25 12:21:02,702] Trial 14 finished with values: [0.05, 0.013770165853202343] and parameters: {'preserve_good_behavior_weight': 0.46821221633813603, 'steer_bad_behavior_weight': 0.0007244482535703746, 'overcorrect_relative_weight': 0.8837273577552892, 'neighbor_count': 18}.
+Optuna 2-layer search completed!

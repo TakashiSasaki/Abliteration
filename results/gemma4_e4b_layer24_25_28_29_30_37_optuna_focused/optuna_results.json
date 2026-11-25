@@ -1,0 +1,332 @@
+[
+  {
+    "trial": 0,
+    "layers": [
+      24,
+      25,
+      28,
+      29,
+      30,
+      37
+    ],
+    "params": {
+      "preserve_good_behavior_weight": 0.3873,
+      "steer_bad_behavior_weight": 0.0003,
+      "overcorrect_relative_weight": 0.8555,
+      "neighbor_count": 14
+    },
+    "scores": {
+      "Refusals": 0.05,
+      "KL divergence": 0.011742403730750084
+    },
+    "elapsed_sec": 32.02
+  },
+  {
+    "trial": 1,
+    "layers": [
+      24,
+      25,
+      28,
+      29,
+      30,
+      37
+    ],
+    "params": {
+      "preserve_good_behavior_weight": 0.2,
+      "steer_bad_behavior_weight": 0.001,
+      "overcorrect_relative_weight": 0.95,
+      "neighbor_count": 14
+    },
+    "scores": {
+      "Refusals": 0.03,
+      "KL divergence": 0.018877746537327766
+    },
+    "elapsed_sec": 31.79
+  },
+  {
+    "trial": 2,
+    "layers": [
+      24,
+      25,
+      28,
+      29,
+      30,
+      37
+    ],
+    "params": {
+      "preserve_good_behavior_weight": 0.351520697405329,
+      "steer_bad_behavior_weight": 0.019527496466900298,
+      "overcorrect_relative_weight": 0.9448714498284472,
+      "neighbor_count": 16
+    },
+    "scores": {
+      "Refusals": 0.04,
+      "KL divergence": 0.03226398676633835
+    },
+    "elapsed_sec": 31.76
+  },
+  {
+    "trial": 3,
+    "layers": [
+      24,
+      25,
+      28,
+      29,
+      30,
+      37
+    ],
+    "params": {
+      "preserve_good_behavior_weight": 0.7479549673032704,
+      "steer_bad_behavior_weight": 0.001521372291785574,
+      "overcorrect_relative_weight": 0.998106244972613,
+      "neighbor_count": 14
+    },
+    "scores": {
+      "Refusals": 0.01,
+      "KL divergence": 0.0835421085357666
+    },
+    "elapsed_sec": 32.07
+  },
+  {
+    "trial": 4,
+    "layers": [
+      24,
+      25,
+      28,
+      29,
+      30,
+      37
+    ],
+    "params": {
+      "preserve_good_behavior_weight": 0.1875470506657594,
+      "steer_bad_behavior_weight": 0.008253397271845188,
+      "overcorrect_relative_weight": 0.8950750758549428,
+      "neighbor_count": 20
+    },
+    "scores": {
+      "Refusals": 0.06,
+      "KL divergence": 0.032417863607406616
+    },
+    "elapsed_sec": 31.64
+  },
+  {
+    "trial": 5,
+    "layers": [
+      24,
+      25,
+      28,
+      29,
+      30,
+      37
+    ],
+    "params": {
+      "preserve_good_behavior_weight": 0.7458887390851121,
+      "steer_bad_behavior_weight": 0.0003309191685655849,
+      "overcorrect_relative_weight": 0.9953416026149815,
+      "neighbor_count": 11
+    },
+    "scores": {
+      "Refusals": 0.04,
+      "KL divergence": 0.019157152622938156
+    },
+    "elapsed_sec": 31.84
+  },
+  {
+    "trial": 6,
+    "layers": [
+      24,
+      25,
+      28,
+      29,
+      30,
+      37
+    ],
+    "params": {
+      "preserve_good_behavior_weight": 0.5441703060573755,
+      "steer_bad_behavior_weight": 0.0018000556886716838,
+      "overcorrect_relative_weight": 0.9370546836608641,
+      "neighbor_count": 10
+    },
+    "scores": {
+      "Refusals": 0.0,
+      "KL divergence": 0.020220577716827393
+    },
+    "elapsed_sec": 31.96
+  },
+  {
+    "trial": 7,
+    "layers": [
+      24,
+      25,
+      28,
+      29,
+      30,
+      37
+    ],
+    "params": {
+      "preserve_good_behavior_weight": 0.5469132031648364,
+      "steer_bad_behavior_weight": 0.006303666132540903,
+      "overcorrect_relative_weight": 0.917642647141459,
+      "neighbor_count": 10
+    },
+    "scores": {
+      "Refusals": 0.01,
+      "KL divergence": 0.0279731135815382
+    },
+    "elapsed_sec": 31.75
+  },
+  {
+    "trial": 8,
+    "layers": [
+      24,
+      25,
+      28,
+      29,
+      30,
+      37
+    ],
+    "params": {
+      "preserve_good_behavior_weight": 0.5451212771990888,
+      "steer_bad_behavior_weight": 0.002444099011579923,
+      "overcorrect_relative_weight": 0.8528663512863419,
+      "neighbor_count": 20
+    },
+    "scores": {
+      "Refusals": 0.05,
+      "KL divergence": 0.014762575738132
+    },
+    "elapsed_sec": 31.74
+  },
+  {
+    "trial": 9,
+    "layers": [
+      24,
+      25,
+      28,
+      29,
+      30,
+      37
+    ],
+    "params": {
+      "preserve_good_behavior_weight": 0.589105692619952,
+      "steer_bad_behavior_weight": 0.024419894985569457,
+      "overcorrect_relative_weight": 0.9573081211149617,
+      "neighbor_count": 17
+    },
+    "scores": {
+      "Refusals": 0.03,
+      "KL divergence": 0.04815186560153961
+    },
+    "elapsed_sec": 31.63
+  },
+  {
+    "trial": 10,
+    "layers": [
+      24,
+      25,
+      28,
+      29,
+      30,
+      37
+    ],
+    "params": {
+      "preserve_good_behavior_weight": 0.36187120510071596,
+      "steer_bad_behavior_weight": 0.0036820191018297763,
+      "overcorrect_relative_weight": 0.8923826988657529,
+      "neighbor_count": 12
+    },
+    "scores": {
+      "Refusals": 0.05,
+      "KL divergence": 0.020114406943321228
+    },
+    "elapsed_sec": 31.67
+  },
+  {
+    "trial": 11,
+    "layers": [
+      24,
+      25,
+      28,
+      29,
+      30,
+      37
+    ],
+    "params": {
+      "preserve_good_behavior_weight": 0.41751965320250156,
+      "steer_bad_behavior_weight": 0.00030410700371887554,
+      "overcorrect_relative_weight": 0.858758015169746,
+      "neighbor_count": 13
+    },
+    "scores": {
+      "Refusals": 0.07,
+      "KL divergence": 0.009806486777961254
+    },
+    "elapsed_sec": 31.92
+  },
+  {
+    "trial": 12,
+    "layers": [
+      24,
+      25,
+      28,
+      29,
+      30,
+      37
+    ],
+    "params": {
+      "preserve_good_behavior_weight": 0.4427525646550419,
+      "steer_bad_behavior_weight": 0.0007285026245986968,
+      "overcorrect_relative_weight": 0.8813475529327933,
+      "neighbor_count": 16
+    },
+    "scores": {
+      "Refusals": 0.03,
+      "KL divergence": 0.012904712930321693
+    },
+    "elapsed_sec": 32.07
+  },
+  {
+    "trial": 13,
+    "layers": [
+      24,
+      25,
+      28,
+      29,
+      30,
+      37
+    ],
+    "params": {
+      "preserve_good_behavior_weight": 0.6252295671643264,
+      "steer_bad_behavior_weight": 0.0008599132257351826,
+      "overcorrect_relative_weight": 0.9204617147175269,
+      "neighbor_count": 17
+    },
+    "scores": {
+      "Refusals": 0.06,
+      "KL divergence": 0.011601640842854977
+    },
+    "elapsed_sec": 32.07
+  },
+  {
+    "trial": 14,
+    "layers": [
+      24,
+      25,
+      28,
+      29,
+      30,
+      37
+    ],
+    "params": {
+      "preserve_good_behavior_weight": 0.46821221633813603,
+      "steer_bad_behavior_weight": 0.0007244482535703746,
+      "overcorrect_relative_weight": 0.8837273577552892,
+      "neighbor_count": 18
+    },
+    "scores": {
+      "Refusals": 0.05,
+      "KL divergence": 0.013770165853202343
+    },
+    "elapsed_sec": 31.84
+  }
+]
