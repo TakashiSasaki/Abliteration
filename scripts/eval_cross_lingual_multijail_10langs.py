@@ -5,8 +5,10 @@ Uses DAMO-NLP-SG/MultiJail (25 rows) for en, zh, it, ko, ar, vi, sw, th,
 and translates the same 25 English prompts into ja and id via facebook/nllb-200-distilled-600M
 before loading google/gemma-4-E4B-it (BNB_4BIT) and applying English-only ARA.
 """
+import argparse
 import gc
 import json
+import sys
 import time
 from pathlib import Path
 
@@ -99,6 +101,18 @@ def nllb_translate(texts: list[str], tgt_lang_code: str) -> list[str]:
 
 
 def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--layers", default=None, help="Comma-separated layer indices (e.g. 24,25,29,30)")
+    parser.add_argument("--start-layer", type=int, default=21)
+    parser.add_argument("--end-layer", type=int, default=42)
+    parser.add_argument("--preserve-good", type=float, default=0.3873)
+    parser.add_argument("--steer-bad", type=float, default=0.0003)
+    parser.add_argument("--overcorrect", type=float, default=0.8555)
+    parser.add_argument("--neighbor-count", type=int, default=14)
+    parser.add_argument("--output-json", default="/content/multijail_10langs_results.json")
+    args = parser.parse_args()
+    sys.argv = [sys.argv[0]]
+
     t0 = time.perf_counter()
     print("Loading DAMO-NLP-SG/MultiJail...")
     ds = load_dataset("DAMO-NLP-SG/MultiJail", split=f"train[:{N_SAMPLES}]")
@@ -142,16 +156,31 @@ def main():
     modifier_entries = load_and_init_modifiers(settings, model)
     modifier = modifier_entries[0].modifier
     ctx = Context(settings=settings, model=model)
-    params = ARAParameters(
-        start_layer_index=21,
-        end_layer_index=42,
-        preserve_good_behavior_weight=0.3873,
-        steer_bad_behavior_weight=0.0003,
-        overcorrect_relative_weight=0.8555,
-        neighbor_count=14,
-    )
     print("Applying English-only ARA abliteration...")
-    modifier.modify_model(ctx, params)
+    if args.layers:
+        target_layers = [int(x.strip()) for x in args.layers.split(",") if x.strip()]
+        for layer_idx in target_layers:
+            params = ARAParameters(
+                start_layer_index=layer_idx,
+                end_layer_index=layer_idx + 1,
+                preserve_good_behavior_weight=args.preserve_good,
+                steer_bad_behavior_weight=args.steer_bad,
+                overcorrect_relative_weight=args.overcorrect,
+                neighbor_count=args.neighbor_count,
+            )
+            modifier.modify_model(ctx, params)
+        applied_layers = target_layers
+    else:
+        params = ARAParameters(
+            start_layer_index=args.start_layer,
+            end_layer_index=args.end_layer,
+            preserve_good_behavior_weight=args.preserve_good,
+            steer_bad_behavior_weight=args.steer_bad,
+            overcorrect_relative_weight=args.overcorrect,
+            neighbor_count=args.neighbor_count,
+        )
+        modifier.modify_model(ctx, params)
+        applied_layers = list(range(args.start_layer, args.end_layer))
 
     print("Running Abliterated evaluation...")
     abl_responses = model.get_responses_batched(prompts, skip_special_tokens=True)
@@ -187,12 +216,14 @@ def main():
         "dataset": "DAMO-NLP-SG/MultiJail + NLLB-200(ja,id)",
         "model": "google/gemma-4-E4B-it",
         "quantization": "BNB_4BIT",
+        "applied_layers": applied_layers,
         "ara_params": params.model_dump() if hasattr(params, "model_dump") else vars(params),
         "elapsed_sec": elapsed,
         "summary": summary,
         "records": records,
     }
-    Path("/content/multijail_10langs_results.json").write_text(
+    Path(args.output_json).parent.mkdir(parents=True, exist_ok=True)
+    Path(args.output_json).write_text(
         json.dumps(out, ensure_ascii=False, indent=2), encoding="utf-8"
     )
     print(f"Done in {elapsed}s!")
