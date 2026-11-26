@@ -29,7 +29,8 @@ tags:
 
 Text-only GGUF builds of **`google/gemma-4-E4B-it`** with localized 5-layer Arbitrary-Rank Ablation (ARA) applied in native `BF16` and verified alongside **`Gemma4AssistantForCausalLM` Multi-Token Prediction (MTP)** speculative decoding for **8 GB VRAM GPUs** (targeted at Windows 11 + RTX 4070 8 GB + `llama.cpp`).
 
-- **Research Repository & Full Reproducibility Logs**: [TakashiSasaki/Abliteration](https://github.com/TakashiSasaki/Abliteration) ([EXPERIMENT_REPORT.md](https://github.com/TakashiSasaki/Abliteration/blob/main/EXPERIMENT_REPORT.md))
+- **Hugging Face Repository**: [`TakashiSasaki/gemma-4-E4B-it-text-abliterated-5L-GGUF`](https://huggingface.co/TakashiSasaki/gemma-4-E4B-it-text-abliterated-5L-GGUF)
+- **GitHub Research & Reproduction Repository**: [`TakashiSasaki/Abliteration`](https://github.com/TakashiSasaki/Abliteration) ([GitHub README](https://github.com/TakashiSasaki/Abliteration#readme) | [Full Experiment Report](https://github.com/TakashiSasaki/Abliteration/blob/main/EXPERIMENT_REPORT.md) | [Reproduction Script](https://github.com/TakashiSasaki/Abliteration/blob/main/scripts/reproduce_gemma4_e4b_gguf_8gb.sh) | [Model Card Backup](https://github.com/TakashiSasaki/Abliteration/blob/main/docs/HF_MODEL_CARD.md))
 
 ---
 
