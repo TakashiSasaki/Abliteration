@@ -1,0 +1,19 @@
+# Python dependencies for Gemma 4 Abliteration, Optuna localization, BF16 merge, and GGUF evaluation.
+# Note: If running on Google Colab or an environment with preinstalled torchao < 0.16.0
+# (such as torchao 0.10.0), run `pip uninstall -y torchao` before BF16 (`--quantization NONE`)
+# LoRA merging so `peft` does not reject the older torchao version.
+#
+# Also install `gguf-py` from `ggml-org/llama.cpp` (verified with build b12751 / commit 532d67426):
+#   pip install -e /path/to/llama.cpp/gguf-py
+
+heretic-llm==2.1.0
+torch>=2.5.0
+transformers>=4.51.0
+peft>=0.14.0
+accelerate>=1.0.0
+bitsandbytes>=0.45.0
+datasets>=3.0.0
+optuna>=4.0.0
+huggingface_hub>=0.28.0
+sentencepiece>=0.2.0
+protobuf>=4.25.0

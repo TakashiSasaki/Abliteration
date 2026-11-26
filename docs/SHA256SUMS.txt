@@ -1,0 +1,4 @@
+2d038865e9fe767d72087d4933ee2c243ad3c4c7e52fc9e0161baacf6c9d9e3f  gemma-4-E4B-it-abliterated-5L-FT12-Q4_K_M.gguf
+57b776f1c709041d4c8f643e39a40f8a0b63e61ca11247a097fe923d95705c1b  gemma-4-E4B-it-abliterated-5L-FT12-mix-Q4KM-Q8.gguf
+8e2b986d1f434dde39c5fe04d72f557c5396d691ac9ea5c910a1ceaae6fb0dc0  mtp-assistant-Q4_K_M.gguf
+80291890b359435865beccdbbf1d7932933966f51e4f0fb3abf28f18303eac35  mtp-assistant-Q8_0.gguf
