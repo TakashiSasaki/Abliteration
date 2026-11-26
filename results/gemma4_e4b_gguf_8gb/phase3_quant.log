@@ -1,0 +1,1507 @@
+Quantizing with nproc=12 threads...
+=== 1. abl-5l-ft12-Q4_K_M ===
+ggml_cuda_init: found 1 CUDA devices (Total VRAM: 22563 MiB):
+  Device 0: NVIDIA L4, compute capability 8.9, VMM: yes, VRAM: 22563 MiB
+load_backend: loaded CUDA backend from /content/llama_bin/libggml-cuda.so
+load_backend: loaded RPC backend from /content/llama_bin/libggml-rpc.so
+load_backend: loaded CPU backend from /content/llama_bin/libggml-cpu-cascadelake.so
+version: 1.0.0-dev (build 12751, commit 532d67426)
+built with GNU 13.3.0 for Linux x86_64
+llama_quantize: quantizing '/content/gguf_models/abl-5l-ft12-BF16.gguf' to '/content/gguf_models/abl-5l-ft12-Q4_K_M.gguf' as Q4_K_M using 12 threads
+llama_model_loader: loaded meta data with 42 key-value pairs and 666 tensors from /content/gguf_models/abl-5l-ft12-BF16.gguf (version GGUF V3 (latest))
+llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+llama_model_loader: - kv   0:                       general.architecture str              = gemma4
+llama_model_loader: - kv   1:                               general.type str              = model
+llama_model_loader: - kv   2:                     general.sampling.top_k i32              = 64
+llama_model_loader: - kv   3:                     general.sampling.top_p f32              = 0.950000
+llama_model_loader: - kv   4:                      general.sampling.temp f32              = 1.000000
+llama_model_loader: - kv   5:                               general.name str              = Gemma4_E4B_5L_Ft12_Bf16
+llama_model_loader: - kv   6:                         general.size_label str              = 7.5B
+llama_model_loader: - kv   7:                         gemma4.block_count u32              = 42
+llama_model_loader: - kv   8:                      gemma4.context_length u32              = 131072
+llama_model_loader: - kv   9:                    gemma4.embedding_length u32              = 2560
+llama_model_loader: - kv  10:                 gemma4.feed_forward_length u32              = 10240
+llama_model_loader: - kv  11:                gemma4.attention.head_count u32              = 8
+llama_model_loader: - kv  12:             gemma4.attention.head_count_kv u32              = 2
+llama_model_loader: - kv  13:                      gemma4.rope.freq_base f32              = 1000000.000000
+llama_model_loader: - kv  14:                  gemma4.rope.freq_base_swa f32              = 10000.000000
+llama_model_loader: - kv  15:    gemma4.attention.layer_norm_rms_epsilon f32              = 0.000001
+llama_model_loader: - kv  16:                gemma4.attention.key_length u32              = 512
+llama_model_loader: - kv  17:              gemma4.attention.value_length u32              = 512
+llama_model_loader: - kv  18:                          general.file_type u32              = 32
+llama_model_loader: - kv  19:             gemma4.final_logit_softcapping f32              = 30.000000
+llama_model_loader: - kv  20:            gemma4.attention.sliding_window u32              = 512
+llama_model_loader: - kv  21:          gemma4.attention.shared_kv_layers u32              = 18
+llama_model_loader: - kv  22:    gemma4.embedding_length_per_layer_input u32              = 256
+llama_model_loader: - kv  23:    gemma4.attention.sliding_window_pattern arr[bool,42]     = [true, true, true, true, true, false,...
+llama_model_loader: - kv  24:            gemma4.attention.key_length_swa u32              = 256
+llama_model_loader: - kv  25:          gemma4.attention.value_length_swa u32              = 256
+llama_model_loader: - kv  26:                gemma4.rope.dimension_count u32              = 512
+llama_model_loader: - kv  27:            gemma4.rope.dimension_count_swa u32              = 256
+llama_model_loader: - kv  28:               general.quantization_version u32              = 2
+llama_model_loader: - kv  29:                       tokenizer.ggml.model str              = gemma4
+llama_model_loader: - kv  30:                      tokenizer.ggml.tokens arr[str,262144]  = ["<pad>", "<eos>", "<bos>", "<unk>", ...
+llama_model_loader: - kv  31:                      tokenizer.ggml.scores arr[f32,262144]  = [-1000.000000, -1000.000000, -1000.00...
+llama_model_loader: - kv  32:                  tokenizer.ggml.token_type arr[i32,262144]  = [3, 3, 3, 3, 3, 1, 1, 1, 1, 1, 1, 1, ...
+llama_model_loader: - kv  33:                      tokenizer.ggml.merges arr[str,514653]  = ["\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n \n", ...
+llama_model_loader: - kv  34:                tokenizer.ggml.bos_token_id u32              = 2
+llama_model_loader: - kv  35:                tokenizer.ggml.eos_token_id u32              = 1
+llama_model_loader: - kv  36:            tokenizer.ggml.unknown_token_id u32              = 3
+llama_model_loader: - kv  37:            tokenizer.ggml.padding_token_id u32              = 0
+llama_model_loader: - kv  38:               tokenizer.ggml.mask_token_id u32              = 4
+llama_model_loader: - kv  39:                    tokenizer.chat_template str              = {#\n  Template: Google Gemma 4 Canonic...
+llama_model_loader: - kv  40:            tokenizer.ggml.add_space_prefix bool             = false
+llama_model_loader: - kv  41:               tokenizer.ggml.add_bos_token bool             = true
+llama_model_loader: - type  f32:  321 tensors
+llama_model_loader: - type bf16:  345 tensors
+
+[   1/ 666] output_norm.weight                   - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[   2/ 666] per_layer_model_proj.weight          - [  2560,  10752,      1,      1], type =   bf16, size = 52.50 MiB
+[   3/ 666] per_layer_proj_norm.weight           - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[   4/ 666] per_layer_token_embd.weight          - [ 10752, 262144,      1,      1], type =   bf16, converting to    q6_K size = 5376.00 MiB -> 2205.00 MiB
+[   5/ 666] rope_freqs.weight                    - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[   6/ 666] token_embd.weight                    - [  2560, 262144,      1,      1], type =   bf16, converting to    q6_K size = 1280.00 MiB -> 525.00 MiB
+[   7/ 666] blk.0.attn_k.weight                  - [  2560,    512,      1,      1], type =   bf16, converting to    q4_K size = 2.50 MiB -> 0.70 MiB
+[   8/ 666] blk.0.attn_k_norm.weight             - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[   9/ 666] blk.0.attn_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[  10/ 666] blk.0.attn_output.weight             - [  2048,   2560,      1,      1], type =   bf16, converting to    q4_K size = 10.00 MiB -> 2.81 MiB
+[  11/ 666] blk.0.attn_q.weight                  - [  2560,   2048,      1,      1], type =   bf16, converting to    q4_K size = 10.00 MiB -> 2.81 MiB
+[  12/ 666] blk.0.attn_q_norm.weight             - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[  13/ 666] blk.0.attn_v.weight                  - [  2560,    512,      1,      1], type =   bf16, converting to    q6_K size = 2.50 MiB -> 1.03 MiB
+[  14/ 666] blk.0.ffn_down.weight                - [ 10240,   2560,      1,      1], type =   bf16, converting to    q6_K size = 50.00 MiB -> 20.51 MiB
+[  15/ 666] blk.0.ffn_gate.weight                - [  2560,  10240,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[  16/ 666] blk.0.ffn_norm.weight                - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[  17/ 666] blk.0.ffn_up.weight                  - [  2560,  10240,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[  18/ 666] blk.0.inp_gate.weight                - [  2560,    256,      1,      1], type =   bf16, converting to    q4_K size = 1.25 MiB -> 0.35 MiB
+[  19/ 666] blk.0.layer_output_scale.weight      - [     1,      1,      1,      1], type =    f32, size = 0.00 MiB
+[  20/ 666] blk.0.post_attention_norm.weight     - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[  21/ 666] blk.0.post_ffw_norm.weight           - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[  22/ 666] blk.0.post_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[  23/ 666] blk.0.proj.weight                    - [   256,   2560,      1,      1], type =   bf16, converting to    q4_K size = 1.25 MiB -> 0.35 MiB
+[  24/ 666] blk.1.attn_k.weight                  - [  2560,    512,      1,      1], type =   bf16, converting to    q4_K size = 2.50 MiB -> 0.70 MiB
+[  25/ 666] blk.1.attn_k_norm.weight             - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[  26/ 666] blk.1.attn_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[  27/ 666] blk.1.attn_output.weight             - [  2048,   2560,      1,      1], type =   bf16, converting to    q4_K size = 10.00 MiB -> 2.81 MiB
+[  28/ 666] blk.1.attn_q.weight                  - [  2560,   2048,      1,      1], type =   bf16, converting to    q4_K size = 10.00 MiB -> 2.81 MiB
+[  29/ 666] blk.1.attn_q_norm.weight             - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[  30/ 666] blk.1.attn_v.weight                  - [  2560,    512,      1,      1], type =   bf16, converting to    q6_K size = 2.50 MiB -> 1.03 MiB
+[  31/ 666] blk.1.ffn_down.weight                - [ 10240,   2560,      1,      1], type =   bf16, converting to    q6_K size = 50.00 MiB -> 20.51 MiB
+[  32/ 666] blk.1.ffn_gate.weight                - [  2560,  10240,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[  33/ 666] blk.1.ffn_norm.weight                - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[  34/ 666] blk.1.ffn_up.weight                  - [  2560,  10240,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[  35/ 666] blk.1.inp_gate.weight                - [  2560,    256,      1,      1], type =   bf16, converting to    q4_K size = 1.25 MiB -> 0.35 MiB
+[  36/ 666] blk.1.layer_output_scale.weight      - [     1,      1,      1,      1], type =    f32, size = 0.00 MiB
+[  37/ 666] blk.1.post_attention_norm.weight     - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[  38/ 666] blk.1.post_ffw_norm.weight           - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[  39/ 666] blk.1.post_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[  40/ 666] blk.1.proj.weight                    - [   256,   2560,      1,      1], type =   bf16, converting to    q4_K size = 1.25 MiB -> 0.35 MiB
+[  41/ 666] blk.2.attn_k.weight                  - [  2560,    512,      1,      1], type =   bf16, converting to    q4_K size = 2.50 MiB -> 0.70 MiB
+[  42/ 666] blk.2.attn_k_norm.weight             - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[  43/ 666] blk.2.attn_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[  44/ 666] blk.2.attn_output.weight             - [  2048,   2560,      1,      1], type =   bf16, converting to    q4_K size = 10.00 MiB -> 2.81 MiB
+[  45/ 666] blk.2.attn_q.weight                  - [  2560,   2048,      1,      1], type =   bf16, converting to    q4_K size = 10.00 MiB -> 2.81 MiB
+[  46/ 666] blk.2.attn_q_norm.weight             - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[  47/ 666] blk.2.attn_v.weight                  - [  2560,    512,      1,      1], type =   bf16, converting to    q6_K size = 2.50 MiB -> 1.03 MiB
+[  48/ 666] blk.2.ffn_down.weight                - [ 10240,   2560,      1,      1], type =   bf16, converting to    q6_K size = 50.00 MiB -> 20.51 MiB
+[  49/ 666] blk.2.ffn_gate.weight                - [  2560,  10240,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[  50/ 666] blk.2.ffn_norm.weight                - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[  51/ 666] blk.2.ffn_up.weight                  - [  2560,  10240,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[  52/ 666] blk.2.inp_gate.weight                - [  2560,    256,      1,      1], type =   bf16, converting to    q4_K size = 1.25 MiB -> 0.35 MiB
+[  53/ 666] blk.2.layer_output_scale.weight      - [     1,      1,      1,      1], type =    f32, size = 0.00 MiB
+[  54/ 666] blk.2.post_attention_norm.weight     - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[  55/ 666] blk.2.post_ffw_norm.weight           - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[  56/ 666] blk.2.post_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[  57/ 666] blk.2.proj.weight                    - [   256,   2560,      1,      1], type =   bf16, converting to    q4_K size = 1.25 MiB -> 0.35 MiB
+[  58/ 666] blk.3.attn_k.weight                  - [  2560,    512,      1,      1], type =   bf16, converting to    q4_K size = 2.50 MiB -> 0.70 MiB
+[  59/ 666] blk.3.attn_k_norm.weight             - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[  60/ 666] blk.3.attn_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[  61/ 666] blk.3.attn_output.weight             - [  2048,   2560,      1,      1], type =   bf16, converting to    q4_K size = 10.00 MiB -> 2.81 MiB
+[  62/ 666] blk.3.attn_q.weight                  - [  2560,   2048,      1,      1], type =   bf16, converting to    q4_K size = 10.00 MiB -> 2.81 MiB
+[  63/ 666] blk.3.attn_q_norm.weight             - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[  64/ 666] blk.3.attn_v.weight                  - [  2560,    512,      1,      1], type =   bf16, converting to    q4_K size = 2.50 MiB -> 0.70 MiB
+[  65/ 666] blk.3.ffn_down.weight                - [ 10240,   2560,      1,      1], type =   bf16, converting to    q6_K size = 50.00 MiB -> 20.51 MiB
+[  66/ 666] blk.3.ffn_gate.weight                - [  2560,  10240,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[  67/ 666] blk.3.ffn_norm.weight                - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[  68/ 666] blk.3.ffn_up.weight                  - [  2560,  10240,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[  69/ 666] blk.3.inp_gate.weight                - [  2560,    256,      1,      1], type =   bf16, converting to    q4_K size = 1.25 MiB -> 0.35 MiB
+[  70/ 666] blk.3.layer_output_scale.weight      - [     1,      1,      1,      1], type =    f32, size = 0.00 MiB
+[  71/ 666] blk.3.post_attention_norm.weight     - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[  72/ 666] blk.3.post_ffw_norm.weight           - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[  73/ 666] blk.3.post_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[  74/ 666] blk.3.proj.weight                    - [   256,   2560,      1,      1], type =   bf16, converting to    q4_K size = 1.25 MiB -> 0.35 MiB
+[  75/ 666] blk.4.attn_k.weight                  - [  2560,    512,      1,      1], type =   bf16, converting to    q4_K size = 2.50 MiB -> 0.70 MiB
+[  76/ 666] blk.4.attn_k_norm.weight             - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[  77/ 666] blk.4.attn_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[  78/ 666] blk.4.attn_output.weight             - [  2048,   2560,      1,      1], type =   bf16, converting to    q4_K size = 10.00 MiB -> 2.81 MiB
+[  79/ 666] blk.4.attn_q.weight                  - [  2560,   2048,      1,      1], type =   bf16, converting to    q4_K size = 10.00 MiB -> 2.81 MiB
+[  80/ 666] blk.4.attn_q_norm.weight             - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[  81/ 666] blk.4.attn_v.weight                  - [  2560,    512,      1,      1], type =   bf16, converting to    q4_K size = 2.50 MiB -> 0.70 MiB
+[  82/ 666] blk.4.ffn_down.weight                - [ 10240,   2560,      1,      1], type =   bf16, converting to    q6_K size = 50.00 MiB -> 20.51 MiB
+[  83/ 666] blk.4.ffn_gate.weight                - [  2560,  10240,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[  84/ 666] blk.4.ffn_norm.weight                - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[  85/ 666] blk.4.ffn_up.weight                  - [  2560,  10240,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[  86/ 666] blk.4.inp_gate.weight                - [  2560,    256,      1,      1], type =   bf16, converting to    q4_K size = 1.25 MiB -> 0.35 MiB
+[  87/ 666] blk.4.layer_output_scale.weight      - [     1,      1,      1,      1], type =    f32, size = 0.00 MiB
+[  88/ 666] blk.4.post_attention_norm.weight     - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[  89/ 666] blk.4.post_ffw_norm.weight           - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[  90/ 666] blk.4.post_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[  91/ 666] blk.4.proj.weight                    - [   256,   2560,      1,      1], type =   bf16, converting to    q4_K size = 1.25 MiB -> 0.35 MiB
+[  92/ 666] blk.5.attn_k.weight                  - [  2560,   1024,      1,      1], type =   bf16, converting to    q4_K size = 5.00 MiB -> 1.41 MiB
+[  93/ 666] blk.5.attn_k_norm.weight             - [   512,      1,      1,      1], type =    f32, size = 0.00 MiB
+[  94/ 666] blk.5.attn_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[  95/ 666] blk.5.attn_output.weight             - [  4096,   2560,      1,      1], type =   bf16, converting to    q4_K size = 20.00 MiB -> 5.62 MiB
+[  96/ 666] blk.5.attn_q.weight                  - [  2560,   4096,      1,      1], type =   bf16, converting to    q4_K size = 20.00 MiB -> 5.62 MiB
+[  97/ 666] blk.5.attn_q_norm.weight             - [   512,      1,      1,      1], type =    f32, size = 0.00 MiB
+[  98/ 666] blk.5.attn_v.weight                  - [  2560,   1024,      1,      1], type =   bf16, converting to    q6_K size = 5.00 MiB -> 2.05 MiB
+[  99/ 666] blk.5.ffn_down.weight                - [ 10240,   2560,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 100/ 666] blk.5.ffn_gate.weight                - [  2560,  10240,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 101/ 666] blk.5.ffn_norm.weight                - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 102/ 666] blk.5.ffn_up.weight                  - [  2560,  10240,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 103/ 666] blk.5.inp_gate.weight                - [  2560,    256,      1,      1], type =   bf16, converting to    q4_K size = 1.25 MiB -> 0.35 MiB
+[ 104/ 666] blk.5.layer_output_scale.weight      - [     1,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 105/ 666] blk.5.post_attention_norm.weight     - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 106/ 666] blk.5.post_ffw_norm.weight           - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 107/ 666] blk.5.post_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 108/ 666] blk.5.proj.weight                    - [   256,   2560,      1,      1], type =   bf16, converting to    q4_K size = 1.25 MiB -> 0.35 MiB
+[ 109/ 666] blk.6.attn_k.weight                  - [  2560,    512,      1,      1], type =   bf16, converting to    q4_K size = 2.50 MiB -> 0.70 MiB
+[ 110/ 666] blk.6.attn_k_norm.weight             - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 111/ 666] blk.6.attn_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 112/ 666] blk.6.attn_output.weight             - [  2048,   2560,      1,      1], type =   bf16, converting to    q4_K size = 10.00 MiB -> 2.81 MiB
+[ 113/ 666] blk.6.attn_q.weight                  - [  2560,   2048,      1,      1], type =   bf16, converting to    q4_K size = 10.00 MiB -> 2.81 MiB
+[ 114/ 666] blk.6.attn_q_norm.weight             - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 115/ 666] blk.6.attn_v.weight                  - [  2560,    512,      1,      1], type =   bf16, converting to    q4_K size = 2.50 MiB -> 0.70 MiB
+[ 116/ 666] blk.6.ffn_down.weight                - [ 10240,   2560,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 117/ 666] blk.6.ffn_gate.weight                - [  2560,  10240,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 118/ 666] blk.6.ffn_norm.weight                - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 119/ 666] blk.6.ffn_up.weight                  - [  2560,  10240,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 120/ 666] blk.6.inp_gate.weight                - [  2560,    256,      1,      1], type =   bf16, converting to    q4_K size = 1.25 MiB -> 0.35 MiB
+[ 121/ 666] blk.6.layer_output_scale.weight      - [     1,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 122/ 666] blk.6.post_attention_norm.weight     - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 123/ 666] blk.6.post_ffw_norm.weight           - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 124/ 666] blk.6.post_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 125/ 666] blk.6.proj.weight                    - [   256,   2560,      1,      1], type =   bf16, converting to    q4_K size = 1.25 MiB -> 0.35 MiB
+[ 126/ 666] blk.7.attn_k.weight                  - [  2560,    512,      1,      1], type =   bf16, converting to    q4_K size = 2.50 MiB -> 0.70 MiB
+[ 127/ 666] blk.7.attn_k_norm.weight             - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 128/ 666] blk.7.attn_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 129/ 666] blk.7.attn_output.weight             - [  2048,   2560,      1,      1], type =   bf16, converting to    q4_K size = 10.00 MiB -> 2.81 MiB
+[ 130/ 666] blk.7.attn_q.weight                  - [  2560,   2048,      1,      1], type =   bf16, converting to    q4_K size = 10.00 MiB -> 2.81 MiB
+[ 131/ 666] blk.7.attn_q_norm.weight             - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 132/ 666] blk.7.attn_v.weight                  - [  2560,    512,      1,      1], type =   bf16, converting to    q4_K size = 2.50 MiB -> 0.70 MiB
+[ 133/ 666] blk.7.ffn_down.weight                - [ 10240,   2560,      1,      1], type =   bf16, converting to    q6_K size = 50.00 MiB -> 20.51 MiB
+[ 134/ 666] blk.7.ffn_gate.weight                - [  2560,  10240,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 135/ 666] blk.7.ffn_norm.weight                - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 136/ 666] blk.7.ffn_up.weight                  - [  2560,  10240,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 137/ 666] blk.7.inp_gate.weight                - [  2560,    256,      1,      1], type =   bf16, converting to    q4_K size = 1.25 MiB -> 0.35 MiB
+[ 138/ 666] blk.7.layer_output_scale.weight      - [     1,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 139/ 666] blk.7.post_attention_norm.weight     - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 140/ 666] blk.7.post_ffw_norm.weight           - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 141/ 666] blk.7.post_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 142/ 666] blk.7.proj.weight                    - [   256,   2560,      1,      1], type =   bf16, converting to    q4_K size = 1.25 MiB -> 0.35 MiB
+[ 143/ 666] blk.8.attn_k.weight                  - [  2560,    512,      1,      1], type =   bf16, converting to    q4_K size = 2.50 MiB -> 0.70 MiB
+[ 144/ 666] blk.8.attn_k_norm.weight             - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 145/ 666] blk.8.attn_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 146/ 666] blk.8.attn_output.weight             - [  2048,   2560,      1,      1], type =   bf16, converting to    q4_K size = 10.00 MiB -> 2.81 MiB
+[ 147/ 666] blk.8.attn_q.weight                  - [  2560,   2048,      1,      1], type =   bf16, converting to    q4_K size = 10.00 MiB -> 2.81 MiB
+[ 148/ 666] blk.8.attn_q_norm.weight             - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 149/ 666] blk.8.attn_v.weight                  - [  2560,    512,      1,      1], type =   bf16, converting to    q6_K size = 2.50 MiB -> 1.03 MiB
+[ 150/ 666] blk.8.ffn_down.weight                - [ 10240,   2560,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 151/ 666] blk.8.ffn_gate.weight                - [  2560,  10240,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 152/ 666] blk.8.ffn_norm.weight                - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 153/ 666] blk.8.ffn_up.weight                  - [  2560,  10240,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 154/ 666] blk.8.inp_gate.weight                - [  2560,    256,      1,      1], type =   bf16, converting to    q4_K size = 1.25 MiB -> 0.35 MiB
+[ 155/ 666] blk.8.layer_output_scale.weight      - [     1,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 156/ 666] blk.8.post_attention_norm.weight     - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 157/ 666] blk.8.post_ffw_norm.weight           - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 158/ 666] blk.8.post_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 159/ 666] blk.8.proj.weight                    - [   256,   2560,      1,      1], type =   bf16, converting to    q4_K size = 1.25 MiB -> 0.35 MiB
+[ 160/ 666] blk.9.attn_k.weight                  - [  2560,    512,      1,      1], type =   bf16, converting to    q4_K size = 2.50 MiB -> 0.70 MiB
+[ 161/ 666] blk.9.attn_k_norm.weight             - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 162/ 666] blk.9.attn_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 163/ 666] blk.9.attn_output.weight             - [  2048,   2560,      1,      1], type =   bf16, converting to    q4_K size = 10.00 MiB -> 2.81 MiB
+[ 164/ 666] blk.9.attn_q.weight                  - [  2560,   2048,      1,      1], type =   bf16, converting to    q4_K size = 10.00 MiB -> 2.81 MiB
+[ 165/ 666] blk.9.attn_q_norm.weight             - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 166/ 666] blk.9.attn_v.weight                  - [  2560,    512,      1,      1], type =   bf16, converting to    q4_K size = 2.50 MiB -> 0.70 MiB
+[ 167/ 666] blk.9.ffn_down.weight                - [ 10240,   2560,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 168/ 666] blk.9.ffn_gate.weight                - [  2560,  10240,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 169/ 666] blk.9.ffn_norm.weight                - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 170/ 666] blk.9.ffn_up.weight                  - [  2560,  10240,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 171/ 666] blk.9.inp_gate.weight                - [  2560,    256,      1,      1], type =   bf16, converting to    q4_K size = 1.25 MiB -> 0.35 MiB
+[ 172/ 666] blk.9.layer_output_scale.weight      - [     1,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 173/ 666] blk.9.post_attention_norm.weight     - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 174/ 666] blk.9.post_ffw_norm.weight           - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 175/ 666] blk.9.post_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 176/ 666] blk.9.proj.weight                    - [   256,   2560,      1,      1], type =   bf16, converting to    q4_K size = 1.25 MiB -> 0.35 MiB
+[ 177/ 666] blk.10.attn_k.weight                 - [  2560,    512,      1,      1], type =   bf16, converting to    q4_K size = 2.50 MiB -> 0.70 MiB
+[ 178/ 666] blk.10.attn_k_norm.weight            - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 179/ 666] blk.10.attn_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 180/ 666] blk.10.attn_output.weight            - [  2048,   2560,      1,      1], type =   bf16, converting to    q4_K size = 10.00 MiB -> 2.81 MiB
+[ 181/ 666] blk.10.attn_q.weight                 - [  2560,   2048,      1,      1], type =   bf16, converting to    q4_K size = 10.00 MiB -> 2.81 MiB
+[ 182/ 666] blk.10.attn_q_norm.weight            - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 183/ 666] blk.10.attn_v.weight                 - [  2560,    512,      1,      1], type =   bf16, converting to    q4_K size = 2.50 MiB -> 0.70 MiB
+[ 184/ 666] blk.10.ffn_down.weight               - [ 10240,   2560,      1,      1], type =   bf16, converting to    q6_K size = 50.00 MiB -> 20.51 MiB
+[ 185/ 666] blk.10.ffn_gate.weight               - [  2560,  10240,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 186/ 666] blk.10.ffn_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 187/ 666] blk.10.ffn_up.weight                 - [  2560,  10240,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 188/ 666] blk.10.inp_gate.weight               - [  2560,    256,      1,      1], type =   bf16, converting to    q4_K size = 1.25 MiB -> 0.35 MiB
+[ 189/ 666] blk.10.layer_output_scale.weight     - [     1,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 190/ 666] blk.10.post_attention_norm.weight    - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 191/ 666] blk.10.post_ffw_norm.weight          - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 192/ 666] blk.10.post_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 193/ 666] blk.10.proj.weight                   - [   256,   2560,      1,      1], type =   bf16, converting to    q4_K size = 1.25 MiB -> 0.35 MiB
+[ 194/ 666] blk.11.attn_k.weight                 - [  2560,   1024,      1,      1], type =   bf16, converting to    q4_K size = 5.00 MiB -> 1.41 MiB
+[ 195/ 666] blk.11.attn_k_norm.weight            - [   512,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 196/ 666] blk.11.attn_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 197/ 666] blk.11.attn_output.weight            - [  4096,   2560,      1,      1], type =   bf16, converting to    q4_K size = 20.00 MiB -> 5.62 MiB
+[ 198/ 666] blk.11.attn_q.weight                 - [  2560,   4096,      1,      1], type =   bf16, converting to    q4_K size = 20.00 MiB -> 5.62 MiB
+[ 199/ 666] blk.11.attn_q_norm.weight            - [   512,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 200/ 666] blk.11.attn_v.weight                 - [  2560,   1024,      1,      1], type =   bf16, converting to    q6_K size = 5.00 MiB -> 2.05 MiB
+[ 201/ 666] blk.11.ffn_down.weight               - [ 10240,   2560,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 202/ 666] blk.11.ffn_gate.weight               - [  2560,  10240,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 203/ 666] blk.11.ffn_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 204/ 666] blk.11.ffn_up.weight                 - [  2560,  10240,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 205/ 666] blk.11.inp_gate.weight               - [  2560,    256,      1,      1], type =   bf16, converting to    q4_K size = 1.25 MiB -> 0.35 MiB
+[ 206/ 666] blk.11.layer_output_scale.weight     - [     1,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 207/ 666] blk.11.post_attention_norm.weight    - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 208/ 666] blk.11.post_ffw_norm.weight          - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 209/ 666] blk.11.post_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 210/ 666] blk.11.proj.weight                   - [   256,   2560,      1,      1], type =   bf16, converting to    q4_K size = 1.25 MiB -> 0.35 MiB
+[ 211/ 666] blk.12.attn_k.weight                 - [  2560,    512,      1,      1], type =   bf16, converting to    q4_K size = 2.50 MiB -> 0.70 MiB
+[ 212/ 666] blk.12.attn_k_norm.weight            - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 213/ 666] blk.12.attn_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 214/ 666] blk.12.attn_output.weight            - [  2048,   2560,      1,      1], type =   bf16, converting to    q4_K size = 10.00 MiB -> 2.81 MiB
+[ 215/ 666] blk.12.attn_q.weight                 - [  2560,   2048,      1,      1], type =   bf16, converting to    q4_K size = 10.00 MiB -> 2.81 MiB
+[ 216/ 666] blk.12.attn_q_norm.weight            - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 217/ 666] blk.12.attn_v.weight                 - [  2560,    512,      1,      1], type =   bf16, converting to    q4_K size = 2.50 MiB -> 0.70 MiB
+[ 218/ 666] blk.12.ffn_down.weight               - [ 10240,   2560,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 219/ 666] blk.12.ffn_gate.weight               - [  2560,  10240,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 220/ 666] blk.12.ffn_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 221/ 666] blk.12.ffn_up.weight                 - [  2560,  10240,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 222/ 666] blk.12.inp_gate.weight               - [  2560,    256,      1,      1], type =   bf16, converting to    q4_K size = 1.25 MiB -> 0.35 MiB
+[ 223/ 666] blk.12.layer_output_scale.weight     - [     1,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 224/ 666] blk.12.post_attention_norm.weight    - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 225/ 666] blk.12.post_ffw_norm.weight          - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 226/ 666] blk.12.post_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 227/ 666] blk.12.proj.weight                   - [   256,   2560,      1,      1], type =   bf16, converting to    q4_K size = 1.25 MiB -> 0.35 MiB
+[ 228/ 666] blk.13.attn_k.weight                 - [  2560,    512,      1,      1], type =   bf16, converting to    q4_K size = 2.50 MiB -> 0.70 MiB
+[ 229/ 666] blk.13.attn_k_norm.weight            - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 230/ 666] blk.13.attn_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 231/ 666] blk.13.attn_output.weight            - [  2048,   2560,      1,      1], type =   bf16, converting to    q4_K size = 10.00 MiB -> 2.81 MiB
+[ 232/ 666] blk.13.attn_q.weight                 - [  2560,   2048,      1,      1], type =   bf16, converting to    q4_K size = 10.00 MiB -> 2.81 MiB
+[ 233/ 666] blk.13.attn_q_norm.weight            - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 234/ 666] blk.13.attn_v.weight                 - [  2560,    512,      1,      1], type =   bf16, converting to    q4_K size = 2.50 MiB -> 0.70 MiB
+[ 235/ 666] blk.13.ffn_down.weight               - [ 10240,   2560,      1,      1], type =   bf16, converting to    q6_K size = 50.00 MiB -> 20.51 MiB
+[ 236/ 666] blk.13.ffn_gate.weight               - [  2560,  10240,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 237/ 666] blk.13.ffn_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 238/ 666] blk.13.ffn_up.weight                 - [  2560,  10240,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 239/ 666] blk.13.inp_gate.weight               - [  2560,    256,      1,      1], type =   bf16, converting to    q4_K size = 1.25 MiB -> 0.35 MiB
+[ 240/ 666] blk.13.layer_output_scale.weight     - [     1,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 241/ 666] blk.13.post_attention_norm.weight    - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 242/ 666] blk.13.post_ffw_norm.weight          - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 243/ 666] blk.13.post_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 244/ 666] blk.13.proj.weight                   - [   256,   2560,      1,      1], type =   bf16, converting to    q4_K size = 1.25 MiB -> 0.35 MiB
+[ 245/ 666] blk.14.attn_k.weight                 - [  2560,    512,      1,      1], type =   bf16, converting to    q4_K size = 2.50 MiB -> 0.70 MiB
+[ 246/ 666] blk.14.attn_k_norm.weight            - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 247/ 666] blk.14.attn_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 248/ 666] blk.14.attn_output.weight            - [  2048,   2560,      1,      1], type =   bf16, converting to    q4_K size = 10.00 MiB -> 2.81 MiB
+[ 249/ 666] blk.14.attn_q.weight                 - [  2560,   2048,      1,      1], type =   bf16, converting to    q4_K size = 10.00 MiB -> 2.81 MiB
+[ 250/ 666] blk.14.attn_q_norm.weight            - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 251/ 666] blk.14.attn_v.weight                 - [  2560,    512,      1,      1], type =   bf16, converting to    q6_K size = 2.50 MiB -> 1.03 MiB
+[ 252/ 666] blk.14.ffn_down.weight               - [ 10240,   2560,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 253/ 666] blk.14.ffn_gate.weight               - [  2560,  10240,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 254/ 666] blk.14.ffn_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 255/ 666] blk.14.ffn_up.weight                 - [  2560,  10240,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 256/ 666] blk.14.inp_gate.weight               - [  2560,    256,      1,      1], type =   bf16, converting to    q4_K size = 1.25 MiB -> 0.35 MiB
+[ 257/ 666] blk.14.layer_output_scale.weight     - [     1,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 258/ 666] blk.14.post_attention_norm.weight    - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 259/ 666] blk.14.post_ffw_norm.weight          - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 260/ 666] blk.14.post_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 261/ 666] blk.14.proj.weight                   - [   256,   2560,      1,      1], type =   bf16, converting to    q4_K size = 1.25 MiB -> 0.35 MiB
+[ 262/ 666] blk.15.attn_k.weight                 - [  2560,    512,      1,      1], type =   bf16, converting to    q4_K size = 2.50 MiB -> 0.70 MiB
+[ 263/ 666] blk.15.attn_k_norm.weight            - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 264/ 666] blk.15.attn_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 265/ 666] blk.15.attn_output.weight            - [  2048,   2560,      1,      1], type =   bf16, converting to    q4_K size = 10.00 MiB -> 2.81 MiB
+[ 266/ 666] blk.15.attn_q.weight                 - [  2560,   2048,      1,      1], type =   bf16, converting to    q4_K size = 10.00 MiB -> 2.81 MiB
+[ 267/ 666] blk.15.attn_q_norm.weight            - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 268/ 666] blk.15.attn_v.weight                 - [  2560,    512,      1,      1], type =   bf16, converting to    q4_K size = 2.50 MiB -> 0.70 MiB
+[ 269/ 666] blk.15.ffn_down.weight               - [ 10240,   2560,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 270/ 666] blk.15.ffn_gate.weight               - [  2560,  10240,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 271/ 666] blk.15.ffn_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 272/ 666] blk.15.ffn_up.weight                 - [  2560,  10240,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 273/ 666] blk.15.inp_gate.weight               - [  2560,    256,      1,      1], type =   bf16, converting to    q4_K size = 1.25 MiB -> 0.35 MiB
+[ 274/ 666] blk.15.layer_output_scale.weight     - [     1,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 275/ 666] blk.15.post_attention_norm.weight    - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 276/ 666] blk.15.post_ffw_norm.weight          - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 277/ 666] blk.15.post_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 278/ 666] blk.15.proj.weight                   - [   256,   2560,      1,      1], type =   bf16, converting to    q4_K size = 1.25 MiB -> 0.35 MiB
+[ 279/ 666] blk.16.attn_k.weight                 - [  2560,    512,      1,      1], type =   bf16, converting to    q4_K size = 2.50 MiB -> 0.70 MiB
+[ 280/ 666] blk.16.attn_k_norm.weight            - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 281/ 666] blk.16.attn_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 282/ 666] blk.16.attn_output.weight            - [  2048,   2560,      1,      1], type =   bf16, converting to    q4_K size = 10.00 MiB -> 2.81 MiB
+[ 283/ 666] blk.16.attn_q.weight                 - [  2560,   2048,      1,      1], type =   bf16, converting to    q4_K size = 10.00 MiB -> 2.81 MiB
+[ 284/ 666] blk.16.attn_q_norm.weight            - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 285/ 666] blk.16.attn_v.weight                 - [  2560,    512,      1,      1], type =   bf16, converting to    q4_K size = 2.50 MiB -> 0.70 MiB
+[ 286/ 666] blk.16.ffn_down.weight               - [ 10240,   2560,      1,      1], type =   bf16, converting to    q6_K size = 50.00 MiB -> 20.51 MiB
+[ 287/ 666] blk.16.ffn_gate.weight               - [  2560,  10240,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 288/ 666] blk.16.ffn_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 289/ 666] blk.16.ffn_up.weight                 - [  2560,  10240,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 290/ 666] blk.16.inp_gate.weight               - [  2560,    256,      1,      1], type =   bf16, converting to    q4_K size = 1.25 MiB -> 0.35 MiB
+[ 291/ 666] blk.16.layer_output_scale.weight     - [     1,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 292/ 666] blk.16.post_attention_norm.weight    - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 293/ 666] blk.16.post_ffw_norm.weight          - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 294/ 666] blk.16.post_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 295/ 666] blk.16.proj.weight                   - [   256,   2560,      1,      1], type =   bf16, converting to    q4_K size = 1.25 MiB -> 0.35 MiB
+[ 296/ 666] blk.17.attn_k.weight                 - [  2560,   1024,      1,      1], type =   bf16, converting to    q4_K size = 5.00 MiB -> 1.41 MiB
+[ 297/ 666] blk.17.attn_k_norm.weight            - [   512,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 298/ 666] blk.17.attn_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 299/ 666] blk.17.attn_output.weight            - [  4096,   2560,      1,      1], type =   bf16, converting to    q4_K size = 20.00 MiB -> 5.62 MiB
+[ 300/ 666] blk.17.attn_q.weight                 - [  2560,   4096,      1,      1], type =   bf16, converting to    q4_K size = 20.00 MiB -> 5.62 MiB
+[ 301/ 666] blk.17.attn_q_norm.weight            - [   512,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 302/ 666] blk.17.attn_v.weight                 - [  2560,   1024,      1,      1], type =   bf16, converting to    q6_K size = 5.00 MiB -> 2.05 MiB
+[ 303/ 666] blk.17.ffn_down.weight               - [ 10240,   2560,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 304/ 666] blk.17.ffn_gate.weight               - [  2560,  10240,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 305/ 666] blk.17.ffn_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 306/ 666] blk.17.ffn_up.weight                 - [  2560,  10240,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 307/ 666] blk.17.inp_gate.weight               - [  2560,    256,      1,      1], type =   bf16, converting to    q4_K size = 1.25 MiB -> 0.35 MiB
+[ 308/ 666] blk.17.layer_output_scale.weight     - [     1,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 309/ 666] blk.17.post_attention_norm.weight    - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 310/ 666] blk.17.post_ffw_norm.weight          - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 311/ 666] blk.17.post_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 312/ 666] blk.17.proj.weight                   - [   256,   2560,      1,      1], type =   bf16, converting to    q4_K size = 1.25 MiB -> 0.35 MiB
+[ 313/ 666] blk.18.attn_k.weight                 - [  2560,    512,      1,      1], type =   bf16, converting to    q4_K size = 2.50 MiB -> 0.70 MiB
+[ 314/ 666] blk.18.attn_k_norm.weight            - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 315/ 666] blk.18.attn_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 316/ 666] blk.18.attn_output.weight            - [  2048,   2560,      1,      1], type =   bf16, converting to    q4_K size = 10.00 MiB -> 2.81 MiB
+[ 317/ 666] blk.18.attn_q.weight                 - [  2560,   2048,      1,      1], type =   bf16, converting to    q4_K size = 10.00 MiB -> 2.81 MiB
+[ 318/ 666] blk.18.attn_q_norm.weight            - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 319/ 666] blk.18.attn_v.weight                 - [  2560,    512,      1,      1], type =   bf16, converting to    q4_K size = 2.50 MiB -> 0.70 MiB
+[ 320/ 666] blk.18.ffn_down.weight               - [ 10240,   2560,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 321/ 666] blk.18.ffn_gate.weight               - [  2560,  10240,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 322/ 666] blk.18.ffn_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 323/ 666] blk.18.ffn_up.weight                 - [  2560,  10240,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 324/ 666] blk.18.inp_gate.weight               - [  2560,    256,      1,      1], type =   bf16, converting to    q4_K size = 1.25 MiB -> 0.35 MiB
+[ 325/ 666] blk.18.layer_output_scale.weight     - [     1,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 326/ 666] blk.18.post_attention_norm.weight    - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 327/ 666] blk.18.post_ffw_norm.weight          - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 328/ 666] blk.18.post_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 329/ 666] blk.18.proj.weight                   - [   256,   2560,      1,      1], type =   bf16, converting to    q4_K size = 1.25 MiB -> 0.35 MiB
+[ 330/ 666] blk.19.attn_k.weight                 - [  2560,    512,      1,      1], type =   bf16, converting to    q4_K size = 2.50 MiB -> 0.70 MiB
+[ 331/ 666] blk.19.attn_k_norm.weight            - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 332/ 666] blk.19.attn_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 333/ 666] blk.19.attn_output.weight            - [  2048,   2560,      1,      1], type =   bf16, converting to    q4_K size = 10.00 MiB -> 2.81 MiB
+[ 334/ 666] blk.19.attn_q.weight                 - [  2560,   2048,      1,      1], type =   bf16, converting to    q4_K size = 10.00 MiB -> 2.81 MiB
+[ 335/ 666] blk.19.attn_q_norm.weight            - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 336/ 666] blk.19.attn_v.weight                 - [  2560,    512,      1,      1], type =   bf16, converting to    q4_K size = 2.50 MiB -> 0.70 MiB
+[ 337/ 666] blk.19.ffn_down.weight               - [ 10240,   2560,      1,      1], type =   bf16, converting to    q6_K size = 50.00 MiB -> 20.51 MiB
+[ 338/ 666] blk.19.ffn_gate.weight               - [  2560,  10240,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 339/ 666] blk.19.ffn_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 340/ 666] blk.19.ffn_up.weight                 - [  2560,  10240,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 341/ 666] blk.19.inp_gate.weight               - [  2560,    256,      1,      1], type =   bf16, converting to    q4_K size = 1.25 MiB -> 0.35 MiB
+[ 342/ 666] blk.19.layer_output_scale.weight     - [     1,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 343/ 666] blk.19.post_attention_norm.weight    - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 344/ 666] blk.19.post_ffw_norm.weight          - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 345/ 666] blk.19.post_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 346/ 666] blk.19.proj.weight                   - [   256,   2560,      1,      1], type =   bf16, converting to    q4_K size = 1.25 MiB -> 0.35 MiB
+[ 347/ 666] blk.20.attn_k.weight                 - [  2560,    512,      1,      1], type =   bf16, converting to    q4_K size = 2.50 MiB -> 0.70 MiB
+[ 348/ 666] blk.20.attn_k_norm.weight            - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 349/ 666] blk.20.attn_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 350/ 666] blk.20.attn_output.weight            - [  2048,   2560,      1,      1], type =   bf16, converting to    q4_K size = 10.00 MiB -> 2.81 MiB
+[ 351/ 666] blk.20.attn_q.weight                 - [  2560,   2048,      1,      1], type =   bf16, converting to    q4_K size = 10.00 MiB -> 2.81 MiB
+[ 352/ 666] blk.20.attn_q_norm.weight            - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 353/ 666] blk.20.attn_v.weight                 - [  2560,    512,      1,      1], type =   bf16, converting to    q6_K size = 2.50 MiB -> 1.03 MiB
+[ 354/ 666] blk.20.ffn_down.weight               - [ 10240,   2560,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 355/ 666] blk.20.ffn_gate.weight               - [  2560,  10240,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 356/ 666] blk.20.ffn_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 357/ 666] blk.20.ffn_up.weight                 - [  2560,  10240,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 358/ 666] blk.20.inp_gate.weight               - [  2560,    256,      1,      1], type =   bf16, converting to    q4_K size = 1.25 MiB -> 0.35 MiB
+[ 359/ 666] blk.20.layer_output_scale.weight     - [     1,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 360/ 666] blk.20.post_attention_norm.weight    - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 361/ 666] blk.20.post_ffw_norm.weight          - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 362/ 666] blk.20.post_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 363/ 666] blk.20.proj.weight                   - [   256,   2560,      1,      1], type =   bf16, converting to    q4_K size = 1.25 MiB -> 0.35 MiB
+[ 364/ 666] blk.21.attn_k.weight                 - [  2560,    512,      1,      1], type =   bf16, converting to    q4_K size = 2.50 MiB -> 0.70 MiB
+[ 365/ 666] blk.21.attn_k_norm.weight            - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 366/ 666] blk.21.attn_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 367/ 666] blk.21.attn_output.weight            - [  2048,   2560,      1,      1], type =   bf16, converting to    q4_K size = 10.00 MiB -> 2.81 MiB
+[ 368/ 666] blk.21.attn_q.weight                 - [  2560,   2048,      1,      1], type =   bf16, converting to    q4_K size = 10.00 MiB -> 2.81 MiB
+[ 369/ 666] blk.21.attn_q_norm.weight            - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 370/ 666] blk.21.attn_v.weight                 - [  2560,    512,      1,      1], type =   bf16, converting to    q6_K size = 2.50 MiB -> 1.03 MiB
+[ 371/ 666] blk.21.ffn_down.weight               - [ 10240,   2560,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 372/ 666] blk.21.ffn_gate.weight               - [  2560,  10240,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 373/ 666] blk.21.ffn_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 374/ 666] blk.21.ffn_up.weight                 - [  2560,  10240,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 375/ 666] blk.21.inp_gate.weight               - [  2560,    256,      1,      1], type =   bf16, converting to    q4_K size = 1.25 MiB -> 0.35 MiB
+[ 376/ 666] blk.21.layer_output_scale.weight     - [     1,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 377/ 666] blk.21.post_attention_norm.weight    - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 378/ 666] blk.21.post_ffw_norm.weight          - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 379/ 666] blk.21.post_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 380/ 666] blk.21.proj.weight                   - [   256,   2560,      1,      1], type =   bf16, converting to    q4_K size = 1.25 MiB -> 0.35 MiB
+[ 381/ 666] blk.22.attn_k.weight                 - [  2560,    512,      1,      1], type =   bf16, converting to    q4_K size = 2.50 MiB -> 0.70 MiB
+[ 382/ 666] blk.22.attn_k_norm.weight            - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 383/ 666] blk.22.attn_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 384/ 666] blk.22.attn_output.weight            - [  2048,   2560,      1,      1], type =   bf16, converting to    q4_K size = 10.00 MiB -> 2.81 MiB
+[ 385/ 666] blk.22.attn_q.weight                 - [  2560,   2048,      1,      1], type =   bf16, converting to    q4_K size = 10.00 MiB -> 2.81 MiB
+[ 386/ 666] blk.22.attn_q_norm.weight            - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 387/ 666] blk.22.attn_v.weight                 - [  2560,    512,      1,      1], type =   bf16, converting to    q6_K size = 2.50 MiB -> 1.03 MiB
+[ 388/ 666] blk.22.ffn_down.weight               - [ 10240,   2560,      1,      1], type =   bf16, converting to    q6_K size = 50.00 MiB -> 20.51 MiB
+[ 389/ 666] blk.22.ffn_gate.weight               - [  2560,  10240,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 390/ 666] blk.22.ffn_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 391/ 666] blk.22.ffn_up.weight                 - [  2560,  10240,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 392/ 666] blk.22.inp_gate.weight               - [  2560,    256,      1,      1], type =   bf16, converting to    q4_K size = 1.25 MiB -> 0.35 MiB
+[ 393/ 666] blk.22.layer_output_scale.weight     - [     1,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 394/ 666] blk.22.post_attention_norm.weight    - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 395/ 666] blk.22.post_ffw_norm.weight          - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 396/ 666] blk.22.post_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 397/ 666] blk.22.proj.weight                   - [   256,   2560,      1,      1], type =   bf16, converting to    q4_K size = 1.25 MiB -> 0.35 MiB
+[ 398/ 666] blk.23.attn_k.weight                 - [  2560,   1024,      1,      1], type =   bf16, converting to    q4_K size = 5.00 MiB -> 1.41 MiB
+[ 399/ 666] blk.23.attn_k_norm.weight            - [   512,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 400/ 666] blk.23.attn_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 401/ 666] blk.23.attn_output.weight            - [  4096,   2560,      1,      1], type =   bf16, converting to    q4_K size = 20.00 MiB -> 5.62 MiB
+[ 402/ 666] blk.23.attn_q.weight                 - [  2560,   4096,      1,      1], type =   bf16, converting to    q4_K size = 20.00 MiB -> 5.62 MiB
+[ 403/ 666] blk.23.attn_q_norm.weight            - [   512,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 404/ 666] blk.23.attn_v.weight                 - [  2560,   1024,      1,      1], type =   bf16, converting to    q6_K size = 5.00 MiB -> 2.05 MiB
+[ 405/ 666] blk.23.ffn_down.weight               - [ 10240,   2560,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 406/ 666] blk.23.ffn_gate.weight               - [  2560,  10240,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 407/ 666] blk.23.ffn_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 408/ 666] blk.23.ffn_up.weight                 - [  2560,  10240,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 409/ 666] blk.23.inp_gate.weight               - [  2560,    256,      1,      1], type =   bf16, converting to    q4_K size = 1.25 MiB -> 0.35 MiB
+[ 410/ 666] blk.23.layer_output_scale.weight     - [     1,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 411/ 666] blk.23.post_attention_norm.weight    - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 412/ 666] blk.23.post_ffw_norm.weight          - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 413/ 666] blk.23.post_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 414/ 666] blk.23.proj.weight                   - [   256,   2560,      1,      1], type =   bf16, converting to    q4_K size = 1.25 MiB -> 0.35 MiB
+[ 415/ 666] blk.24.attn_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 416/ 666] blk.24.attn_output.weight            - [  2048,   2560,      1,      1], type =   bf16, converting to    q4_K size = 10.00 MiB -> 2.81 MiB
+[ 417/ 666] blk.24.attn_q.weight                 - [  2560,   2048,      1,      1], type =   bf16, converting to    q4_K size = 10.00 MiB -> 2.81 MiB
+[ 418/ 666] blk.24.attn_q_norm.weight            - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 419/ 666] blk.24.ffn_down.weight               - [ 10240,   2560,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 420/ 666] blk.24.ffn_gate.weight               - [  2560,  10240,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 421/ 666] blk.24.ffn_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 422/ 666] blk.24.ffn_up.weight                 - [  2560,  10240,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 423/ 666] blk.24.inp_gate.weight               - [  2560,    256,      1,      1], type =   bf16, converting to    q4_K size = 1.25 MiB -> 0.35 MiB
+[ 424/ 666] blk.24.layer_output_scale.weight     - [     1,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 425/ 666] blk.24.post_attention_norm.weight    - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 426/ 666] blk.24.post_ffw_norm.weight          - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 427/ 666] blk.24.post_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 428/ 666] blk.24.proj.weight                   - [   256,   2560,      1,      1], type =   bf16, converting to    q4_K size = 1.25 MiB -> 0.35 MiB
+[ 429/ 666] blk.25.attn_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 430/ 666] blk.25.attn_output.weight            - [  2048,   2560,      1,      1], type =   bf16, converting to    q4_K size = 10.00 MiB -> 2.81 MiB
+[ 431/ 666] blk.25.attn_q.weight                 - [  2560,   2048,      1,      1], type =   bf16, converting to    q4_K size = 10.00 MiB -> 2.81 MiB
+[ 432/ 666] blk.25.attn_q_norm.weight            - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 433/ 666] blk.25.ffn_down.weight               - [ 10240,   2560,      1,      1], type =   bf16, converting to    q6_K size = 50.00 MiB -> 20.51 MiB
+[ 434/ 666] blk.25.ffn_gate.weight               - [  2560,  10240,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 435/ 666] blk.25.ffn_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 436/ 666] blk.25.ffn_up.weight                 - [  2560,  10240,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 437/ 666] blk.25.inp_gate.weight               - [  2560,    256,      1,      1], type =   bf16, converting to    q4_K size = 1.25 MiB -> 0.35 MiB
+[ 438/ 666] blk.25.layer_output_scale.weight     - [     1,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 439/ 666] blk.25.post_attention_norm.weight    - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 440/ 666] blk.25.post_ffw_norm.weight          - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 441/ 666] blk.25.post_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 442/ 666] blk.25.proj.weight                   - [   256,   2560,      1,      1], type =   bf16, converting to    q4_K size = 1.25 MiB -> 0.35 MiB
+[ 443/ 666] blk.26.attn_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 444/ 666] blk.26.attn_output.weight            - [  2048,   2560,      1,      1], type =   bf16, converting to    q4_K size = 10.00 MiB -> 2.81 MiB
+[ 445/ 666] blk.26.attn_q.weight                 - [  2560,   2048,      1,      1], type =   bf16, converting to    q4_K size = 10.00 MiB -> 2.81 MiB
+[ 446/ 666] blk.26.attn_q_norm.weight            - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 447/ 666] blk.26.ffn_down.weight               - [ 10240,   2560,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 448/ 666] blk.26.ffn_gate.weight               - [  2560,  10240,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 449/ 666] blk.26.ffn_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 450/ 666] blk.26.ffn_up.weight                 - [  2560,  10240,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 451/ 666] blk.26.inp_gate.weight               - [  2560,    256,      1,      1], type =   bf16, converting to    q4_K size = 1.25 MiB -> 0.35 MiB
+[ 452/ 666] blk.26.layer_output_scale.weight     - [     1,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 453/ 666] blk.26.post_attention_norm.weight    - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 454/ 666] blk.26.post_ffw_norm.weight          - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 455/ 666] blk.26.post_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 456/ 666] blk.26.proj.weight                   - [   256,   2560,      1,      1], type =   bf16, converting to    q4_K size = 1.25 MiB -> 0.35 MiB
+[ 457/ 666] blk.27.attn_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 458/ 666] blk.27.attn_output.weight            - [  2048,   2560,      1,      1], type =   bf16, converting to    q4_K size = 10.00 MiB -> 2.81 MiB
+[ 459/ 666] blk.27.attn_q.weight                 - [  2560,   2048,      1,      1], type =   bf16, converting to    q4_K size = 10.00 MiB -> 2.81 MiB
+[ 460/ 666] blk.27.attn_q_norm.weight            - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 461/ 666] blk.27.ffn_down.weight               - [ 10240,   2560,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 462/ 666] blk.27.ffn_gate.weight               - [  2560,  10240,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 463/ 666] blk.27.ffn_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 464/ 666] blk.27.ffn_up.weight                 - [  2560,  10240,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 465/ 666] blk.27.inp_gate.weight               - [  2560,    256,      1,      1], type =   bf16, converting to    q4_K size = 1.25 MiB -> 0.35 MiB
+[ 466/ 666] blk.27.layer_output_scale.weight     - [     1,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 467/ 666] blk.27.post_attention_norm.weight    - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 468/ 666] blk.27.post_ffw_norm.weight          - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 469/ 666] blk.27.post_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 470/ 666] blk.27.proj.weight                   - [   256,   2560,      1,      1], type =   bf16, converting to    q4_K size = 1.25 MiB -> 0.35 MiB
+[ 471/ 666] blk.28.attn_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 472/ 666] blk.28.attn_output.weight            - [  2048,   2560,      1,      1], type =   bf16, converting to    q4_K size = 10.00 MiB -> 2.81 MiB
+[ 473/ 666] blk.28.attn_q.weight                 - [  2560,   2048,      1,      1], type =   bf16, converting to    q4_K size = 10.00 MiB -> 2.81 MiB
+[ 474/ 666] blk.28.attn_q_norm.weight            - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 475/ 666] blk.28.ffn_down.weight               - [ 10240,   2560,      1,      1], type =   bf16, converting to    q6_K size = 50.00 MiB -> 20.51 MiB
+[ 476/ 666] blk.28.ffn_gate.weight               - [  2560,  10240,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 477/ 666] blk.28.ffn_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 478/ 666] blk.28.ffn_up.weight                 - [  2560,  10240,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 479/ 666] blk.28.inp_gate.weight               - [  2560,    256,      1,      1], type =   bf16, converting to    q4_K size = 1.25 MiB -> 0.35 MiB
+[ 480/ 666] blk.28.layer_output_scale.weight     - [     1,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 481/ 666] blk.28.post_attention_norm.weight    - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 482/ 666] blk.28.post_ffw_norm.weight          - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 483/ 666] blk.28.post_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 484/ 666] blk.28.proj.weight                   - [   256,   2560,      1,      1], type =   bf16, converting to    q4_K size = 1.25 MiB -> 0.35 MiB
+[ 485/ 666] blk.29.attn_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 486/ 666] blk.29.attn_output.weight            - [  4096,   2560,      1,      1], type =   bf16, converting to    q4_K size = 20.00 MiB -> 5.62 MiB
+[ 487/ 666] blk.29.attn_q.weight                 - [  2560,   4096,      1,      1], type =   bf16, converting to    q4_K size = 20.00 MiB -> 5.62 MiB
+[ 488/ 666] blk.29.attn_q_norm.weight            - [   512,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 489/ 666] blk.29.ffn_down.weight               - [ 10240,   2560,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 490/ 666] blk.29.ffn_gate.weight               - [  2560,  10240,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 491/ 666] blk.29.ffn_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 492/ 666] blk.29.ffn_up.weight                 - [  2560,  10240,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 493/ 666] blk.29.inp_gate.weight               - [  2560,    256,      1,      1], type =   bf16, converting to    q4_K size = 1.25 MiB -> 0.35 MiB
+[ 494/ 666] blk.29.layer_output_scale.weight     - [     1,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 495/ 666] blk.29.post_attention_norm.weight    - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 496/ 666] blk.29.post_ffw_norm.weight          - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 497/ 666] blk.29.post_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 498/ 666] blk.29.proj.weight                   - [   256,   2560,      1,      1], type =   bf16, converting to    q4_K size = 1.25 MiB -> 0.35 MiB
+[ 499/ 666] blk.30.attn_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 500/ 666] blk.30.attn_output.weight            - [  2048,   2560,      1,      1], type =   bf16, converting to    q4_K size = 10.00 MiB -> 2.81 MiB
+[ 501/ 666] blk.30.attn_q.weight                 - [  2560,   2048,      1,      1], type =   bf16, converting to    q4_K size = 10.00 MiB -> 2.81 MiB
+[ 502/ 666] blk.30.attn_q_norm.weight            - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 503/ 666] blk.30.ffn_down.weight               - [ 10240,   2560,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 504/ 666] blk.30.ffn_gate.weight               - [  2560,  10240,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 505/ 666] blk.30.ffn_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 506/ 666] blk.30.ffn_up.weight                 - [  2560,  10240,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 507/ 666] blk.30.inp_gate.weight               - [  2560,    256,      1,      1], type =   bf16, converting to    q4_K size = 1.25 MiB -> 0.35 MiB
+[ 508/ 666] blk.30.layer_output_scale.weight     - [     1,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 509/ 666] blk.30.post_attention_norm.weight    - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 510/ 666] blk.30.post_ffw_norm.weight          - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 511/ 666] blk.30.post_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 512/ 666] blk.30.proj.weight                   - [   256,   2560,      1,      1], type =   bf16, converting to    q4_K size = 1.25 MiB -> 0.35 MiB
+[ 513/ 666] blk.31.attn_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 514/ 666] blk.31.attn_output.weight            - [  2048,   2560,      1,      1], type =   bf16, converting to    q4_K size = 10.00 MiB -> 2.81 MiB
+[ 515/ 666] blk.31.attn_q.weight                 - [  2560,   2048,      1,      1], type =   bf16, converting to    q4_K size = 10.00 MiB -> 2.81 MiB
+[ 516/ 666] blk.31.attn_q_norm.weight            - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 517/ 666] blk.31.ffn_down.weight               - [ 10240,   2560,      1,      1], type =   bf16, converting to    q6_K size = 50.00 MiB -> 20.51 MiB
+[ 518/ 666] blk.31.ffn_gate.weight               - [  2560,  10240,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 519/ 666] blk.31.ffn_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 520/ 666] blk.31.ffn_up.weight                 - [  2560,  10240,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 521/ 666] blk.31.inp_gate.weight               - [  2560,    256,      1,      1], type =   bf16, converting to    q4_K size = 1.25 MiB -> 0.35 MiB
+[ 522/ 666] blk.31.layer_output_scale.weight     - [     1,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 523/ 666] blk.31.post_attention_norm.weight    - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 524/ 666] blk.31.post_ffw_norm.weight          - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 525/ 666] blk.31.post_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 526/ 666] blk.31.proj.weight                   - [   256,   2560,      1,      1], type =   bf16, converting to    q4_K size = 1.25 MiB -> 0.35 MiB
+[ 527/ 666] blk.32.attn_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 528/ 666] blk.32.attn_output.weight            - [  2048,   2560,      1,      1], type =   bf16, converting to    q4_K size = 10.00 MiB -> 2.81 MiB
+[ 529/ 666] blk.32.attn_q.weight                 - [  2560,   2048,      1,      1], type =   bf16, converting to    q4_K size = 10.00 MiB -> 2.81 MiB
+[ 530/ 666] blk.32.attn_q_norm.weight            - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 531/ 666] blk.32.ffn_down.weight               - [ 10240,   2560,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 532/ 666] blk.32.ffn_gate.weight               - [  2560,  10240,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 533/ 666] blk.32.ffn_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 534/ 666] blk.32.ffn_up.weight                 - [  2560,  10240,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 535/ 666] blk.32.inp_gate.weight               - [  2560,    256,      1,      1], type =   bf16, converting to    q4_K size = 1.25 MiB -> 0.35 MiB
+[ 536/ 666] blk.32.layer_output_scale.weight     - [     1,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 537/ 666] blk.32.post_attention_norm.weight    - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 538/ 666] blk.32.post_ffw_norm.weight          - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 539/ 666] blk.32.post_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 540/ 666] blk.32.proj.weight                   - [   256,   2560,      1,      1], type =   bf16, converting to    q4_K size = 1.25 MiB -> 0.35 MiB
+[ 541/ 666] blk.33.attn_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 542/ 666] blk.33.attn_output.weight            - [  2048,   2560,      1,      1], type =   bf16, converting to    q4_K size = 10.00 MiB -> 2.81 MiB
+[ 543/ 666] blk.33.attn_q.weight                 - [  2560,   2048,      1,      1], type =   bf16, converting to    q4_K size = 10.00 MiB -> 2.81 MiB
+[ 544/ 666] blk.33.attn_q_norm.weight            - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 545/ 666] blk.33.ffn_down.weight               - [ 10240,   2560,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 546/ 666] blk.33.ffn_gate.weight               - [  2560,  10240,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 547/ 666] blk.33.ffn_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 548/ 666] blk.33.ffn_up.weight                 - [  2560,  10240,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 549/ 666] blk.33.inp_gate.weight               - [  2560,    256,      1,      1], type =   bf16, converting to    q4_K size = 1.25 MiB -> 0.35 MiB
+[ 550/ 666] blk.33.layer_output_scale.weight     - [     1,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 551/ 666] blk.33.post_attention_norm.weight    - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 552/ 666] blk.33.post_ffw_norm.weight          - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 553/ 666] blk.33.post_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 554/ 666] blk.33.proj.weight                   - [   256,   2560,      1,      1], type =   bf16, converting to    q4_K size = 1.25 MiB -> 0.35 MiB
+[ 555/ 666] blk.34.attn_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 556/ 666] blk.34.attn_output.weight            - [  2048,   2560,      1,      1], type =   bf16, converting to    q4_K size = 10.00 MiB -> 2.81 MiB
+[ 557/ 666] blk.34.attn_q.weight                 - [  2560,   2048,      1,      1], type =   bf16, converting to    q4_K size = 10.00 MiB -> 2.81 MiB
+[ 558/ 666] blk.34.attn_q_norm.weight            - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 559/ 666] blk.34.ffn_down.weight               - [ 10240,   2560,      1,      1], type =   bf16, converting to    q6_K size = 50.00 MiB -> 20.51 MiB
+[ 560/ 666] blk.34.ffn_gate.weight               - [  2560,  10240,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 561/ 666] blk.34.ffn_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 562/ 666] blk.34.ffn_up.weight                 - [  2560,  10240,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 563/ 666] blk.34.inp_gate.weight               - [  2560,    256,      1,      1], type =   bf16, converting to    q4_K size = 1.25 MiB -> 0.35 MiB
+[ 564/ 666] blk.34.layer_output_scale.weight     - [     1,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 565/ 666] blk.34.post_attention_norm.weight    - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 566/ 666] blk.34.post_ffw_norm.weight          - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 567/ 666] blk.34.post_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 568/ 666] blk.34.proj.weight                   - [   256,   2560,      1,      1], type =   bf16, converting to    q4_K size = 1.25 MiB -> 0.35 MiB
+[ 569/ 666] blk.35.attn_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 570/ 666] blk.35.attn_output.weight            - [  4096,   2560,      1,      1], type =   bf16, converting to    q4_K size = 20.00 MiB -> 5.62 MiB
+[ 571/ 666] blk.35.attn_q.weight                 - [  2560,   4096,      1,      1], type =   bf16, converting to    q4_K size = 20.00 MiB -> 5.62 MiB
+[ 572/ 666] blk.35.attn_q_norm.weight            - [   512,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 573/ 666] blk.35.ffn_down.weight               - [ 10240,   2560,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 574/ 666] blk.35.ffn_gate.weight               - [  2560,  10240,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 575/ 666] blk.35.ffn_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 576/ 666] blk.35.ffn_up.weight                 - [  2560,  10240,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 577/ 666] blk.35.inp_gate.weight               - [  2560,    256,      1,      1], type =   bf16, converting to    q4_K size = 1.25 MiB -> 0.35 MiB
+[ 578/ 666] blk.35.layer_output_scale.weight     - [     1,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 579/ 666] blk.35.post_attention_norm.weight    - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 580/ 666] blk.35.post_ffw_norm.weight          - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 581/ 666] blk.35.post_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 582/ 666] blk.35.proj.weight                   - [   256,   2560,      1,      1], type =   bf16, converting to    q4_K size = 1.25 MiB -> 0.35 MiB
+[ 583/ 666] blk.36.attn_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 584/ 666] blk.36.attn_output.weight            - [  2048,   2560,      1,      1], type =   bf16, converting to    q4_K size = 10.00 MiB -> 2.81 MiB
+[ 585/ 666] blk.36.attn_q.weight                 - [  2560,   2048,      1,      1], type =   bf16, converting to    q4_K size = 10.00 MiB -> 2.81 MiB
+[ 586/ 666] blk.36.attn_q_norm.weight            - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 587/ 666] blk.36.ffn_down.weight               - [ 10240,   2560,      1,      1], type =   bf16, converting to    q6_K size = 50.00 MiB -> 20.51 MiB
+[ 588/ 666] blk.36.ffn_gate.weight               - [  2560,  10240,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 589/ 666] blk.36.ffn_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 590/ 666] blk.36.ffn_up.weight                 - [  2560,  10240,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 591/ 666] blk.36.inp_gate.weight               - [  2560,    256,      1,      1], type =   bf16, converting to    q4_K size = 1.25 MiB -> 0.35 MiB
+[ 592/ 666] blk.36.layer_output_scale.weight     - [     1,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 593/ 666] blk.36.post_attention_norm.weight    - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 594/ 666] blk.36.post_ffw_norm.weight          - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 595/ 666] blk.36.post_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 596/ 666] blk.36.proj.weight                   - [   256,   2560,      1,      1], type =   bf16, converting to    q4_K size = 1.25 MiB -> 0.35 MiB
+[ 597/ 666] blk.37.attn_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 598/ 666] blk.37.attn_output.weight            - [  2048,   2560,      1,      1], type =   bf16, converting to    q4_K size = 10.00 MiB -> 2.81 MiB
+[ 599/ 666] blk.37.attn_q.weight                 - [  2560,   2048,      1,      1], type =   bf16, converting to    q4_K size = 10.00 MiB -> 2.81 MiB
+[ 600/ 666] blk.37.attn_q_norm.weight            - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 601/ 666] blk.37.ffn_down.weight               - [ 10240,   2560,      1,      1], type =   bf16, converting to    q6_K size = 50.00 MiB -> 20.51 MiB
+[ 602/ 666] blk.37.ffn_gate.weight               - [  2560,  10240,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 603/ 666] blk.37.ffn_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 604/ 666] blk.37.ffn_up.weight                 - [  2560,  10240,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 605/ 666] blk.37.inp_gate.weight               - [  2560,    256,      1,      1], type =   bf16, converting to    q4_K size = 1.25 MiB -> 0.35 MiB
+[ 606/ 666] blk.37.layer_output_scale.weight     - [     1,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 607/ 666] blk.37.post_attention_norm.weight    - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 608/ 666] blk.37.post_ffw_norm.weight          - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 609/ 666] blk.37.post_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 610/ 666] blk.37.proj.weight                   - [   256,   2560,      1,      1], type =   bf16, converting to    q4_K size = 1.25 MiB -> 0.35 MiB
+[ 611/ 666] blk.38.attn_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 612/ 666] blk.38.attn_output.weight            - [  2048,   2560,      1,      1], type =   bf16, converting to    q4_K size = 10.00 MiB -> 2.81 MiB
+[ 613/ 666] blk.38.attn_q.weight                 - [  2560,   2048,      1,      1], type =   bf16, converting to    q4_K size = 10.00 MiB -> 2.81 MiB
+[ 614/ 666] blk.38.attn_q_norm.weight            - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 615/ 666] blk.38.ffn_down.weight               - [ 10240,   2560,      1,      1], type =   bf16, converting to    q6_K size = 50.00 MiB -> 20.51 MiB
+[ 616/ 666] blk.38.ffn_gate.weight               - [  2560,  10240,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 617/ 666] blk.38.ffn_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 618/ 666] blk.38.ffn_up.weight                 - [  2560,  10240,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 619/ 666] blk.38.inp_gate.weight               - [  2560,    256,      1,      1], type =   bf16, converting to    q4_K size = 1.25 MiB -> 0.35 MiB
+[ 620/ 666] blk.38.layer_output_scale.weight     - [     1,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 621/ 666] blk.38.post_attention_norm.weight    - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 622/ 666] blk.38.post_ffw_norm.weight          - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 623/ 666] blk.38.post_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 624/ 666] blk.38.proj.weight                   - [   256,   2560,      1,      1], type =   bf16, converting to    q4_K size = 1.25 MiB -> 0.35 MiB
+[ 625/ 666] blk.39.attn_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 626/ 666] blk.39.attn_output.weight            - [  2048,   2560,      1,      1], type =   bf16, converting to    q4_K size = 10.00 MiB -> 2.81 MiB
+[ 627/ 666] blk.39.attn_q.weight                 - [  2560,   2048,      1,      1], type =   bf16, converting to    q4_K size = 10.00 MiB -> 2.81 MiB
+[ 628/ 666] blk.39.attn_q_norm.weight            - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 629/ 666] blk.39.ffn_down.weight               - [ 10240,   2560,      1,      1], type =   bf16, converting to    q6_K size = 50.00 MiB -> 20.51 MiB
+[ 630/ 666] blk.39.ffn_gate.weight               - [  2560,  10240,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 631/ 666] blk.39.ffn_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 632/ 666] blk.39.ffn_up.weight                 - [  2560,  10240,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 633/ 666] blk.39.inp_gate.weight               - [  2560,    256,      1,      1], type =   bf16, converting to    q4_K size = 1.25 MiB -> 0.35 MiB
+[ 634/ 666] blk.39.layer_output_scale.weight     - [     1,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 635/ 666] blk.39.post_attention_norm.weight    - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 636/ 666] blk.39.post_ffw_norm.weight          - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 637/ 666] blk.39.post_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 638/ 666] blk.39.proj.weight                   - [   256,   2560,      1,      1], type =   bf16, converting to    q4_K size = 1.25 MiB -> 0.35 MiB
+[ 639/ 666] blk.40.attn_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 640/ 666] blk.40.attn_output.weight            - [  2048,   2560,      1,      1], type =   bf16, converting to    q4_K size = 10.00 MiB -> 2.81 MiB
+[ 641/ 666] blk.40.attn_q.weight                 - [  2560,   2048,      1,      1], type =   bf16, converting to    q4_K size = 10.00 MiB -> 2.81 MiB
+[ 642/ 666] blk.40.attn_q_norm.weight            - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 643/ 666] blk.40.ffn_down.weight               - [ 10240,   2560,      1,      1], type =   bf16, converting to    q6_K size = 50.00 MiB -> 20.51 MiB
+[ 644/ 666] blk.40.ffn_gate.weight               - [  2560,  10240,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 645/ 666] blk.40.ffn_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 646/ 666] blk.40.ffn_up.weight                 - [  2560,  10240,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 647/ 666] blk.40.inp_gate.weight               - [  2560,    256,      1,      1], type =   bf16, converting to    q4_K size = 1.25 MiB -> 0.35 MiB
+[ 648/ 666] blk.40.layer_output_scale.weight     - [     1,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 649/ 666] blk.40.post_attention_norm.weight    - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 650/ 666] blk.40.post_ffw_norm.weight          - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 651/ 666] blk.40.post_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 652/ 666] blk.40.proj.weight                   - [   256,   2560,      1,      1], type =   bf16, converting to    q4_K size = 1.25 MiB -> 0.35 MiB
+[ 653/ 666] blk.41.attn_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 654/ 666] blk.41.attn_output.weight            - [  4096,   2560,      1,      1], type =   bf16, converting to    q4_K size = 20.00 MiB -> 5.62 MiB
+[ 655/ 666] blk.41.attn_q.weight                 - [  2560,   4096,      1,      1], type =   bf16, converting to    q4_K size = 20.00 MiB -> 5.62 MiB
+[ 656/ 666] blk.41.attn_q_norm.weight            - [   512,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 657/ 666] blk.41.ffn_down.weight               - [ 10240,   2560,      1,      1], type =   bf16, converting to    q6_K size = 50.00 MiB -> 20.51 MiB
+[ 658/ 666] blk.41.ffn_gate.weight               - [  2560,  10240,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 659/ 666] blk.41.ffn_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 660/ 666] blk.41.ffn_up.weight                 - [  2560,  10240,      1,      1], type =   bf16, converting to    q4_K size = 50.00 MiB -> 14.06 MiB
+[ 661/ 666] blk.41.inp_gate.weight               - [  2560,    256,      1,      1], type =   bf16, converting to    q4_K size = 1.25 MiB -> 0.35 MiB
+[ 662/ 666] blk.41.layer_output_scale.weight     - [     1,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 663/ 666] blk.41.post_attention_norm.weight    - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 664/ 666] blk.41.post_ffw_norm.weight          - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 665/ 666] blk.41.post_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 666/ 666] blk.41.proj.weight                   - [   256,   2560,      1,      1], type =   bf16, converting to    q4_K size = 1.25 MiB -> 0.35 MiB
+llama_model_quantize_impl: model size  = 14235.64 MiB (16.0012 BPW)
+llama_model_quantize_impl: quant size  =  5041.55 MiB ( 5.6668 BPW)
+
+llama_quantize: quantize time = 117214.84 ms
+llama_quantize:    total time = 117214.84 ms
+=== 2. abl-5l-ft12-mix-Q4KM-Q8 ===
+llama_tensor_get_type: blk.24.attn_output.weight            - applying manual override: q4_K -> q8_0
+llama_tensor_get_type: blk.24.ffn_down.weight               - applying manual override: q4_K -> q8_0
+llama_tensor_get_type: blk.25.attn_output.weight            - applying manual override: q4_K -> q8_0
+llama_tensor_get_type: blk.25.ffn_down.weight               - applying manual override: q4_K -> q8_0
+llama_tensor_get_type: blk.29.attn_output.weight            - applying manual override: q4_K -> q8_0
+llama_tensor_get_type: blk.29.ffn_down.weight               - applying manual override: q4_K -> q8_0
+llama_tensor_get_type: blk.30.attn_output.weight            - applying manual override: q4_K -> q8_0
+llama_tensor_get_type: blk.30.ffn_down.weight               - applying manual override: q4_K -> q8_0
+llama_tensor_get_type: blk.37.attn_output.weight            - applying manual override: q4_K -> q8_0
+llama_tensor_get_type: blk.37.ffn_down.weight               - applying manual override: q4_K -> q8_0
+llama_model_quantize_impl: quant size  =  5086.83 MiB ( 5.7177 BPW)
+llama_quantize: quantize time = 111048.68 ms
+=== 3. abl-5l-ft12-mix-Q4KM-BF16 ===
+llama_tensor_get_type: blk.24.attn_output.weight            - applying manual override: q4_K -> bf16
+llama_tensor_get_type: blk.24.ffn_down.weight               - applying manual override: q4_K -> bf16
+llama_tensor_get_type: blk.25.attn_output.weight            - applying manual override: q4_K -> bf16
+llama_tensor_get_type: blk.25.ffn_down.weight               - applying manual override: q4_K -> bf16
+llama_tensor_get_type: blk.29.attn_output.weight            - applying manual override: q4_K -> bf16
+llama_tensor_get_type: blk.29.ffn_down.weight               - applying manual override: q4_K -> bf16
+llama_tensor_get_type: blk.30.attn_output.weight            - applying manual override: q4_K -> bf16
+llama_tensor_get_type: blk.30.ffn_down.weight               - applying manual override: q4_K -> bf16
+llama_tensor_get_type: blk.37.attn_output.weight            - applying manual override: q4_K -> bf16
+llama_tensor_get_type: blk.37.ffn_down.weight               - applying manual override: q4_K -> bf16
+llama_model_quantize_impl: quant size  =  5232.14 MiB ( 5.8810 BPW)
+llama_quantize: quantize time = 100831.96 ms
+=== 4. abl-5l-ft12-IQ4_XS ===
+ggml_cuda_init: found 1 CUDA devices (Total VRAM: 22563 MiB):
+  Device 0: NVIDIA L4, compute capability 8.9, VMM: yes, VRAM: 22563 MiB
+load_backend: loaded CUDA backend from /content/llama_bin/libggml-cuda.so
+load_backend: loaded RPC backend from /content/llama_bin/libggml-rpc.so
+load_backend: loaded CPU backend from /content/llama_bin/libggml-cpu-cascadelake.so
+version: 1.0.0-dev (build 12751, commit 532d67426)
+built with GNU 13.3.0 for Linux x86_64
+llama_quantize: quantizing '/content/gguf_models/abl-5l-ft12-BF16.gguf' to '/content/gguf_models/abl-5l-ft12-IQ4_XS.gguf' as IQ4_XS using 12 threads
+llama_model_loader: loaded meta data with 42 key-value pairs and 666 tensors from /content/gguf_models/abl-5l-ft12-BF16.gguf (version GGUF V3 (latest))
+llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+llama_model_loader: - kv   0:                       general.architecture str              = gemma4
+llama_model_loader: - kv   1:                               general.type str              = model
+llama_model_loader: - kv   2:                     general.sampling.top_k i32              = 64
+llama_model_loader: - kv   3:                     general.sampling.top_p f32              = 0.950000
+llama_model_loader: - kv   4:                      general.sampling.temp f32              = 1.000000
+llama_model_loader: - kv   5:                               general.name str              = Gemma4_E4B_5L_Ft12_Bf16
+llama_model_loader: - kv   6:                         general.size_label str              = 7.5B
+llama_model_loader: - kv   7:                         gemma4.block_count u32              = 42
+llama_model_loader: - kv   8:                      gemma4.context_length u32              = 131072
+llama_model_loader: - kv   9:                    gemma4.embedding_length u32              = 2560
+llama_model_loader: - kv  10:                 gemma4.feed_forward_length u32              = 10240
+llama_model_loader: - kv  11:                gemma4.attention.head_count u32              = 8
+llama_model_loader: - kv  12:             gemma4.attention.head_count_kv u32              = 2
+llama_model_loader: - kv  13:                      gemma4.rope.freq_base f32              = 1000000.000000
+llama_model_loader: - kv  14:                  gemma4.rope.freq_base_swa f32              = 10000.000000
+llama_model_loader: - kv  15:    gemma4.attention.layer_norm_rms_epsilon f32              = 0.000001
+llama_model_loader: - kv  16:                gemma4.attention.key_length u32              = 512
+llama_model_loader: - kv  17:              gemma4.attention.value_length u32              = 512
+llama_model_loader: - kv  18:                          general.file_type u32              = 32
+llama_model_loader: - kv  19:             gemma4.final_logit_softcapping f32              = 30.000000
+llama_model_loader: - kv  20:            gemma4.attention.sliding_window u32              = 512
+llama_model_loader: - kv  21:          gemma4.attention.shared_kv_layers u32              = 18
+llama_model_loader: - kv  22:    gemma4.embedding_length_per_layer_input u32              = 256
+llama_model_loader: - kv  23:    gemma4.attention.sliding_window_pattern arr[bool,42]     = [true, true, true, true, true, false,...
+llama_model_loader: - kv  24:            gemma4.attention.key_length_swa u32              = 256
+llama_model_loader: - kv  25:          gemma4.attention.value_length_swa u32              = 256
+llama_model_loader: - kv  26:                gemma4.rope.dimension_count u32              = 512
+llama_model_loader: - kv  27:            gemma4.rope.dimension_count_swa u32              = 256
+llama_model_loader: - kv  28:               general.quantization_version u32              = 2
+llama_model_loader: - kv  29:                       tokenizer.ggml.model str              = gemma4
+llama_model_loader: - kv  30:                      tokenizer.ggml.tokens arr[str,262144]  = ["<pad>", "<eos>", "<bos>", "<unk>", ...
+llama_model_loader: - kv  31:                      tokenizer.ggml.scores arr[f32,262144]  = [-1000.000000, -1000.000000, -1000.00...
+llama_model_loader: - kv  32:                  tokenizer.ggml.token_type arr[i32,262144]  = [3, 3, 3, 3, 3, 1, 1, 1, 1, 1, 1, 1, ...
+llama_model_loader: - kv  33:                      tokenizer.ggml.merges arr[str,514653]  = ["\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n \n", ...
+llama_model_loader: - kv  34:                tokenizer.ggml.bos_token_id u32              = 2
+llama_model_loader: - kv  35:                tokenizer.ggml.eos_token_id u32              = 1
+llama_model_loader: - kv  36:            tokenizer.ggml.unknown_token_id u32              = 3
+llama_model_loader: - kv  37:            tokenizer.ggml.padding_token_id u32              = 0
+llama_model_loader: - kv  38:               tokenizer.ggml.mask_token_id u32              = 4
+llama_model_loader: - kv  39:                    tokenizer.chat_template str              = {#\n  Template: Google Gemma 4 Canonic...
+llama_model_loader: - kv  40:            tokenizer.ggml.add_space_prefix bool             = false
+llama_model_loader: - kv  41:               tokenizer.ggml.add_bos_token bool             = true
+llama_model_loader: - type  f32:  321 tensors
+llama_model_loader: - type bf16:  345 tensors
+
+[   1/ 666] output_norm.weight                   - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[   2/ 666] per_layer_model_proj.weight          - [  2560,  10752,      1,      1], type =   bf16, size = 52.50 MiB
+[   3/ 666] per_layer_proj_norm.weight           - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[   4/ 666] per_layer_token_embd.weight          - [ 10752, 262144,      1,      1], type =   bf16, converting to    q6_K size = 5376.00 MiB -> 2205.00 MiB
+[   5/ 666] rope_freqs.weight                    - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[   6/ 666] token_embd.weight                    - [  2560, 262144,      1,      1], type =   bf16, converting to    q6_K size = 1280.00 MiB -> 525.00 MiB
+[   7/ 666] blk.0.attn_k.weight                  - [  2560,    512,      1,      1], type =   bf16, converting to  iq4_xs size = 2.50 MiB -> 0.66 MiB
+[   8/ 666] blk.0.attn_k_norm.weight             - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[   9/ 666] blk.0.attn_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[  10/ 666] blk.0.attn_output.weight             - [  2048,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 10.00 MiB -> 2.66 MiB
+[  11/ 666] blk.0.attn_q.weight                  - [  2560,   2048,      1,      1], type =   bf16, converting to  iq4_xs size = 10.00 MiB -> 2.66 MiB
+[  12/ 666] blk.0.attn_q_norm.weight             - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[  13/ 666] blk.0.attn_v.weight                  - [  2560,    512,      1,      1], type =   bf16, converting to    q5_K size = 2.50 MiB -> 0.86 MiB
+[  14/ 666] blk.0.ffn_down.weight                - [ 10240,   2560,      1,      1], type =   bf16, converting to    q5_K size = 50.00 MiB -> 17.19 MiB
+[  15/ 666] blk.0.ffn_gate.weight                - [  2560,  10240,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[  16/ 666] blk.0.ffn_norm.weight                - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[  17/ 666] blk.0.ffn_up.weight                  - [  2560,  10240,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[  18/ 666] blk.0.inp_gate.weight                - [  2560,    256,      1,      1], type =   bf16, converting to  iq4_xs size = 1.25 MiB -> 0.33 MiB
+[  19/ 666] blk.0.layer_output_scale.weight      - [     1,      1,      1,      1], type =    f32, size = 0.00 MiB
+[  20/ 666] blk.0.post_attention_norm.weight     - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[  21/ 666] blk.0.post_ffw_norm.weight           - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[  22/ 666] blk.0.post_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[  23/ 666] blk.0.proj.weight                    - [   256,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 1.25 MiB -> 0.33 MiB
+[  24/ 666] blk.1.attn_k.weight                  - [  2560,    512,      1,      1], type =   bf16, converting to  iq4_xs size = 2.50 MiB -> 0.66 MiB
+[  25/ 666] blk.1.attn_k_norm.weight             - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[  26/ 666] blk.1.attn_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[  27/ 666] blk.1.attn_output.weight             - [  2048,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 10.00 MiB -> 2.66 MiB
+[  28/ 666] blk.1.attn_q.weight                  - [  2560,   2048,      1,      1], type =   bf16, converting to  iq4_xs size = 10.00 MiB -> 2.66 MiB
+[  29/ 666] blk.1.attn_q_norm.weight             - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[  30/ 666] blk.1.attn_v.weight                  - [  2560,    512,      1,      1], type =   bf16, converting to    q5_K size = 2.50 MiB -> 0.86 MiB
+[  31/ 666] blk.1.ffn_down.weight                - [ 10240,   2560,      1,      1], type =   bf16, converting to    q5_K size = 50.00 MiB -> 17.19 MiB
+[  32/ 666] blk.1.ffn_gate.weight                - [  2560,  10240,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[  33/ 666] blk.1.ffn_norm.weight                - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[  34/ 666] blk.1.ffn_up.weight                  - [  2560,  10240,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[  35/ 666] blk.1.inp_gate.weight                - [  2560,    256,      1,      1], type =   bf16, converting to  iq4_xs size = 1.25 MiB -> 0.33 MiB
+[  36/ 666] blk.1.layer_output_scale.weight      - [     1,      1,      1,      1], type =    f32, size = 0.00 MiB
+[  37/ 666] blk.1.post_attention_norm.weight     - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[  38/ 666] blk.1.post_ffw_norm.weight           - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[  39/ 666] blk.1.post_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[  40/ 666] blk.1.proj.weight                    - [   256,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 1.25 MiB -> 0.33 MiB
+[  41/ 666] blk.2.attn_k.weight                  - [  2560,    512,      1,      1], type =   bf16, converting to  iq4_xs size = 2.50 MiB -> 0.66 MiB
+[  42/ 666] blk.2.attn_k_norm.weight             - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[  43/ 666] blk.2.attn_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[  44/ 666] blk.2.attn_output.weight             - [  2048,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 10.00 MiB -> 2.66 MiB
+[  45/ 666] blk.2.attn_q.weight                  - [  2560,   2048,      1,      1], type =   bf16, converting to  iq4_xs size = 10.00 MiB -> 2.66 MiB
+[  46/ 666] blk.2.attn_q_norm.weight             - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[  47/ 666] blk.2.attn_v.weight                  - [  2560,    512,      1,      1], type =   bf16, converting to    q5_K size = 2.50 MiB -> 0.86 MiB
+[  48/ 666] blk.2.ffn_down.weight                - [ 10240,   2560,      1,      1], type =   bf16, converting to    q5_K size = 50.00 MiB -> 17.19 MiB
+[  49/ 666] blk.2.ffn_gate.weight                - [  2560,  10240,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[  50/ 666] blk.2.ffn_norm.weight                - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[  51/ 666] blk.2.ffn_up.weight                  - [  2560,  10240,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[  52/ 666] blk.2.inp_gate.weight                - [  2560,    256,      1,      1], type =   bf16, converting to  iq4_xs size = 1.25 MiB -> 0.33 MiB
+[  53/ 666] blk.2.layer_output_scale.weight      - [     1,      1,      1,      1], type =    f32, size = 0.00 MiB
+[  54/ 666] blk.2.post_attention_norm.weight     - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[  55/ 666] blk.2.post_ffw_norm.weight           - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[  56/ 666] blk.2.post_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[  57/ 666] blk.2.proj.weight                    - [   256,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 1.25 MiB -> 0.33 MiB
+[  58/ 666] blk.3.attn_k.weight                  - [  2560,    512,      1,      1], type =   bf16, converting to  iq4_xs size = 2.50 MiB -> 0.66 MiB
+[  59/ 666] blk.3.attn_k_norm.weight             - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[  60/ 666] blk.3.attn_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[  61/ 666] blk.3.attn_output.weight             - [  2048,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 10.00 MiB -> 2.66 MiB
+[  62/ 666] blk.3.attn_q.weight                  - [  2560,   2048,      1,      1], type =   bf16, converting to  iq4_xs size = 10.00 MiB -> 2.66 MiB
+[  63/ 666] blk.3.attn_q_norm.weight             - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[  64/ 666] blk.3.attn_v.weight                  - [  2560,    512,      1,      1], type =   bf16, converting to    q5_K size = 2.50 MiB -> 0.86 MiB
+[  65/ 666] blk.3.ffn_down.weight                - [ 10240,   2560,      1,      1], type =   bf16, converting to    q5_K size = 50.00 MiB -> 17.19 MiB
+[  66/ 666] blk.3.ffn_gate.weight                - [  2560,  10240,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[  67/ 666] blk.3.ffn_norm.weight                - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[  68/ 666] blk.3.ffn_up.weight                  - [  2560,  10240,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[  69/ 666] blk.3.inp_gate.weight                - [  2560,    256,      1,      1], type =   bf16, converting to  iq4_xs size = 1.25 MiB -> 0.33 MiB
+[  70/ 666] blk.3.layer_output_scale.weight      - [     1,      1,      1,      1], type =    f32, size = 0.00 MiB
+[  71/ 666] blk.3.post_attention_norm.weight     - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[  72/ 666] blk.3.post_ffw_norm.weight           - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[  73/ 666] blk.3.post_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[  74/ 666] blk.3.proj.weight                    - [   256,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 1.25 MiB -> 0.33 MiB
+[  75/ 666] blk.4.attn_k.weight                  - [  2560,    512,      1,      1], type =   bf16, converting to  iq4_xs size = 2.50 MiB -> 0.66 MiB
+[  76/ 666] blk.4.attn_k_norm.weight             - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[  77/ 666] blk.4.attn_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[  78/ 666] blk.4.attn_output.weight             - [  2048,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 10.00 MiB -> 2.66 MiB
+[  79/ 666] blk.4.attn_q.weight                  - [  2560,   2048,      1,      1], type =   bf16, converting to  iq4_xs size = 10.00 MiB -> 2.66 MiB
+[  80/ 666] blk.4.attn_q_norm.weight             - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[  81/ 666] blk.4.attn_v.weight                  - [  2560,    512,      1,      1], type =   bf16, converting to    q5_K size = 2.50 MiB -> 0.86 MiB
+[  82/ 666] blk.4.ffn_down.weight                - [ 10240,   2560,      1,      1], type =   bf16, converting to    q5_K size = 50.00 MiB -> 17.19 MiB
+[  83/ 666] blk.4.ffn_gate.weight                - [  2560,  10240,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[  84/ 666] blk.4.ffn_norm.weight                - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[  85/ 666] blk.4.ffn_up.weight                  - [  2560,  10240,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[  86/ 666] blk.4.inp_gate.weight                - [  2560,    256,      1,      1], type =   bf16, converting to  iq4_xs size = 1.25 MiB -> 0.33 MiB
+[  87/ 666] blk.4.layer_output_scale.weight      - [     1,      1,      1,      1], type =    f32, size = 0.00 MiB
+[  88/ 666] blk.4.post_attention_norm.weight     - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[  89/ 666] blk.4.post_ffw_norm.weight           - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[  90/ 666] blk.4.post_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[  91/ 666] blk.4.proj.weight                    - [   256,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 1.25 MiB -> 0.33 MiB
+[  92/ 666] blk.5.attn_k.weight                  - [  2560,   1024,      1,      1], type =   bf16, converting to  iq4_xs size = 5.00 MiB -> 1.33 MiB
+[  93/ 666] blk.5.attn_k_norm.weight             - [   512,      1,      1,      1], type =    f32, size = 0.00 MiB
+[  94/ 666] blk.5.attn_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[  95/ 666] blk.5.attn_output.weight             - [  4096,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 20.00 MiB -> 5.31 MiB
+[  96/ 666] blk.5.attn_q.weight                  - [  2560,   4096,      1,      1], type =   bf16, converting to  iq4_xs size = 20.00 MiB -> 5.31 MiB
+[  97/ 666] blk.5.attn_q_norm.weight             - [   512,      1,      1,      1], type =    f32, size = 0.00 MiB
+[  98/ 666] blk.5.attn_v.weight                  - [  2560,   1024,      1,      1], type =   bf16, converting to    q5_K size = 5.00 MiB -> 1.72 MiB
+[  99/ 666] blk.5.ffn_down.weight                - [ 10240,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 100/ 666] blk.5.ffn_gate.weight                - [  2560,  10240,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 101/ 666] blk.5.ffn_norm.weight                - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 102/ 666] blk.5.ffn_up.weight                  - [  2560,  10240,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 103/ 666] blk.5.inp_gate.weight                - [  2560,    256,      1,      1], type =   bf16, converting to  iq4_xs size = 1.25 MiB -> 0.33 MiB
+[ 104/ 666] blk.5.layer_output_scale.weight      - [     1,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 105/ 666] blk.5.post_attention_norm.weight     - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 106/ 666] blk.5.post_ffw_norm.weight           - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 107/ 666] blk.5.post_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 108/ 666] blk.5.proj.weight                    - [   256,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 1.25 MiB -> 0.33 MiB
+[ 109/ 666] blk.6.attn_k.weight                  - [  2560,    512,      1,      1], type =   bf16, converting to  iq4_xs size = 2.50 MiB -> 0.66 MiB
+[ 110/ 666] blk.6.attn_k_norm.weight             - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 111/ 666] blk.6.attn_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 112/ 666] blk.6.attn_output.weight             - [  2048,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 10.00 MiB -> 2.66 MiB
+[ 113/ 666] blk.6.attn_q.weight                  - [  2560,   2048,      1,      1], type =   bf16, converting to  iq4_xs size = 10.00 MiB -> 2.66 MiB
+[ 114/ 666] blk.6.attn_q_norm.weight             - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 115/ 666] blk.6.attn_v.weight                  - [  2560,    512,      1,      1], type =   bf16, converting to    q5_K size = 2.50 MiB -> 0.86 MiB
+[ 116/ 666] blk.6.ffn_down.weight                - [ 10240,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 117/ 666] blk.6.ffn_gate.weight                - [  2560,  10240,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 118/ 666] blk.6.ffn_norm.weight                - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 119/ 666] blk.6.ffn_up.weight                  - [  2560,  10240,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 120/ 666] blk.6.inp_gate.weight                - [  2560,    256,      1,      1], type =   bf16, converting to  iq4_xs size = 1.25 MiB -> 0.33 MiB
+[ 121/ 666] blk.6.layer_output_scale.weight      - [     1,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 122/ 666] blk.6.post_attention_norm.weight     - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 123/ 666] blk.6.post_ffw_norm.weight           - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 124/ 666] blk.6.post_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 125/ 666] blk.6.proj.weight                    - [   256,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 1.25 MiB -> 0.33 MiB
+[ 126/ 666] blk.7.attn_k.weight                  - [  2560,    512,      1,      1], type =   bf16, converting to  iq4_xs size = 2.50 MiB -> 0.66 MiB
+[ 127/ 666] blk.7.attn_k_norm.weight             - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 128/ 666] blk.7.attn_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 129/ 666] blk.7.attn_output.weight             - [  2048,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 10.00 MiB -> 2.66 MiB
+[ 130/ 666] blk.7.attn_q.weight                  - [  2560,   2048,      1,      1], type =   bf16, converting to  iq4_xs size = 10.00 MiB -> 2.66 MiB
+[ 131/ 666] blk.7.attn_q_norm.weight             - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 132/ 666] blk.7.attn_v.weight                  - [  2560,    512,      1,      1], type =   bf16, converting to    q5_K size = 2.50 MiB -> 0.86 MiB
+[ 133/ 666] blk.7.ffn_down.weight                - [ 10240,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 134/ 666] blk.7.ffn_gate.weight                - [  2560,  10240,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 135/ 666] blk.7.ffn_norm.weight                - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 136/ 666] blk.7.ffn_up.weight                  - [  2560,  10240,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 137/ 666] blk.7.inp_gate.weight                - [  2560,    256,      1,      1], type =   bf16, converting to  iq4_xs size = 1.25 MiB -> 0.33 MiB
+[ 138/ 666] blk.7.layer_output_scale.weight      - [     1,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 139/ 666] blk.7.post_attention_norm.weight     - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 140/ 666] blk.7.post_ffw_norm.weight           - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 141/ 666] blk.7.post_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 142/ 666] blk.7.proj.weight                    - [   256,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 1.25 MiB -> 0.33 MiB
+[ 143/ 666] blk.8.attn_k.weight                  - [  2560,    512,      1,      1], type =   bf16, converting to  iq4_xs size = 2.50 MiB -> 0.66 MiB
+[ 144/ 666] blk.8.attn_k_norm.weight             - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 145/ 666] blk.8.attn_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 146/ 666] blk.8.attn_output.weight             - [  2048,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 10.00 MiB -> 2.66 MiB
+[ 147/ 666] blk.8.attn_q.weight                  - [  2560,   2048,      1,      1], type =   bf16, converting to  iq4_xs size = 10.00 MiB -> 2.66 MiB
+[ 148/ 666] blk.8.attn_q_norm.weight             - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 149/ 666] blk.8.attn_v.weight                  - [  2560,    512,      1,      1], type =   bf16, converting to    q5_K size = 2.50 MiB -> 0.86 MiB
+[ 150/ 666] blk.8.ffn_down.weight                - [ 10240,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 151/ 666] blk.8.ffn_gate.weight                - [  2560,  10240,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 152/ 666] blk.8.ffn_norm.weight                - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 153/ 666] blk.8.ffn_up.weight                  - [  2560,  10240,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 154/ 666] blk.8.inp_gate.weight                - [  2560,    256,      1,      1], type =   bf16, converting to  iq4_xs size = 1.25 MiB -> 0.33 MiB
+[ 155/ 666] blk.8.layer_output_scale.weight      - [     1,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 156/ 666] blk.8.post_attention_norm.weight     - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 157/ 666] blk.8.post_ffw_norm.weight           - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 158/ 666] blk.8.post_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 159/ 666] blk.8.proj.weight                    - [   256,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 1.25 MiB -> 0.33 MiB
+[ 160/ 666] blk.9.attn_k.weight                  - [  2560,    512,      1,      1], type =   bf16, converting to  iq4_xs size = 2.50 MiB -> 0.66 MiB
+[ 161/ 666] blk.9.attn_k_norm.weight             - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 162/ 666] blk.9.attn_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 163/ 666] blk.9.attn_output.weight             - [  2048,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 10.00 MiB -> 2.66 MiB
+[ 164/ 666] blk.9.attn_q.weight                  - [  2560,   2048,      1,      1], type =   bf16, converting to  iq4_xs size = 10.00 MiB -> 2.66 MiB
+[ 165/ 666] blk.9.attn_q_norm.weight             - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 166/ 666] blk.9.attn_v.weight                  - [  2560,    512,      1,      1], type =   bf16, converting to    q5_K size = 2.50 MiB -> 0.86 MiB
+[ 167/ 666] blk.9.ffn_down.weight                - [ 10240,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 168/ 666] blk.9.ffn_gate.weight                - [  2560,  10240,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 169/ 666] blk.9.ffn_norm.weight                - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 170/ 666] blk.9.ffn_up.weight                  - [  2560,  10240,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 171/ 666] blk.9.inp_gate.weight                - [  2560,    256,      1,      1], type =   bf16, converting to  iq4_xs size = 1.25 MiB -> 0.33 MiB
+[ 172/ 666] blk.9.layer_output_scale.weight      - [     1,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 173/ 666] blk.9.post_attention_norm.weight     - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 174/ 666] blk.9.post_ffw_norm.weight           - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 175/ 666] blk.9.post_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 176/ 666] blk.9.proj.weight                    - [   256,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 1.25 MiB -> 0.33 MiB
+[ 177/ 666] blk.10.attn_k.weight                 - [  2560,    512,      1,      1], type =   bf16, converting to  iq4_xs size = 2.50 MiB -> 0.66 MiB
+[ 178/ 666] blk.10.attn_k_norm.weight            - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 179/ 666] blk.10.attn_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 180/ 666] blk.10.attn_output.weight            - [  2048,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 10.00 MiB -> 2.66 MiB
+[ 181/ 666] blk.10.attn_q.weight                 - [  2560,   2048,      1,      1], type =   bf16, converting to  iq4_xs size = 10.00 MiB -> 2.66 MiB
+[ 182/ 666] blk.10.attn_q_norm.weight            - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 183/ 666] blk.10.attn_v.weight                 - [  2560,    512,      1,      1], type =   bf16, converting to    q5_K size = 2.50 MiB -> 0.86 MiB
+[ 184/ 666] blk.10.ffn_down.weight               - [ 10240,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 185/ 666] blk.10.ffn_gate.weight               - [  2560,  10240,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 186/ 666] blk.10.ffn_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 187/ 666] blk.10.ffn_up.weight                 - [  2560,  10240,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 188/ 666] blk.10.inp_gate.weight               - [  2560,    256,      1,      1], type =   bf16, converting to  iq4_xs size = 1.25 MiB -> 0.33 MiB
+[ 189/ 666] blk.10.layer_output_scale.weight     - [     1,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 190/ 666] blk.10.post_attention_norm.weight    - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 191/ 666] blk.10.post_ffw_norm.weight          - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 192/ 666] blk.10.post_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 193/ 666] blk.10.proj.weight                   - [   256,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 1.25 MiB -> 0.33 MiB
+[ 194/ 666] blk.11.attn_k.weight                 - [  2560,   1024,      1,      1], type =   bf16, converting to  iq4_xs size = 5.00 MiB -> 1.33 MiB
+[ 195/ 666] blk.11.attn_k_norm.weight            - [   512,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 196/ 666] blk.11.attn_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 197/ 666] blk.11.attn_output.weight            - [  4096,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 20.00 MiB -> 5.31 MiB
+[ 198/ 666] blk.11.attn_q.weight                 - [  2560,   4096,      1,      1], type =   bf16, converting to  iq4_xs size = 20.00 MiB -> 5.31 MiB
+[ 199/ 666] blk.11.attn_q_norm.weight            - [   512,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 200/ 666] blk.11.attn_v.weight                 - [  2560,   1024,      1,      1], type =   bf16, converting to    q5_K size = 5.00 MiB -> 1.72 MiB
+[ 201/ 666] blk.11.ffn_down.weight               - [ 10240,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 202/ 666] blk.11.ffn_gate.weight               - [  2560,  10240,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 203/ 666] blk.11.ffn_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 204/ 666] blk.11.ffn_up.weight                 - [  2560,  10240,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 205/ 666] blk.11.inp_gate.weight               - [  2560,    256,      1,      1], type =   bf16, converting to  iq4_xs size = 1.25 MiB -> 0.33 MiB
+[ 206/ 666] blk.11.layer_output_scale.weight     - [     1,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 207/ 666] blk.11.post_attention_norm.weight    - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 208/ 666] blk.11.post_ffw_norm.weight          - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 209/ 666] blk.11.post_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 210/ 666] blk.11.proj.weight                   - [   256,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 1.25 MiB -> 0.33 MiB
+[ 211/ 666] blk.12.attn_k.weight                 - [  2560,    512,      1,      1], type =   bf16, converting to  iq4_xs size = 2.50 MiB -> 0.66 MiB
+[ 212/ 666] blk.12.attn_k_norm.weight            - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 213/ 666] blk.12.attn_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 214/ 666] blk.12.attn_output.weight            - [  2048,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 10.00 MiB -> 2.66 MiB
+[ 215/ 666] blk.12.attn_q.weight                 - [  2560,   2048,      1,      1], type =   bf16, converting to  iq4_xs size = 10.00 MiB -> 2.66 MiB
+[ 216/ 666] blk.12.attn_q_norm.weight            - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 217/ 666] blk.12.attn_v.weight                 - [  2560,    512,      1,      1], type =   bf16, converting to    q5_K size = 2.50 MiB -> 0.86 MiB
+[ 218/ 666] blk.12.ffn_down.weight               - [ 10240,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 219/ 666] blk.12.ffn_gate.weight               - [  2560,  10240,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 220/ 666] blk.12.ffn_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 221/ 666] blk.12.ffn_up.weight                 - [  2560,  10240,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 222/ 666] blk.12.inp_gate.weight               - [  2560,    256,      1,      1], type =   bf16, converting to  iq4_xs size = 1.25 MiB -> 0.33 MiB
+[ 223/ 666] blk.12.layer_output_scale.weight     - [     1,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 224/ 666] blk.12.post_attention_norm.weight    - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 225/ 666] blk.12.post_ffw_norm.weight          - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 226/ 666] blk.12.post_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 227/ 666] blk.12.proj.weight                   - [   256,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 1.25 MiB -> 0.33 MiB
+[ 228/ 666] blk.13.attn_k.weight                 - [  2560,    512,      1,      1], type =   bf16, converting to  iq4_xs size = 2.50 MiB -> 0.66 MiB
+[ 229/ 666] blk.13.attn_k_norm.weight            - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 230/ 666] blk.13.attn_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 231/ 666] blk.13.attn_output.weight            - [  2048,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 10.00 MiB -> 2.66 MiB
+[ 232/ 666] blk.13.attn_q.weight                 - [  2560,   2048,      1,      1], type =   bf16, converting to  iq4_xs size = 10.00 MiB -> 2.66 MiB
+[ 233/ 666] blk.13.attn_q_norm.weight            - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 234/ 666] blk.13.attn_v.weight                 - [  2560,    512,      1,      1], type =   bf16, converting to    q5_K size = 2.50 MiB -> 0.86 MiB
+[ 235/ 666] blk.13.ffn_down.weight               - [ 10240,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 236/ 666] blk.13.ffn_gate.weight               - [  2560,  10240,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 237/ 666] blk.13.ffn_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 238/ 666] blk.13.ffn_up.weight                 - [  2560,  10240,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 239/ 666] blk.13.inp_gate.weight               - [  2560,    256,      1,      1], type =   bf16, converting to  iq4_xs size = 1.25 MiB -> 0.33 MiB
+[ 240/ 666] blk.13.layer_output_scale.weight     - [     1,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 241/ 666] blk.13.post_attention_norm.weight    - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 242/ 666] blk.13.post_ffw_norm.weight          - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 243/ 666] blk.13.post_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 244/ 666] blk.13.proj.weight                   - [   256,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 1.25 MiB -> 0.33 MiB
+[ 245/ 666] blk.14.attn_k.weight                 - [  2560,    512,      1,      1], type =   bf16, converting to  iq4_xs size = 2.50 MiB -> 0.66 MiB
+[ 246/ 666] blk.14.attn_k_norm.weight            - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 247/ 666] blk.14.attn_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 248/ 666] blk.14.attn_output.weight            - [  2048,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 10.00 MiB -> 2.66 MiB
+[ 249/ 666] blk.14.attn_q.weight                 - [  2560,   2048,      1,      1], type =   bf16, converting to  iq4_xs size = 10.00 MiB -> 2.66 MiB
+[ 250/ 666] blk.14.attn_q_norm.weight            - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 251/ 666] blk.14.attn_v.weight                 - [  2560,    512,      1,      1], type =   bf16, converting to    q5_K size = 2.50 MiB -> 0.86 MiB
+[ 252/ 666] blk.14.ffn_down.weight               - [ 10240,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 253/ 666] blk.14.ffn_gate.weight               - [  2560,  10240,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 254/ 666] blk.14.ffn_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 255/ 666] blk.14.ffn_up.weight                 - [  2560,  10240,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 256/ 666] blk.14.inp_gate.weight               - [  2560,    256,      1,      1], type =   bf16, converting to  iq4_xs size = 1.25 MiB -> 0.33 MiB
+[ 257/ 666] blk.14.layer_output_scale.weight     - [     1,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 258/ 666] blk.14.post_attention_norm.weight    - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 259/ 666] blk.14.post_ffw_norm.weight          - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 260/ 666] blk.14.post_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 261/ 666] blk.14.proj.weight                   - [   256,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 1.25 MiB -> 0.33 MiB
+[ 262/ 666] blk.15.attn_k.weight                 - [  2560,    512,      1,      1], type =   bf16, converting to  iq4_xs size = 2.50 MiB -> 0.66 MiB
+[ 263/ 666] blk.15.attn_k_norm.weight            - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 264/ 666] blk.15.attn_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 265/ 666] blk.15.attn_output.weight            - [  2048,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 10.00 MiB -> 2.66 MiB
+[ 266/ 666] blk.15.attn_q.weight                 - [  2560,   2048,      1,      1], type =   bf16, converting to  iq4_xs size = 10.00 MiB -> 2.66 MiB
+[ 267/ 666] blk.15.attn_q_norm.weight            - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 268/ 666] blk.15.attn_v.weight                 - [  2560,    512,      1,      1], type =   bf16, converting to    q5_K size = 2.50 MiB -> 0.86 MiB
+[ 269/ 666] blk.15.ffn_down.weight               - [ 10240,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 270/ 666] blk.15.ffn_gate.weight               - [  2560,  10240,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 271/ 666] blk.15.ffn_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 272/ 666] blk.15.ffn_up.weight                 - [  2560,  10240,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 273/ 666] blk.15.inp_gate.weight               - [  2560,    256,      1,      1], type =   bf16, converting to  iq4_xs size = 1.25 MiB -> 0.33 MiB
+[ 274/ 666] blk.15.layer_output_scale.weight     - [     1,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 275/ 666] blk.15.post_attention_norm.weight    - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 276/ 666] blk.15.post_ffw_norm.weight          - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 277/ 666] blk.15.post_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 278/ 666] blk.15.proj.weight                   - [   256,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 1.25 MiB -> 0.33 MiB
+[ 279/ 666] blk.16.attn_k.weight                 - [  2560,    512,      1,      1], type =   bf16, converting to  iq4_xs size = 2.50 MiB -> 0.66 MiB
+[ 280/ 666] blk.16.attn_k_norm.weight            - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 281/ 666] blk.16.attn_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 282/ 666] blk.16.attn_output.weight            - [  2048,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 10.00 MiB -> 2.66 MiB
+[ 283/ 666] blk.16.attn_q.weight                 - [  2560,   2048,      1,      1], type =   bf16, converting to  iq4_xs size = 10.00 MiB -> 2.66 MiB
+[ 284/ 666] blk.16.attn_q_norm.weight            - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 285/ 666] blk.16.attn_v.weight                 - [  2560,    512,      1,      1], type =   bf16, converting to    q5_K size = 2.50 MiB -> 0.86 MiB
+[ 286/ 666] blk.16.ffn_down.weight               - [ 10240,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 287/ 666] blk.16.ffn_gate.weight               - [  2560,  10240,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 288/ 666] blk.16.ffn_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 289/ 666] blk.16.ffn_up.weight                 - [  2560,  10240,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 290/ 666] blk.16.inp_gate.weight               - [  2560,    256,      1,      1], type =   bf16, converting to  iq4_xs size = 1.25 MiB -> 0.33 MiB
+[ 291/ 666] blk.16.layer_output_scale.weight     - [     1,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 292/ 666] blk.16.post_attention_norm.weight    - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 293/ 666] blk.16.post_ffw_norm.weight          - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 294/ 666] blk.16.post_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 295/ 666] blk.16.proj.weight                   - [   256,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 1.25 MiB -> 0.33 MiB
+[ 296/ 666] blk.17.attn_k.weight                 - [  2560,   1024,      1,      1], type =   bf16, converting to  iq4_xs size = 5.00 MiB -> 1.33 MiB
+[ 297/ 666] blk.17.attn_k_norm.weight            - [   512,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 298/ 666] blk.17.attn_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 299/ 666] blk.17.attn_output.weight            - [  4096,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 20.00 MiB -> 5.31 MiB
+[ 300/ 666] blk.17.attn_q.weight                 - [  2560,   4096,      1,      1], type =   bf16, converting to  iq4_xs size = 20.00 MiB -> 5.31 MiB
+[ 301/ 666] blk.17.attn_q_norm.weight            - [   512,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 302/ 666] blk.17.attn_v.weight                 - [  2560,   1024,      1,      1], type =   bf16, converting to    q5_K size = 5.00 MiB -> 1.72 MiB
+[ 303/ 666] blk.17.ffn_down.weight               - [ 10240,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 304/ 666] blk.17.ffn_gate.weight               - [  2560,  10240,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 305/ 666] blk.17.ffn_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 306/ 666] blk.17.ffn_up.weight                 - [  2560,  10240,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 307/ 666] blk.17.inp_gate.weight               - [  2560,    256,      1,      1], type =   bf16, converting to  iq4_xs size = 1.25 MiB -> 0.33 MiB
+[ 308/ 666] blk.17.layer_output_scale.weight     - [     1,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 309/ 666] blk.17.post_attention_norm.weight    - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 310/ 666] blk.17.post_ffw_norm.weight          - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 311/ 666] blk.17.post_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 312/ 666] blk.17.proj.weight                   - [   256,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 1.25 MiB -> 0.33 MiB
+[ 313/ 666] blk.18.attn_k.weight                 - [  2560,    512,      1,      1], type =   bf16, converting to  iq4_xs size = 2.50 MiB -> 0.66 MiB
+[ 314/ 666] blk.18.attn_k_norm.weight            - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 315/ 666] blk.18.attn_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 316/ 666] blk.18.attn_output.weight            - [  2048,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 10.00 MiB -> 2.66 MiB
+[ 317/ 666] blk.18.attn_q.weight                 - [  2560,   2048,      1,      1], type =   bf16, converting to  iq4_xs size = 10.00 MiB -> 2.66 MiB
+[ 318/ 666] blk.18.attn_q_norm.weight            - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 319/ 666] blk.18.attn_v.weight                 - [  2560,    512,      1,      1], type =   bf16, converting to    q5_K size = 2.50 MiB -> 0.86 MiB
+[ 320/ 666] blk.18.ffn_down.weight               - [ 10240,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 321/ 666] blk.18.ffn_gate.weight               - [  2560,  10240,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 322/ 666] blk.18.ffn_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 323/ 666] blk.18.ffn_up.weight                 - [  2560,  10240,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 324/ 666] blk.18.inp_gate.weight               - [  2560,    256,      1,      1], type =   bf16, converting to  iq4_xs size = 1.25 MiB -> 0.33 MiB
+[ 325/ 666] blk.18.layer_output_scale.weight     - [     1,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 326/ 666] blk.18.post_attention_norm.weight    - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 327/ 666] blk.18.post_ffw_norm.weight          - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 328/ 666] blk.18.post_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 329/ 666] blk.18.proj.weight                   - [   256,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 1.25 MiB -> 0.33 MiB
+[ 330/ 666] blk.19.attn_k.weight                 - [  2560,    512,      1,      1], type =   bf16, converting to  iq4_xs size = 2.50 MiB -> 0.66 MiB
+[ 331/ 666] blk.19.attn_k_norm.weight            - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 332/ 666] blk.19.attn_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 333/ 666] blk.19.attn_output.weight            - [  2048,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 10.00 MiB -> 2.66 MiB
+[ 334/ 666] blk.19.attn_q.weight                 - [  2560,   2048,      1,      1], type =   bf16, converting to  iq4_xs size = 10.00 MiB -> 2.66 MiB
+[ 335/ 666] blk.19.attn_q_norm.weight            - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 336/ 666] blk.19.attn_v.weight                 - [  2560,    512,      1,      1], type =   bf16, converting to    q5_K size = 2.50 MiB -> 0.86 MiB
+[ 337/ 666] blk.19.ffn_down.weight               - [ 10240,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 338/ 666] blk.19.ffn_gate.weight               - [  2560,  10240,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 339/ 666] blk.19.ffn_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 340/ 666] blk.19.ffn_up.weight                 - [  2560,  10240,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 341/ 666] blk.19.inp_gate.weight               - [  2560,    256,      1,      1], type =   bf16, converting to  iq4_xs size = 1.25 MiB -> 0.33 MiB
+[ 342/ 666] blk.19.layer_output_scale.weight     - [     1,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 343/ 666] blk.19.post_attention_norm.weight    - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 344/ 666] blk.19.post_ffw_norm.weight          - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 345/ 666] blk.19.post_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 346/ 666] blk.19.proj.weight                   - [   256,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 1.25 MiB -> 0.33 MiB
+[ 347/ 666] blk.20.attn_k.weight                 - [  2560,    512,      1,      1], type =   bf16, converting to  iq4_xs size = 2.50 MiB -> 0.66 MiB
+[ 348/ 666] blk.20.attn_k_norm.weight            - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 349/ 666] blk.20.attn_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 350/ 666] blk.20.attn_output.weight            - [  2048,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 10.00 MiB -> 2.66 MiB
+[ 351/ 666] blk.20.attn_q.weight                 - [  2560,   2048,      1,      1], type =   bf16, converting to  iq4_xs size = 10.00 MiB -> 2.66 MiB
+[ 352/ 666] blk.20.attn_q_norm.weight            - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 353/ 666] blk.20.attn_v.weight                 - [  2560,    512,      1,      1], type =   bf16, converting to    q5_K size = 2.50 MiB -> 0.86 MiB
+[ 354/ 666] blk.20.ffn_down.weight               - [ 10240,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 355/ 666] blk.20.ffn_gate.weight               - [  2560,  10240,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 356/ 666] blk.20.ffn_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 357/ 666] blk.20.ffn_up.weight                 - [  2560,  10240,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 358/ 666] blk.20.inp_gate.weight               - [  2560,    256,      1,      1], type =   bf16, converting to  iq4_xs size = 1.25 MiB -> 0.33 MiB
+[ 359/ 666] blk.20.layer_output_scale.weight     - [     1,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 360/ 666] blk.20.post_attention_norm.weight    - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 361/ 666] blk.20.post_ffw_norm.weight          - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 362/ 666] blk.20.post_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 363/ 666] blk.20.proj.weight                   - [   256,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 1.25 MiB -> 0.33 MiB
+[ 364/ 666] blk.21.attn_k.weight                 - [  2560,    512,      1,      1], type =   bf16, converting to  iq4_xs size = 2.50 MiB -> 0.66 MiB
+[ 365/ 666] blk.21.attn_k_norm.weight            - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 366/ 666] blk.21.attn_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 367/ 666] blk.21.attn_output.weight            - [  2048,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 10.00 MiB -> 2.66 MiB
+[ 368/ 666] blk.21.attn_q.weight                 - [  2560,   2048,      1,      1], type =   bf16, converting to  iq4_xs size = 10.00 MiB -> 2.66 MiB
+[ 369/ 666] blk.21.attn_q_norm.weight            - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 370/ 666] blk.21.attn_v.weight                 - [  2560,    512,      1,      1], type =   bf16, converting to    q5_K size = 2.50 MiB -> 0.86 MiB
+[ 371/ 666] blk.21.ffn_down.weight               - [ 10240,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 372/ 666] blk.21.ffn_gate.weight               - [  2560,  10240,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 373/ 666] blk.21.ffn_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 374/ 666] blk.21.ffn_up.weight                 - [  2560,  10240,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 375/ 666] blk.21.inp_gate.weight               - [  2560,    256,      1,      1], type =   bf16, converting to  iq4_xs size = 1.25 MiB -> 0.33 MiB
+[ 376/ 666] blk.21.layer_output_scale.weight     - [     1,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 377/ 666] blk.21.post_attention_norm.weight    - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 378/ 666] blk.21.post_ffw_norm.weight          - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 379/ 666] blk.21.post_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 380/ 666] blk.21.proj.weight                   - [   256,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 1.25 MiB -> 0.33 MiB
+[ 381/ 666] blk.22.attn_k.weight                 - [  2560,    512,      1,      1], type =   bf16, converting to  iq4_xs size = 2.50 MiB -> 0.66 MiB
+[ 382/ 666] blk.22.attn_k_norm.weight            - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 383/ 666] blk.22.attn_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 384/ 666] blk.22.attn_output.weight            - [  2048,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 10.00 MiB -> 2.66 MiB
+[ 385/ 666] blk.22.attn_q.weight                 - [  2560,   2048,      1,      1], type =   bf16, converting to  iq4_xs size = 10.00 MiB -> 2.66 MiB
+[ 386/ 666] blk.22.attn_q_norm.weight            - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 387/ 666] blk.22.attn_v.weight                 - [  2560,    512,      1,      1], type =   bf16, converting to    q5_K size = 2.50 MiB -> 0.86 MiB
+[ 388/ 666] blk.22.ffn_down.weight               - [ 10240,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 389/ 666] blk.22.ffn_gate.weight               - [  2560,  10240,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 390/ 666] blk.22.ffn_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 391/ 666] blk.22.ffn_up.weight                 - [  2560,  10240,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 392/ 666] blk.22.inp_gate.weight               - [  2560,    256,      1,      1], type =   bf16, converting to  iq4_xs size = 1.25 MiB -> 0.33 MiB
+[ 393/ 666] blk.22.layer_output_scale.weight     - [     1,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 394/ 666] blk.22.post_attention_norm.weight    - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 395/ 666] blk.22.post_ffw_norm.weight          - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 396/ 666] blk.22.post_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 397/ 666] blk.22.proj.weight                   - [   256,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 1.25 MiB -> 0.33 MiB
+[ 398/ 666] blk.23.attn_k.weight                 - [  2560,   1024,      1,      1], type =   bf16, converting to  iq4_xs size = 5.00 MiB -> 1.33 MiB
+[ 399/ 666] blk.23.attn_k_norm.weight            - [   512,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 400/ 666] blk.23.attn_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 401/ 666] blk.23.attn_output.weight            - [  4096,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 20.00 MiB -> 5.31 MiB
+[ 402/ 666] blk.23.attn_q.weight                 - [  2560,   4096,      1,      1], type =   bf16, converting to  iq4_xs size = 20.00 MiB -> 5.31 MiB
+[ 403/ 666] blk.23.attn_q_norm.weight            - [   512,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 404/ 666] blk.23.attn_v.weight                 - [  2560,   1024,      1,      1], type =   bf16, converting to    q5_K size = 5.00 MiB -> 1.72 MiB
+[ 405/ 666] blk.23.ffn_down.weight               - [ 10240,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 406/ 666] blk.23.ffn_gate.weight               - [  2560,  10240,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 407/ 666] blk.23.ffn_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 408/ 666] blk.23.ffn_up.weight                 - [  2560,  10240,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 409/ 666] blk.23.inp_gate.weight               - [  2560,    256,      1,      1], type =   bf16, converting to  iq4_xs size = 1.25 MiB -> 0.33 MiB
+[ 410/ 666] blk.23.layer_output_scale.weight     - [     1,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 411/ 666] blk.23.post_attention_norm.weight    - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 412/ 666] blk.23.post_ffw_norm.weight          - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 413/ 666] blk.23.post_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 414/ 666] blk.23.proj.weight                   - [   256,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 1.25 MiB -> 0.33 MiB
+[ 415/ 666] blk.24.attn_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 416/ 666] blk.24.attn_output.weight            - [  2048,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 10.00 MiB -> 2.66 MiB
+[ 417/ 666] blk.24.attn_q.weight                 - [  2560,   2048,      1,      1], type =   bf16, converting to  iq4_xs size = 10.00 MiB -> 2.66 MiB
+[ 418/ 666] blk.24.attn_q_norm.weight            - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 419/ 666] blk.24.ffn_down.weight               - [ 10240,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 420/ 666] blk.24.ffn_gate.weight               - [  2560,  10240,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 421/ 666] blk.24.ffn_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 422/ 666] blk.24.ffn_up.weight                 - [  2560,  10240,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 423/ 666] blk.24.inp_gate.weight               - [  2560,    256,      1,      1], type =   bf16, converting to  iq4_xs size = 1.25 MiB -> 0.33 MiB
+[ 424/ 666] blk.24.layer_output_scale.weight     - [     1,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 425/ 666] blk.24.post_attention_norm.weight    - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 426/ 666] blk.24.post_ffw_norm.weight          - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 427/ 666] blk.24.post_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 428/ 666] blk.24.proj.weight                   - [   256,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 1.25 MiB -> 0.33 MiB
+[ 429/ 666] blk.25.attn_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 430/ 666] blk.25.attn_output.weight            - [  2048,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 10.00 MiB -> 2.66 MiB
+[ 431/ 666] blk.25.attn_q.weight                 - [  2560,   2048,      1,      1], type =   bf16, converting to  iq4_xs size = 10.00 MiB -> 2.66 MiB
+[ 432/ 666] blk.25.attn_q_norm.weight            - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 433/ 666] blk.25.ffn_down.weight               - [ 10240,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 434/ 666] blk.25.ffn_gate.weight               - [  2560,  10240,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 435/ 666] blk.25.ffn_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 436/ 666] blk.25.ffn_up.weight                 - [  2560,  10240,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 437/ 666] blk.25.inp_gate.weight               - [  2560,    256,      1,      1], type =   bf16, converting to  iq4_xs size = 1.25 MiB -> 0.33 MiB
+[ 438/ 666] blk.25.layer_output_scale.weight     - [     1,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 439/ 666] blk.25.post_attention_norm.weight    - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 440/ 666] blk.25.post_ffw_norm.weight          - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 441/ 666] blk.25.post_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 442/ 666] blk.25.proj.weight                   - [   256,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 1.25 MiB -> 0.33 MiB
+[ 443/ 666] blk.26.attn_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 444/ 666] blk.26.attn_output.weight            - [  2048,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 10.00 MiB -> 2.66 MiB
+[ 445/ 666] blk.26.attn_q.weight                 - [  2560,   2048,      1,      1], type =   bf16, converting to  iq4_xs size = 10.00 MiB -> 2.66 MiB
+[ 446/ 666] blk.26.attn_q_norm.weight            - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 447/ 666] blk.26.ffn_down.weight               - [ 10240,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 448/ 666] blk.26.ffn_gate.weight               - [  2560,  10240,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 449/ 666] blk.26.ffn_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 450/ 666] blk.26.ffn_up.weight                 - [  2560,  10240,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 451/ 666] blk.26.inp_gate.weight               - [  2560,    256,      1,      1], type =   bf16, converting to  iq4_xs size = 1.25 MiB -> 0.33 MiB
+[ 452/ 666] blk.26.layer_output_scale.weight     - [     1,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 453/ 666] blk.26.post_attention_norm.weight    - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 454/ 666] blk.26.post_ffw_norm.weight          - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 455/ 666] blk.26.post_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 456/ 666] blk.26.proj.weight                   - [   256,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 1.25 MiB -> 0.33 MiB
+[ 457/ 666] blk.27.attn_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 458/ 666] blk.27.attn_output.weight            - [  2048,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 10.00 MiB -> 2.66 MiB
+[ 459/ 666] blk.27.attn_q.weight                 - [  2560,   2048,      1,      1], type =   bf16, converting to  iq4_xs size = 10.00 MiB -> 2.66 MiB
+[ 460/ 666] blk.27.attn_q_norm.weight            - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 461/ 666] blk.27.ffn_down.weight               - [ 10240,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 462/ 666] blk.27.ffn_gate.weight               - [  2560,  10240,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 463/ 666] blk.27.ffn_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 464/ 666] blk.27.ffn_up.weight                 - [  2560,  10240,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 465/ 666] blk.27.inp_gate.weight               - [  2560,    256,      1,      1], type =   bf16, converting to  iq4_xs size = 1.25 MiB -> 0.33 MiB
+[ 466/ 666] blk.27.layer_output_scale.weight     - [     1,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 467/ 666] blk.27.post_attention_norm.weight    - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 468/ 666] blk.27.post_ffw_norm.weight          - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 469/ 666] blk.27.post_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 470/ 666] blk.27.proj.weight                   - [   256,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 1.25 MiB -> 0.33 MiB
+[ 471/ 666] blk.28.attn_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 472/ 666] blk.28.attn_output.weight            - [  2048,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 10.00 MiB -> 2.66 MiB
+[ 473/ 666] blk.28.attn_q.weight                 - [  2560,   2048,      1,      1], type =   bf16, converting to  iq4_xs size = 10.00 MiB -> 2.66 MiB
+[ 474/ 666] blk.28.attn_q_norm.weight            - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 475/ 666] blk.28.ffn_down.weight               - [ 10240,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 476/ 666] blk.28.ffn_gate.weight               - [  2560,  10240,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 477/ 666] blk.28.ffn_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 478/ 666] blk.28.ffn_up.weight                 - [  2560,  10240,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 479/ 666] blk.28.inp_gate.weight               - [  2560,    256,      1,      1], type =   bf16, converting to  iq4_xs size = 1.25 MiB -> 0.33 MiB
+[ 480/ 666] blk.28.layer_output_scale.weight     - [     1,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 481/ 666] blk.28.post_attention_norm.weight    - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 482/ 666] blk.28.post_ffw_norm.weight          - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 483/ 666] blk.28.post_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 484/ 666] blk.28.proj.weight                   - [   256,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 1.25 MiB -> 0.33 MiB
+[ 485/ 666] blk.29.attn_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 486/ 666] blk.29.attn_output.weight            - [  4096,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 20.00 MiB -> 5.31 MiB
+[ 487/ 666] blk.29.attn_q.weight                 - [  2560,   4096,      1,      1], type =   bf16, converting to  iq4_xs size = 20.00 MiB -> 5.31 MiB
+[ 488/ 666] blk.29.attn_q_norm.weight            - [   512,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 489/ 666] blk.29.ffn_down.weight               - [ 10240,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 490/ 666] blk.29.ffn_gate.weight               - [  2560,  10240,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 491/ 666] blk.29.ffn_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 492/ 666] blk.29.ffn_up.weight                 - [  2560,  10240,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 493/ 666] blk.29.inp_gate.weight               - [  2560,    256,      1,      1], type =   bf16, converting to  iq4_xs size = 1.25 MiB -> 0.33 MiB
+[ 494/ 666] blk.29.layer_output_scale.weight     - [     1,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 495/ 666] blk.29.post_attention_norm.weight    - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 496/ 666] blk.29.post_ffw_norm.weight          - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 497/ 666] blk.29.post_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 498/ 666] blk.29.proj.weight                   - [   256,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 1.25 MiB -> 0.33 MiB
+[ 499/ 666] blk.30.attn_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 500/ 666] blk.30.attn_output.weight            - [  2048,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 10.00 MiB -> 2.66 MiB
+[ 501/ 666] blk.30.attn_q.weight                 - [  2560,   2048,      1,      1], type =   bf16, converting to  iq4_xs size = 10.00 MiB -> 2.66 MiB
+[ 502/ 666] blk.30.attn_q_norm.weight            - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 503/ 666] blk.30.ffn_down.weight               - [ 10240,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 504/ 666] blk.30.ffn_gate.weight               - [  2560,  10240,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 505/ 666] blk.30.ffn_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 506/ 666] blk.30.ffn_up.weight                 - [  2560,  10240,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 507/ 666] blk.30.inp_gate.weight               - [  2560,    256,      1,      1], type =   bf16, converting to  iq4_xs size = 1.25 MiB -> 0.33 MiB
+[ 508/ 666] blk.30.layer_output_scale.weight     - [     1,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 509/ 666] blk.30.post_attention_norm.weight    - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 510/ 666] blk.30.post_ffw_norm.weight          - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 511/ 666] blk.30.post_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 512/ 666] blk.30.proj.weight                   - [   256,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 1.25 MiB -> 0.33 MiB
+[ 513/ 666] blk.31.attn_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 514/ 666] blk.31.attn_output.weight            - [  2048,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 10.00 MiB -> 2.66 MiB
+[ 515/ 666] blk.31.attn_q.weight                 - [  2560,   2048,      1,      1], type =   bf16, converting to  iq4_xs size = 10.00 MiB -> 2.66 MiB
+[ 516/ 666] blk.31.attn_q_norm.weight            - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 517/ 666] blk.31.ffn_down.weight               - [ 10240,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 518/ 666] blk.31.ffn_gate.weight               - [  2560,  10240,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 519/ 666] blk.31.ffn_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 520/ 666] blk.31.ffn_up.weight                 - [  2560,  10240,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 521/ 666] blk.31.inp_gate.weight               - [  2560,    256,      1,      1], type =   bf16, converting to  iq4_xs size = 1.25 MiB -> 0.33 MiB
+[ 522/ 666] blk.31.layer_output_scale.weight     - [     1,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 523/ 666] blk.31.post_attention_norm.weight    - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 524/ 666] blk.31.post_ffw_norm.weight          - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 525/ 666] blk.31.post_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 526/ 666] blk.31.proj.weight                   - [   256,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 1.25 MiB -> 0.33 MiB
+[ 527/ 666] blk.32.attn_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 528/ 666] blk.32.attn_output.weight            - [  2048,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 10.00 MiB -> 2.66 MiB
+[ 529/ 666] blk.32.attn_q.weight                 - [  2560,   2048,      1,      1], type =   bf16, converting to  iq4_xs size = 10.00 MiB -> 2.66 MiB
+[ 530/ 666] blk.32.attn_q_norm.weight            - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 531/ 666] blk.32.ffn_down.weight               - [ 10240,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 532/ 666] blk.32.ffn_gate.weight               - [  2560,  10240,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 533/ 666] blk.32.ffn_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 534/ 666] blk.32.ffn_up.weight                 - [  2560,  10240,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 535/ 666] blk.32.inp_gate.weight               - [  2560,    256,      1,      1], type =   bf16, converting to  iq4_xs size = 1.25 MiB -> 0.33 MiB
+[ 536/ 666] blk.32.layer_output_scale.weight     - [     1,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 537/ 666] blk.32.post_attention_norm.weight    - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 538/ 666] blk.32.post_ffw_norm.weight          - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 539/ 666] blk.32.post_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 540/ 666] blk.32.proj.weight                   - [   256,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 1.25 MiB -> 0.33 MiB
+[ 541/ 666] blk.33.attn_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 542/ 666] blk.33.attn_output.weight            - [  2048,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 10.00 MiB -> 2.66 MiB
+[ 543/ 666] blk.33.attn_q.weight                 - [  2560,   2048,      1,      1], type =   bf16, converting to  iq4_xs size = 10.00 MiB -> 2.66 MiB
+[ 544/ 666] blk.33.attn_q_norm.weight            - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 545/ 666] blk.33.ffn_down.weight               - [ 10240,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 546/ 666] blk.33.ffn_gate.weight               - [  2560,  10240,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 547/ 666] blk.33.ffn_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 548/ 666] blk.33.ffn_up.weight                 - [  2560,  10240,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 549/ 666] blk.33.inp_gate.weight               - [  2560,    256,      1,      1], type =   bf16, converting to  iq4_xs size = 1.25 MiB -> 0.33 MiB
+[ 550/ 666] blk.33.layer_output_scale.weight     - [     1,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 551/ 666] blk.33.post_attention_norm.weight    - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 552/ 666] blk.33.post_ffw_norm.weight          - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 553/ 666] blk.33.post_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 554/ 666] blk.33.proj.weight                   - [   256,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 1.25 MiB -> 0.33 MiB
+[ 555/ 666] blk.34.attn_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 556/ 666] blk.34.attn_output.weight            - [  2048,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 10.00 MiB -> 2.66 MiB
+[ 557/ 666] blk.34.attn_q.weight                 - [  2560,   2048,      1,      1], type =   bf16, converting to  iq4_xs size = 10.00 MiB -> 2.66 MiB
+[ 558/ 666] blk.34.attn_q_norm.weight            - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 559/ 666] blk.34.ffn_down.weight               - [ 10240,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 560/ 666] blk.34.ffn_gate.weight               - [  2560,  10240,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 561/ 666] blk.34.ffn_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 562/ 666] blk.34.ffn_up.weight                 - [  2560,  10240,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 563/ 666] blk.34.inp_gate.weight               - [  2560,    256,      1,      1], type =   bf16, converting to  iq4_xs size = 1.25 MiB -> 0.33 MiB
+[ 564/ 666] blk.34.layer_output_scale.weight     - [     1,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 565/ 666] blk.34.post_attention_norm.weight    - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 566/ 666] blk.34.post_ffw_norm.weight          - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 567/ 666] blk.34.post_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 568/ 666] blk.34.proj.weight                   - [   256,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 1.25 MiB -> 0.33 MiB
+[ 569/ 666] blk.35.attn_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 570/ 666] blk.35.attn_output.weight            - [  4096,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 20.00 MiB -> 5.31 MiB
+[ 571/ 666] blk.35.attn_q.weight                 - [  2560,   4096,      1,      1], type =   bf16, converting to  iq4_xs size = 20.00 MiB -> 5.31 MiB
+[ 572/ 666] blk.35.attn_q_norm.weight            - [   512,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 573/ 666] blk.35.ffn_down.weight               - [ 10240,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 574/ 666] blk.35.ffn_gate.weight               - [  2560,  10240,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 575/ 666] blk.35.ffn_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 576/ 666] blk.35.ffn_up.weight                 - [  2560,  10240,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 577/ 666] blk.35.inp_gate.weight               - [  2560,    256,      1,      1], type =   bf16, converting to  iq4_xs size = 1.25 MiB -> 0.33 MiB
+[ 578/ 666] blk.35.layer_output_scale.weight     - [     1,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 579/ 666] blk.35.post_attention_norm.weight    - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 580/ 666] blk.35.post_ffw_norm.weight          - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 581/ 666] blk.35.post_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 582/ 666] blk.35.proj.weight                   - [   256,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 1.25 MiB -> 0.33 MiB
+[ 583/ 666] blk.36.attn_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 584/ 666] blk.36.attn_output.weight            - [  2048,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 10.00 MiB -> 2.66 MiB
+[ 585/ 666] blk.36.attn_q.weight                 - [  2560,   2048,      1,      1], type =   bf16, converting to  iq4_xs size = 10.00 MiB -> 2.66 MiB
+[ 586/ 666] blk.36.attn_q_norm.weight            - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 587/ 666] blk.36.ffn_down.weight               - [ 10240,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 588/ 666] blk.36.ffn_gate.weight               - [  2560,  10240,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 589/ 666] blk.36.ffn_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 590/ 666] blk.36.ffn_up.weight                 - [  2560,  10240,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 591/ 666] blk.36.inp_gate.weight               - [  2560,    256,      1,      1], type =   bf16, converting to  iq4_xs size = 1.25 MiB -> 0.33 MiB
+[ 592/ 666] blk.36.layer_output_scale.weight     - [     1,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 593/ 666] blk.36.post_attention_norm.weight    - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 594/ 666] blk.36.post_ffw_norm.weight          - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 595/ 666] blk.36.post_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 596/ 666] blk.36.proj.weight                   - [   256,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 1.25 MiB -> 0.33 MiB
+[ 597/ 666] blk.37.attn_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 598/ 666] blk.37.attn_output.weight            - [  2048,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 10.00 MiB -> 2.66 MiB
+[ 599/ 666] blk.37.attn_q.weight                 - [  2560,   2048,      1,      1], type =   bf16, converting to  iq4_xs size = 10.00 MiB -> 2.66 MiB
+[ 600/ 666] blk.37.attn_q_norm.weight            - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 601/ 666] blk.37.ffn_down.weight               - [ 10240,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 602/ 666] blk.37.ffn_gate.weight               - [  2560,  10240,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 603/ 666] blk.37.ffn_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 604/ 666] blk.37.ffn_up.weight                 - [  2560,  10240,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 605/ 666] blk.37.inp_gate.weight               - [  2560,    256,      1,      1], type =   bf16, converting to  iq4_xs size = 1.25 MiB -> 0.33 MiB
+[ 606/ 666] blk.37.layer_output_scale.weight     - [     1,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 607/ 666] blk.37.post_attention_norm.weight    - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 608/ 666] blk.37.post_ffw_norm.weight          - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 609/ 666] blk.37.post_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 610/ 666] blk.37.proj.weight                   - [   256,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 1.25 MiB -> 0.33 MiB
+[ 611/ 666] blk.38.attn_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 612/ 666] blk.38.attn_output.weight            - [  2048,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 10.00 MiB -> 2.66 MiB
+[ 613/ 666] blk.38.attn_q.weight                 - [  2560,   2048,      1,      1], type =   bf16, converting to  iq4_xs size = 10.00 MiB -> 2.66 MiB
+[ 614/ 666] blk.38.attn_q_norm.weight            - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 615/ 666] blk.38.ffn_down.weight               - [ 10240,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 616/ 666] blk.38.ffn_gate.weight               - [  2560,  10240,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 617/ 666] blk.38.ffn_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 618/ 666] blk.38.ffn_up.weight                 - [  2560,  10240,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 619/ 666] blk.38.inp_gate.weight               - [  2560,    256,      1,      1], type =   bf16, converting to  iq4_xs size = 1.25 MiB -> 0.33 MiB
+[ 620/ 666] blk.38.layer_output_scale.weight     - [     1,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 621/ 666] blk.38.post_attention_norm.weight    - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 622/ 666] blk.38.post_ffw_norm.weight          - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 623/ 666] blk.38.post_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 624/ 666] blk.38.proj.weight                   - [   256,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 1.25 MiB -> 0.33 MiB
+[ 625/ 666] blk.39.attn_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 626/ 666] blk.39.attn_output.weight            - [  2048,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 10.00 MiB -> 2.66 MiB
+[ 627/ 666] blk.39.attn_q.weight                 - [  2560,   2048,      1,      1], type =   bf16, converting to  iq4_xs size = 10.00 MiB -> 2.66 MiB
+[ 628/ 666] blk.39.attn_q_norm.weight            - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 629/ 666] blk.39.ffn_down.weight               - [ 10240,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 630/ 666] blk.39.ffn_gate.weight               - [  2560,  10240,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 631/ 666] blk.39.ffn_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 632/ 666] blk.39.ffn_up.weight                 - [  2560,  10240,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 633/ 666] blk.39.inp_gate.weight               - [  2560,    256,      1,      1], type =   bf16, converting to  iq4_xs size = 1.25 MiB -> 0.33 MiB
+[ 634/ 666] blk.39.layer_output_scale.weight     - [     1,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 635/ 666] blk.39.post_attention_norm.weight    - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 636/ 666] blk.39.post_ffw_norm.weight          - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 637/ 666] blk.39.post_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 638/ 666] blk.39.proj.weight                   - [   256,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 1.25 MiB -> 0.33 MiB
+[ 639/ 666] blk.40.attn_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 640/ 666] blk.40.attn_output.weight            - [  2048,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 10.00 MiB -> 2.66 MiB
+[ 641/ 666] blk.40.attn_q.weight                 - [  2560,   2048,      1,      1], type =   bf16, converting to  iq4_xs size = 10.00 MiB -> 2.66 MiB
+[ 642/ 666] blk.40.attn_q_norm.weight            - [   256,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 643/ 666] blk.40.ffn_down.weight               - [ 10240,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 644/ 666] blk.40.ffn_gate.weight               - [  2560,  10240,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 645/ 666] blk.40.ffn_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 646/ 666] blk.40.ffn_up.weight                 - [  2560,  10240,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 647/ 666] blk.40.inp_gate.weight               - [  2560,    256,      1,      1], type =   bf16, converting to  iq4_xs size = 1.25 MiB -> 0.33 MiB
+[ 648/ 666] blk.40.layer_output_scale.weight     - [     1,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 649/ 666] blk.40.post_attention_norm.weight    - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 650/ 666] blk.40.post_ffw_norm.weight          - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 651/ 666] blk.40.post_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 652/ 666] blk.40.proj.weight                   - [   256,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 1.25 MiB -> 0.33 MiB
+[ 653/ 666] blk.41.attn_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 654/ 666] blk.41.attn_output.weight            - [  4096,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 20.00 MiB -> 5.31 MiB
+[ 655/ 666] blk.41.attn_q.weight                 - [  2560,   4096,      1,      1], type =   bf16, converting to  iq4_xs size = 20.00 MiB -> 5.31 MiB
+[ 656/ 666] blk.41.attn_q_norm.weight            - [   512,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 657/ 666] blk.41.ffn_down.weight               - [ 10240,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 658/ 666] blk.41.ffn_gate.weight               - [  2560,  10240,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 659/ 666] blk.41.ffn_norm.weight               - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 660/ 666] blk.41.ffn_up.weight                 - [  2560,  10240,      1,      1], type =   bf16, converting to  iq4_xs size = 50.00 MiB -> 13.28 MiB
+[ 661/ 666] blk.41.inp_gate.weight               - [  2560,    256,      1,      1], type =   bf16, converting to  iq4_xs size = 1.25 MiB -> 0.33 MiB
+[ 662/ 666] blk.41.layer_output_scale.weight     - [     1,      1,      1,      1], type =    f32, size = 0.00 MiB
+[ 663/ 666] blk.41.post_attention_norm.weight    - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 664/ 666] blk.41.post_ffw_norm.weight          - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 665/ 666] blk.41.post_norm.weight              - [  2560,      1,      1,      1], type =    f32, size = 0.01 MiB
+[ 666/ 666] blk.41.proj.weight                   - [   256,   2560,      1,      1], type =   bf16, converting to  iq4_xs size = 1.25 MiB -> 0.33 MiB
+llama_model_quantize_impl: model size  = 14235.64 MiB (16.0012 BPW)
+llama_model_quantize_impl: quant size  =  4808.47 MiB ( 5.4048 BPW)
+
+llama_quantize: quantize time = 68761.73 ms
+llama_quantize:    total time = 68761.73 ms
+=== 5. abl-5l-ft12-mix-IQ4XS-Q8 ===
+llama_tensor_get_type: blk.24.attn_output.weight            - applying manual override: iq4_xs -> q8_0
+llama_tensor_get_type: blk.24.ffn_down.weight               - applying manual override: iq4_xs -> q8_0
+llama_tensor_get_type: blk.25.attn_output.weight            - applying manual override: iq4_xs -> q8_0
+llama_tensor_get_type: blk.25.ffn_down.weight               - applying manual override: iq4_xs -> q8_0
+llama_tensor_get_type: blk.29.attn_output.weight            - applying manual override: iq4_xs -> q8_0
+llama_tensor_get_type: blk.29.ffn_down.weight               - applying manual override: iq4_xs -> q8_0
+llama_tensor_get_type: blk.30.attn_output.weight            - applying manual override: iq4_xs -> q8_0
+llama_tensor_get_type: blk.30.ffn_down.weight               - applying manual override: iq4_xs -> q8_0
+llama_tensor_get_type: blk.37.attn_output.weight            - applying manual override: iq4_xs -> q8_0
+llama_tensor_get_type: blk.37.ffn_down.weight               - applying manual override: iq4_xs -> q8_0
+llama_model_quantize_impl: quant size  =  4890.81 MiB ( 5.4974 BPW)
+llama_quantize: quantize time = 67834.59 ms
+total 58G
+-rw-r--r-- 1 root root  14G Nov 26 01:57 abl-5l-ft12-BF16.gguf
+-rw-r--r-- 1 root root 4.8G Nov 26 02:22 abl-5l-ft12-IQ4_XS.gguf
+-rw-r--r-- 1 root root 4.8G Nov 26 02:24 abl-5l-ft12-mix-IQ4XS-Q8.gguf
+-rw-r--r-- 1 root root 5.2G Nov 26 02:21 abl-5l-ft12-mix-Q4KM-BF16.gguf
+-rw-r--r-- 1 root root 5.0G Nov 26 02:20 abl-5l-ft12-mix-Q4KM-Q8.gguf
+-rw-r--r-- 1 root root 5.0G Nov 26 02:18 abl-5l-ft12-Q4_K_M.gguf
+-rw-r--r-- 1 root root  15G Nov 26 01:36 base-BF16.gguf
+-rw-r--r-- 1 root root 5.0G Nov 26 01:38 base-Q4_K_M.gguf
+-rw-r--r-- 1 root root 164M Nov 26 01:32 mtp-assistant-F16.gguf
+-rw-r--r-- 1 root root  74M Nov 26 01:33 mtp-assistant-Q4_K_M.gguf
+-rw-r--r-- 1 root root  95M Nov 26 01:33 mtp-assistant-Q8_0.gguf
+PHASE3_QUANT_DONE

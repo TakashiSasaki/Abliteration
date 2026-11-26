@@ -49,6 +49,7 @@ def main():
     parser.add_argument("--layers", default="29,24")
     parser.add_argument("--n-trials", type=int, default=10)
     parser.add_argument("--batch-size", type=int, default=128)
+    parser.add_argument("--quantization", default="BNB_4BIT", choices=["BNB_4BIT", "NONE"])
     parser.add_argument("--cache-path", default="/content/cache/gemma4_e4b_bnb4bit_seed42_ara.pt")
     parser.add_argument("--work-dir", default="/content/layer29_24_optuna")
     parser.add_argument("--preserve-min", type=float, default=0.05)
@@ -66,6 +67,7 @@ def main():
     sys.argv = [sys.argv[0]]
 
     target_layers = [int(x.strip()) for x in args.layers.split(",") if x.strip()]
+    qmethod = QuantizationMethod.NONE if args.quantization == "NONE" else QuantizationMethod.BNB_4BIT
     work_dir = Path(args.work_dir)
     work_dir.mkdir(parents=True, exist_ok=True)
     ckpt_file = work_dir / "optuna_journal.jsonl"
@@ -74,7 +76,7 @@ def main():
 
     settings = Settings(
         model="google/gemma-4-E4B-it",
-        quantization=QuantizationMethod.BNB_4BIT,
+        quantization=qmethod,
         batch_size=args.batch_size,
         seed=42,
     )

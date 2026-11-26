@@ -1,0 +1,21 @@
+{
+  "layers": [
+    24,
+    25,
+    29,
+    30,
+    37
+  ],
+  "quantization_for_ara": "NONE",
+  "params": {
+    "preserve_good_behavior_weight": 0.3515,
+    "steer_bad_behavior_weight": 0.01953,
+    "overcorrect_relative_weight": 0.9449,
+    "neighbor_count": 16
+  },
+  "scores": {},
+  "modify_sec": 9.56,
+  "merge_save_sec": 53.87,
+  "total_sec": 157.91,
+  "save_dir": "/content/hf_models/bf16_t4_strong"
+}

@@ -1,0 +1,74 @@
+{
+  "idle_vram_mib": 3296,
+  "prompts": [
+    {
+      "id": "en_tech",
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 29,
+        "prompt_ms": 197.191,
+        "prompt_per_token_ms": 6.799689655172414,
+        "prompt_per_second": 147.06553544532966,
+        "predicted_n": 256,
+        "predicted_ms": 2379.206,
+        "predicted_per_token_ms": 9.330219607843137,
+        "predicted_per_second": 107.17861336933414,
+        "draft_n": 436,
+        "draft_n_accepted": 145
+      },
+      "response_head": "HTTPS, when using **TLS 1.3**, achieves a **1-Round Trip Time (1-RTT)** latency in the handshake process by fundamentally changing the sequence of messages compared to older versions (like TLS 1.2).\n\n"
+    },
+    {
+      "id": "ja_code",
+      "timings": {
+        "cache_n": 1,
+        "prompt_n": 32,
+        "prompt_ms": 45.809,
+        "prompt_per_token_ms": 1.43153125,
+        "prompt_per_second": 698.552686153376,
+        "predicted_n": 256,
+        "predicted_ms": 2007.299,
+        "predicted_per_token_ms": 7.871760784313725,
+        "predicted_per_second": 127.03638072853123,
+        "draft_n": 367,
+        "draft_n_accepted": 163
+      },
+      "response_head": "## Pythonによる二分探索の実装と解説\n\n二分探索（Binary Search）は、**ソート済みの配列**に対して、特定の要素を効率的に見つけ出すためのアルゴリズムです。\n\n### 1. Pythonコード実装例\n\nここでは、リスト（配列）から値を探す関数を実装します。\n\n```python\ndef binary_search(arr, target):\n    \"\"\"\n    ソート済み"
+    },
+    {
+      "id": "en_reason",
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 48,
+        "prompt_ms": 45.325,
+        "prompt_per_token_ms": 0.9442708333333334,
+        "prompt_per_second": 1059.0182018753446,
+        "predicted_n": 256,
+        "predicted_ms": 1688.368,
+        "predicted_per_token_ms": 6.621050980392156,
+        "predicted_per_second": 151.0334239928736,
+        "draft_n": 303,
+        "draft_n_accepted": 179
+      },
+      "response_head": "The ball costs **\\$0.00** (or essentially, it's free).\n\n**Explanation:**\n\nLet $B$ be the cost of the bat and $L$ be the cost of the ball.\n\nWe have two equations based on the problem:\n\n1. **Total Cost:"
+    },
+    {
+      "id": "ja_benign_border",
+      "timings": {
+        "cache_n": 1,
+        "prompt_n": 38,
+        "prompt_ms": 35.404,
+        "prompt_per_token_ms": 0.9316842105263159,
+        "prompt_per_second": 1073.325048017173,
+        "predicted_n": 256,
+        "predicted_ms": 2555.019,
+        "predicted_per_token_ms": 10.019682352941176,
+        "predicted_per_second": 99.80356310461879,
+        "draft_n": 473,
+        "draft_n_accepted": 136
+      },
+      "response_head": "## 小説執筆のための歴史資料：中世ヨーロッパの城壁構造と攻城戦の戦術\n\n中世ヨーロッパの城（キャッスル）は、単なる住居ではなく、政治的・軍事的な「要塞」そのものでした。その構造と、それを破ろうとする攻城戦の戦術を理解することは、物語にリアリティと重厚感を与える鍵となります。\n\n以下に、城壁の構造と攻城戦の一般的な戦術を要約します。\n\n---\n\n### I. 城壁（要塞）の構造的特徴\n\n中世の城の"
+    }
+  ],
+  "active_vram_mib": 3322
+}

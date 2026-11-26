@@ -1,0 +1,74 @@
+{
+  "idle_vram_mib": 3680,
+  "prompts": [
+    {
+      "id": "en_tech",
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 29,
+        "prompt_ms": 202.671,
+        "prompt_per_token_ms": 6.988655172413793,
+        "prompt_per_second": 143.08904579342877,
+        "predicted_n": 256,
+        "predicted_ms": 2443.582,
+        "predicted_per_token_ms": 9.58267450980392,
+        "predicted_per_second": 104.35500015960177,
+        "draft_n": 413,
+        "draft_n_accepted": 150
+      },
+      "response_head": "The achievement of **1-RTT (Round-Trip Time) latency** in the TLS 1.3 handshake is a significant improvement over previous versions (like TLS 1.2, which often required 2-RTT or more). This efficiency "
+    },
+    {
+      "id": "ja_code",
+      "timings": {
+        "cache_n": 1,
+        "prompt_n": 32,
+        "prompt_ms": 50.379,
+        "prompt_per_token_ms": 1.57434375,
+        "prompt_per_second": 635.1852954604101,
+        "predicted_n": 256,
+        "predicted_ms": 2149.661,
+        "predicted_per_token_ms": 8.430043137254902,
+        "predicted_per_second": 118.62335503132819,
+        "draft_n": 367,
+        "draft_n_accepted": 163
+      },
+      "response_head": "## Pythonによる二分探索の実装と解説\n\n### 1. 二分探索のコード例\n\n二分探索は、**ソート（昇順または降順）されている配列**に対して、特定の要素（ターゲット）が存在するかどうか、またはそのインデックスを効率的に見つけるアルゴリズムです。\n\n```python\ndef binary_search(arr, target):\n    \"\"\"\n    ソートされた配列 arr の中に "
+    },
+    {
+      "id": "en_reason",
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 48,
+        "prompt_ms": 50.698,
+        "prompt_per_token_ms": 1.0562083333333334,
+        "prompt_per_second": 946.7829105684642,
+        "predicted_n": 256,
+        "predicted_ms": 1613.858,
+        "predicted_per_token_ms": 6.328854901960784,
+        "predicted_per_second": 158.00646649209534,
+        "draft_n": 266,
+        "draft_n_accepted": 188
+      },
+      "response_head": "The ball costs **\\$0.10**.\n\n**Explanation:**\n\nLet $B$ be the cost of the bat and $L$ be the cost of the ball.\n\nWe have two equations based on the problem:\n\n1. **Total cost:** $B + L = 1.10$\n2. **Price"
+    },
+    {
+      "id": "ja_benign_border",
+      "timings": {
+        "cache_n": 1,
+        "prompt_n": 38,
+        "prompt_ms": 39.78,
+        "prompt_per_token_ms": 1.046842105263158,
+        "prompt_per_second": 955.253896430367,
+        "predicted_n": 256,
+        "predicted_ms": 2676.488,
+        "predicted_per_token_ms": 10.49603137254902,
+        "predicted_per_second": 95.27410546955564,
+        "draft_n": 455,
+        "draft_n_accepted": 139
+      },
+      "response_head": "## 小説執筆のための歴史資料：中世ヨーロッパの城壁構造と攻城戦の戦術\n\n小説の舞台設定に役立つよう、中世ヨーロッパの城壁の構造的特徴と、それに対する攻城戦の一般的な戦術をまとめました。時代や地域によって大きな差はありますが、ここでは「典型的な」イメージを提示します。\n\n---\n\n### I. 城壁の構造的特徴（防御側の視点）\n\n中世の城（キャッスル）は、単なる壁ではなく、複数の防御層を重ねた「立"
+    }
+  ],
+  "active_vram_mib": 3704
+}

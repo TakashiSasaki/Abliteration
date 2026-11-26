@@ -721,3 +721,102 @@
    - `6L Focused T6` は英語100問では `0/100` を達成したものの、`steer_bad = 0.00180`, `k = 10` の弱めステアリングであったため、10言語 MultiJail では **`26/250 (10.4%)`**（特に `zh 24%`, `id 16%`）へと後退した。`6L Focused T7`（`steer_bad = 0.00630`, `k = 10`）は `ko=0%, vi=0%, ar=0%` を達成した一方 `ja 24%, zh 20%` が残り合計 `25/250 (10.0%)` に留まった。
    - 以上より、第22節（`5L T6` / `6L T6` ともに `steer_bad=0.0195` で `19/250 = 7.6%`）および本節の結果から、**言語非依存に拒否回路を抑えるには英語目的関数での `0/100` 到達よりも適度な `steer_bad`（`~0.008–0.020`）と `neighbor_count`（`12–16`）による拒否方向の上書きが重要**であることが実証された。
 - 永続化ファイル: `results/gemma4_e4b_layer24_25_29_30_37_cross_lingual/multijail_10langs_focused_trial12.log`, `results/gemma4_e4b_layer24_25_28_29_30_37_cross_lingual/multijail_10langs_focused_trial6.log`, `results/gemma4_e4b_layer24_25_28_29_30_37_cross_lingual/multijail_10langs_focused_trial7.log`
+
+---
+
+## 26. Windows 11 / 8GB VRAM / MTP 対応 GGUF 化: 仕様確認とベースライン (Phase 1)
+
+### 目的と対象環境
+- **目的**: 総合最良レシピ `5L [24, 25, 29, 30, 37] Focused Trial 12`（`preserve_good_behavior_weight=0.5387, steer_bad_behavior_weight=0.00819, overcorrect_relative_weight=0.9787, neighbor_count=12`）を、**Windows 11 / `llama.cpp` / RTX 4070 (8GB VRAM) / CPU RAM 32GB** で動作する**テキスト専用（Vision/Audio 除外）・MTP（`--spec-type draft-mtp`）有効**の GGUF モデルとして実現・検証する。
+- **検証ツールチェーン**: `ggml-org/llama.cpp` `b12751` (commit `532d67426`, CUDA 12.8 on NVIDIA L4 SM 8.9 — RTX 4070 と同一 Ada Lovelace アーキテクチャ)。
+
+### 仕様確認（`llama.cpp b12751`）
+1. **テキスト専用変換**: `convert_hf_to_gguf.py` の `Gemma4Model` 実装により、標準実行で Vision / Audio エンコーダテンソルが除外されたテキスト専用 GGUF（出力確認で `vision/audio` テンソル数 `0`）を生成可能。
+2. **MTP (Next-N Token Prediction) ドラフト変換**: `Gemma4AssistantModel` が `Gemma4AssistantForCausalLM` を変換し、`llama-server --model-draft ... --spec-type draft-mtp --spec-draft-n-max 4` で動作。
+   - 生成した MTP ドラフトモデル: `mtp-assistant-Q8_0.gguf`（`98,653,280` bytes, 49 tensors, `n_kv=45`）および `mtp-assistant-Q4_K_M.gguf`（`77,231,200` bytes, 49 tensors, `n_kv=45`）。
+3. **テンソル別混合量子化**: `llama-quantize --tensor-type "blk\.(24|25|29|30|37)\.(attn_output|ffn_down)\.weight=<type>"`（`src/llama-quant.cpp` での `std::regex_search` によるテンソル名一致指定）により、ARA 介入対象 5層 10テンソルのみを高精度化可能。
+4. **変換時のシステムメモリ要件**: Colab `T4 Standard`（`12 GiB` CPU RAM）では、単体 `5.64 GB` の `per_layer_token_embd.weight` 変換時に CPU RAM 不足（OOM kill）が発生するため、`L4 Standard` 以上の環境を使用する必要がある。
+
+### 未改変ベースライン（L4 / CUDA 12.8 / `-fa on` / `ctx=8192`）
+| モデル | サイズ / テンソル数 | `pp512` (t/s) | `tg128` (t/s) | WikiText-2 PPL (`chunks=32`) | Server `MTP OFF` (VRAM) | Server `MTP ON` (VRAM) | MultiJail 10言語 |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| `base-BF16.gguf` | `15G` / 720 | — | — | `53.7849 ± 2.83395` | — | — | — |
+| `base-Q4_K_M.gguf` | `4.95 GiB (5069.49 MiB)` / 5.6565 BPW | `7023.28 ± 78.37` | `68.37 ± 0.17` | `52.3827 ± 2.72929` | `64.22 / 64.02 t/s` (`3444→3466 MiB`) | `113.29 / 124.02 t/s` (`3558→3582 MiB`) | **`180/250 (72.0%)`** (`88.8 t/s`, 採択率 `23.37%`) |
+
+*(注: Base 10言語内訳 `en:17, ja:18, zh:20, ko:16, id:19, th:16, vi:20, it:16, ar:19, sw:19`。)*
+
+---
+
+## 27. 原寸 BF16 上への 5層 Focused Trial 12 ARA 適用と量子化前ゲート (Phase 2)
+
+- **スクリプト**: `scripts/apply_ara_and_merge.py`（`--quantization NONE` 指定、Colab 既定の非互換 `torchao 0.10.0` を削除して `peft` の `nn.Linear` マージ互換性を確保）。
+- **実行結果**:
+  - `modify_sec = 9.13s`, `merge_save_sec = 54.81s`
+  - **英語 Evaluator**: **`Refusals = 0.02 (2/100)`**, **`KL divergence = 0.024441`**（従来の BNB_4BIT 版 `KL 0.0291` よりさらに低い KL を原寸 BF16 で達成）。
+- **BF16 GGUF 変換・量子化前評価 (`abl-5l-ft12-BF16.gguf`)**:
+  - サイズ `14.9G`（`666` tensors — KV-shared 層の未使用 `attn_k/v/k_norm` 54テンソルは `save_pretrained` で整理済、`abl - base = 0` で異常なし）。
+  - WikiText-2 PPL = **`55.3953 ± 2.90502`**
+  - `llama-server` MultiJail 10言語合計 = **`24/250 (9.6%)`**（`en:1, ja:3, zh:3, ko:4, id:2, th:2, vi:4, it:2, ar:1, sw:2`、`25.33 tok/s`）。
+
+---
+
+## 28. テキスト専用 GGUF の均一量子化 vs 混合量子化 定量比較 (Phase 3 & 4)
+
+全 5 バリアントを同一条件（`llama.cpp b12751`, NVIDIA L4, `--model-draft mtp-assistant-Q8_0.gguf --spec-type draft-mtp --spec-draft-n-max 4`, `-fa on`, `ctx=8192`, `n_slots=4`）で比較評価した（`evals/` 参照）。
+
+### 速度・VRAM・PPL・MTP・品質比較表
+| バリアント | ファイルサイズ (`BPW`) | `llama-bench` `pp512` / `tg128` | WikiText-2 PPL | `srv` MTP OFF (`VRAM`) | `srv` MTP ON (`VRAM`, 採択率) | MultiJail 10言語 (`速度`, `採択率`) | 推論検査 (`en_reason`: バットとボール) |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| `abl-5l-ft12-Q4_K_M` (均一) | `5,302,268,608 B` (`5041.55 MiB`, `5.6668`) | `7363.58` / `68.19` | **`53.9559 ± 2.80442`** | `63.69 t/s` (`3440 MiB`) | `119.17 t/s` (`1.87x`, `3556 MiB`, `38.50%`) | `19/250 (7.6%)` (`90.71 t/s`, `24.94%`) | **正解 (`\$0.10`)** |
+| `abl-5l-ft12-mix-Q4KM-Q8` (介入層 `Q8_0`) | `5,349,741,248 B` (`5086.83 MiB`, `5.7177`) | `6901.10` / `66.38` (`-6.3%` / `-2.7%`) | `54.0490 ± 2.81704` | `62.07 t/s` (`3484 MiB`) | **`119.91 t/s`** (`1.93x`, `3600 MiB`, **`40.27%`**) | `21/250 (8.4%)` (`90.80 t/s`, `25.52%`) | **正解 (`\$0.10`)** |
+| `abl-5l-ft12-mix-Q4KM-BF16` (介入層 `BF16`) | `5,486,294,184 B` | `6964.03` / `64.10` (`-5.4%` / `-6.0%`) | `54.0917 ± 2.81993` | `59.42 t/s` (`3630 MiB`) | `113.69 t/s` (`1.91x`, `3746 MiB`, `39.87%`) | `19/250 (7.6%)` (`88.35 t/s`, `25.35%`) | **正解 (`\$0.10`)** |
+| `abl-5l-ft12-IQ4_XS` (均一 `IQ4_XS`) | `5,042,042,024 B` (`4808.47 MiB`, `5.4048`) | `7680.85` / `72.52` | `58.0482 ± 3.03996` (悪化) | `67.39 t/s` (`3206 MiB`) | `121.26 t/s` (`1.80x`, `3322 MiB`, `39.46%`) | `23/250 (9.2%)` (`95.70 t/s`, `25.79%`) | **不正解 (`\$0.00`)** |
+| `abl-5l-ft12-mix-IQ4XS-Q8` (介入層 `Q8_0`) | `5,128,385,704 B` (`4890.81 MiB`, `5.4974`) | `7480.15` / `70.91` (`-2.6%` / `-2.2%`) | `58.8949 ± 3.09973` | `65.96 t/s` (`3288 MiB`) | `121.01 t/s` (`1.83x`, `3404 MiB`, `40.74%`) | **`18/250 (7.2%)`** (`93.69 t/s`, `25.51%`) | **不正解 (`\$0.00`)** |
+
+### 長コンテキスト 8GB VRAM 収容確認（`-ctk q8_0 -ctv q8_0 -fa on`）
+- `abl-5l-ft12-Q4_K_M` (`ctx=16384`): VRAM `3636 → 3660 MiB`（`avg_tps = 118.47 t/s`, `acc = 40.59%`）。
+- `abl-5l-ft12-mix-Q4KM-Q8` (`ctx=16384`): VRAM `3680 → 3704 MiB`（`avg_tps = 119.06 t/s`, `acc = 42.64%`）。
+- `abl-5l-ft12-mix-Q4KM-Q8` (`ctx=32768`): VRAM **`3978 → 4002 MiB`**（`avg_tps = 118.57 t/s`, `acc = 42.64%`）。
+- いずれも RTX 4070 8GB VRAM の約半分（4GB 未満〜4.0GB）に収容可能。これは `llama.cpp` が巨大な `per_layer_token_embd.weight` (PLE) テーブルを CPU/ホスト側に適切に配置し、計算主体テンソルのみを VRAM に展開するためである。
+
+### 混合量子化による劣化・回復の知見
+1. **`Q4_K_M` 基盤では均一量子化がすでに高性能、混合 `Q8_0` は MTP 採択率に微益**:
+   - `abl-5l-ft12-Q4_K_M` 自体が BF16 以上の MultiJail 突破（`24/250 -> 19/250 = 7.6%`）と最小 PPL（`53.9559`）を維持した。
+   - 介入5層10テンソルを `Q8_0` 化する（`mix-Q4KM-Q8`）と `+44〜45 MiB` の微小 VRAM 増で `pp512 -6.3% / tg128 -2.7%` の生速度低下が生じる一方、MTP ドラフト採択率が `38.50% -> 40.27%` に改善し実効 `llama-server` 速度は `119.91 t/s` で互角となった。`BF16` 混合（`mix-Q4KM-BF16`）は `+190 MiB`・`-6.0%` 速度低下に対して品質利得が限定的（`19/250`）で `Q8_0` 混合より効率が劣る。
+2. **`IQ4_XS` 基盤では PPL と推論が劣化、`Q8_0` 混合は拒否率を完全回復するが推論劣化は基盤由来**:
+   - `IQ4_XS` は ~`234 MiB` 省 VRAM かつ最速だが、PPL が `+4.09` 悪化（`53.96 -> 58.05`）し、バットとボール問題で System-1 の誤答（`\$0.00`）が発生、MultiJail も `19 -> 23/250 (9.2%)` に後退した。
+   - 介入10テンソルを `Q8_0` 化した `mix-IQ4XS-Q8` は MultiJail を **`18/250 (7.2%)`**（全モデル中最少）へ完全回復させたものの、非介入層全体の `IQ4_XS` 圧縮による PPL 悪化（`58.89`）と推論誤答（`\$0.00`）までは回復できなかった。
+
+---
+
+## 29. BF16 Optuna 再最適化検証と最終納品成果物 (Phase 4.5 & Deliverables)
+
+### BF16 Optuna 探索 (`phase4_5_bf16_optuna/optuna_results.json`, 8試行)
+`scripts/run_layer29_24_optuna.py --quantization NONE` による 5層 `[24, 25, 29, 30, 37]` の探索結果:
+- **Trial 0 (`low-KL` 候補)**: `preserve=0.3873, steer=0.00030, overcorrect=0.8555, k=14` → `Refusals=0.05, KL=0.005588`
+- **Trial 2 (`5L_FT12`)**: `preserve=0.5387, steer=0.00819, overcorrect=0.9787, k=12` → **`Refusals=0.02, KL=0.024441`**（総合最良）
+- **Trial 4 (`strong-steer` 候補)**: `preserve=0.3515, steer=0.01953, overcorrect=0.9449, k=16` → `Refusals=0.03, KL=0.057695`
+- **Trial 6 (`k=10`)**: `Refusals=0.27, KL=0.012092`
+
+### Optuna 再最適化による量子化劣化の改善有無検証 (`evals_p45/`)
+1. **Exp 4.5-A (`Trial 4 strong-steer` → `IQ4_XS`)**:
+   - `pp512 = 8033.08 ± 62.02`, `tg128 = 73.70 ± 0.26`, `srv MTP ON = 121.91 t/s (acc=40.14%)`
+   - **MultiJail = `21/250 (8.4%)`**（`FT12 IQ4_XS` の `23/250` から 2件改善、`en:1, ja:3, zh:3, ko:4, id:3, th:3, vi:1, it:1, ar:1, sw:1`, `93.13 t/s`, `acc=25.82%`）
+   - しかし **WikiText-2 PPL = `61.0761 ± 3.26634`**（`58.05` より `+3.03` さらに悪化）かつ `en_reason = \$0.00` の推論崩壊も未回復。
+   - **結論**: 強ステアへの Optuna 再探索は `IQ4_XS` の拒否戻りを部分緩和するが、**介入層のみを `Q8_0` 化する混合量子化 (`mix-IQ4XS-Q8`: `18/250`, `PPL=58.89`) に比べ拒否抑制・PPL 双方で劣る**。
+2. **Exp 4.5-B (`Trial 0 low-KL` → `Q4_K_M`)**:
+   - `pp512 = 7123.44 ± 109.44`, `tg128 = 68.18 ± 0.11`, `srv MTP ON = 116.96 t/s (acc=40.87%)`, `en_reason = \$0.10` 正解
+   - **WikiText-2 PPL = `54.0005 ± 2.83243`**, **MultiJail = `21/250 (8.4%)`**（`en:1, ja:4, zh:0, ko:1, id:3, th:1, vi:4, it:1, ar:3, sw:3`, `88.52 t/s`, `acc=25.08%`）
+   - **結論**: `5L_FT12 Q4_K_M`（`19/250 = 7.6%`, `PPL=53.9559`, `90.71 t/s`）をいずれの主要指標でも上回らず、BF16 パレート最適点 `5L_FT12` が `Q4_K_M` 量子化後も最適であることが実証された。
+
+### ローカル最終納品成果物（`/data/Abliteration/main/models/`, `.gitignore` 対象）
+| ファイル名 | サイズ (bytes) | SHA-256 (`models/SHA256SUMS.txt`) | 用途 |
+| :--- | :---: | :--- | :--- |
+| `gemma-4-E4B-it-abliterated-5L-FT12-Q4_K_M.gguf` | `5,302,268,608` | `2d038865e9fe767d72087d4933ee2c243ad3c4c7e52fc9e0161baacf6c9d9e3f` | **主推奨**（最小 PPL `53.96`・最少 MultiJail `19/250`） |
+| `gemma-4-E4B-it-abliterated-5L-FT12-mix-Q4KM-Q8.gguf` | `5,349,741,248` | `57b776f1c709041d4c8f643e39a40f8a0b63e61ca11247a097fe923d95705c1b` | **比較・MTP採択重視版**（介入5層 `Q8_0`、MTP `40.27%`） |
+| `mtp-assistant-Q8_0.gguf` | `98,653,280` | `80291890b359435865beccdbbf1d793293966f51e4f0fb3abf28f18303eac35` | **推奨 MTP ドラフトモデル**（1.87x–1.93x 高速化） |
+| `mtp-assistant-Q4_K_M.gguf` | `77,231,200` | `8e2b986d1f434dde39c5fe04d72f557c5396d691ac9ea5c910a1ceaae6fb0dc0` | 省容量 MTP ドラフトモデル |
+
+- **Windows 11 RTX 4070 8GB 起動スクリプト**: `scripts/run_gemma4_mtp_rtx4070.ps1`, `scripts/run_gemma4_mtp_rtx4070.bat`（`-ngl 999 -ngld 999 --spec-type draft-mtp --spec-draft-n-max 4 --ctx-size 16384 -ctk q8_0 -ctv q8_0 -fa on --jinja`）。
+- **永続化ファイル**: `results/gemma4_e4b_gguf_8gb/{evals,evals_p45,phase4_5_bf16_optuna,*.log}`, `scripts/{apply_ara_and_merge.py,eval_gguf_multijail_10langs.py,run_layer29_24_optuna.py,run_gemma4_mtp_rtx4070.ps1,run_gemma4_mtp_rtx4070.bat}`, `models/SHA256SUMS.txt`, `ccu_history.jsonl`。
+

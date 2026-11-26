@@ -1,0 +1,13 @@
+0.02.115.771 W load: control-looking token:    212 '</s>' was not control-type; this is probably a bug in the model. its type will be overridden
+0.02.115.852 W load: control-looking token:     50 '<|tool_response>' was not control-type; this is probably a bug in the model. its type will be overridden
+0.02.123.068 W load: '</s>' is a normal token here, removing it from EOG list
+0.09.698.723 I cmn          init: llama threadpool init, n_threads = 6
+0.09.888.319 I 
+0.09.888.455 I system_info: n_threads = 6 (n_threads_batch = 6) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890,900,1200 | USE_GRAPHS = 1 | FA_QUANTS = q4_0-q4_0,q8_0-q8_0,f16-f16,bf16-bf16,f8_e4m3-f8_e4m3 | NATIVE_FP8 = 1 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | 
+0.09.888.479 I perplexity: tokenizing the input ..
+0.10.790.930 I perplexity: tokenization took 902.432 ms
+0.10.791.300 I perplexity: calculating perplexity over 32 chunks, n_ctx=512, batch_size=2048, n_seq=4
+0.12.511.340 I perplexity: 1.72 seconds per pass - ETA 0.22 minutes
+[1]32.8333,[2]50.7760,[3]48.7856,[4]57.3911,[5]57.3247,[6]65.0559,[7]68.3258,[8]70.9715,[9]80.5530,[10]81.1571,[11]82.9969,[12]85.8755,[13]91.2392,[14]85.7940,[15]84.0105,[16]81.1693,[17]76.5140,[18]80.8337,[19]80.2368,[20]78.3917,[21]75.1740,[22]73.3727,[23]69.3090,[24]66.2866,[25]63.6276,[26]61.0142,[27]59.5844,[28]57.8403,[29]56.5066,[30]56.6518,[31]55.4413,[32]55.3953,
+0.19.695.870 I Final estimate: PPL = 55.3953 +/- 2.90502
+

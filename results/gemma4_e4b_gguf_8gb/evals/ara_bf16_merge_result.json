@@ -1,0 +1,24 @@
+{
+  "layers": [
+    24,
+    25,
+    29,
+    30,
+    37
+  ],
+  "quantization_for_ara": "NONE",
+  "params": {
+    "preserve_good_behavior_weight": 0.5387,
+    "steer_bad_behavior_weight": 0.00819,
+    "overcorrect_relative_weight": 0.9787,
+    "neighbor_count": 12
+  },
+  "scores": {
+    "Refusals": 0.02,
+    "KL divergence": 0.024440966546535492
+  },
+  "modify_sec": 9.13,
+  "merge_save_sec": 54.81,
+  "total_sec": 261.14,
+  "save_dir": "/content/hf_models/gemma4_e4b_5l_ft12_bf16"
+}

@@ -1,0 +1,21 @@
+{
+  "layers": [
+    24,
+    25,
+    29,
+    30,
+    37
+  ],
+  "quantization_for_ara": "NONE",
+  "params": {
+    "preserve_good_behavior_weight": 0.3873,
+    "steer_bad_behavior_weight": 0.0003,
+    "overcorrect_relative_weight": 0.8555,
+    "neighbor_count": 14
+  },
+  "scores": {},
+  "modify_sec": 9.71,
+  "merge_save_sec": 53.66,
+  "total_sec": 127.56,
+  "save_dir": "/content/hf_models/bf16_t0_lowkl"
+}
